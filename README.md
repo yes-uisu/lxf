@@ -1,39 +1,74 @@
-# lxf
+<a href="https://themes.3rdwavemedia.com/bootstrap-templates/popular/devblog-free-bootstrap-4-blog-template-for-developers/" target="_blank"><img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/Bootstrap-Blog-Template-DevBlog-Pormo.jpg" alt="Bootstrap 4 Blog Template for Developers" /></a>
 
-#### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+## Theme Details & Demo
 
-#### 软件架构
-软件架构说明
+**Demo:** https://themes.3rdwavemedia.com/bootstrap-templates/popular/devblog-free-bootstrap-4-blog-template-for-developers/
 
+DevBlog is a **free Bootstrap blog template** made for developers. It provides a great reading experience for desktop and mobile users. Comes with 8 hand-picked colour schemes, you can easily customise the theme colour/styling via the source SCSS files.
 
-#### 安装教程
+Blogging is a great way for developers to share their ideas and promote their work or side projects. This template can help you set up a professional-looking blog in no time. No need to rely on a third-party blogging platform – get all the traffic to your own site instead. Want to get your blog online and start building your audience? Don’t miss this template!
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## Author & License
 
-#### 使用说明
+This Bootstrap template is made by UX/UI designer [Xiaoying Riley](https://twitter.com/3rdwave_themes) for developers and is 100% FREE under the [Creative Commons Attribution 3.0 License (CC BY 3.0)](http://creativecommons.org/licenses/by/3.0/)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+If you'd like to **use the template without the attribution**, you can [buy the **commercial license** via the theme website](https://themes.3rdwavemedia.com/bootstrap-templates/popular/devblog-free-bootstrap-4-blog-template-for-developers/)
 
-#### 参与贡献
+#### Follow Xiaoying
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+[Twitter](https://twitter.com/3rdwave_themes)
+
+[Facebook](https://www.facebook.com/3rdwavethemes/)
+
+[Dribbble](https://dribbble.com/Xiaoying)
+
+[Medium](https://medium.com/@3rdwave_themes)
+
+[Linkedin](https://uk.linkedin.com/in/xiaoying)
 
 
-#### 码云特技
+## Latest Version
+**v1.1** - 12 Feb 2019
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+[Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/popular/devblog-free-bootstrap-4-blog-template-for-developers/?target=changelog)
+
+## Colour Schemes
+
+#### Colour 1 (theme-1.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-1.jpg" width="400" alt="DevBlog color 1" />
+
+#### Colour 2 (theme-2.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-2.jpg" width="400" alt="DevBlog color 2" />
+
+#### Colour 3 (theme-3.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-3.jpg" width="400" alt="DevBlog color 3" />
+
+#### Colour 4 (theme-4.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-4.jpg" width="400" alt="DevBlog color 4" />
+
+#### Colour 5 (theme-5.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-5.jpg" width="400" alt="DevBlog color 5" />
+
+#### Colour 6 (theme-6.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-6.jpg" width="400" alt="DevBlog color 6" />
+
+#### Colour 7 (theme-7.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-7.jpg" width="400" alt="DevBlog color 7" />
+
+#### Colour 8 (theme-8.css)
+<img src="https://themes.3rdwavemedia.com/wp-content/uploads/2019/02/devblog-theme-8.jpg" width="400" alt="DevBlog color 8" />
+
+## Features
+
+-  Fully Responsive
+-  HTML5 + CSS3
+-  Built on Bootstrap 4
+-  **SCSS** source files included
+-  8 Colour Schemes
+-  1000+ FontAwesome 5 icons
+-  Compatible with all modern browsers
+
+## Credits
+- [Bootstrap](https://getbootstrap.com/)
+- [FontAwesome](https://fortawesome.github.io/Font-Awesome/)
+- [Highlight.js](https://highlightjs.org/)
