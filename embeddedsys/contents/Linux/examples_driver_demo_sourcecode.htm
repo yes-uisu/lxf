@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../../embeddedsys_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>例子demo.c源程序</title>
+<!-- #EndEditable -->
+<meta content="insert DESCRIPTION here" name="description" />
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" class="scalable" src="../../../images/masthead-logo.jpg" style="width: 1024px; height: 139px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../../index.html" title="主页">主页</a></li>
+			<li><a href="../../../about.html" title="关于">关于</a></li>
+			<li><a href="../../../contact.html" title="联系方式">联系方式</a></li>
+			<li><a href="../../../links.html" title="外网课件">外网课件</a></li>
+			<li><a href="../../../search.html" title="搜索">搜索</a></li>
+			<li><a href="../../../site-map.html" title="网站地图">网站地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程列表</p>
+			<ul>
+				<li>
+				<a href="../../../电子线路计算机辅助设计/课件/目录.htm" title="电子线路计算机辅助设计">电子线路计算机辅助设计</a></li>
+				<li><a href="../../contents.htm" title="嵌入式系统设计">嵌入式系统设计</a></li>
+				<li><a href="../../../sopc系统设计/目录.htm" title="SOPC系统设计">SOPC系统设计</a></li>
+			</ul>
+			<p class="heading">基本问题</p>
+			<ul>
+				<li><a href="#" title="计算机组成">自制计算机</a></li>
+			</ul>
+			<p class="heading">开源资源</p>
+			<ul>
+				<li><a href="#" title="开源cpu">开源cpu</a></li>
+				<li><a href="#" title="gcc">gcc</a></li>
+			</ul>
+
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">好好学习天天向上</p>
+			
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000; "  >
+				联大大纲—<a href="../../communication_syllabus.htm">通信</a>—<a href="../../普通本科教学大纲-嵌入式系统原理及应用(电子3学分).htm">电子</a>
+				;<a href="../../lixiaofeng_inf.htm">教师介绍</a>;
+				<a href="../单片机原理与应用目录.htm">单片机课程学习经验</a>-
+				<a href="../learning_map.htm">学习路线图</a>;
+				1.<a href="../Embedded_system_introduction.htm">概述</a>
+				-<a href="../application.htm">应用</a>
+				-<a href="../definition.htm">定义</a>
+				-<a href="../features.htm">特点</a>
+				-<a href="../architecture.htm">构成</a>;
+				2.嵌入式处理器
+				—<a href="../most_simple_cpu/cpu_learn_tru_diy.htm">DIY CPU</a>
+				—<a href="../general_cpu.htm">处理器</a>
+				—<a href="../ARM_index.htm">ARM处理器</a>
+				—<a href="../Cortex-A8/Cortex-A8-index.htm">Cortex-A8</a>
+				—<a href="../S5PV210/S5PV210_index.htm">S5PV210</a>
+				—<a href="../armv7-contexa8-s5pv210-rel.htm">讨论</a>;
+				
+				3.<a href="../arm_assembly_language/arm_assembly_index.htm">汇编语言</a>
+				-<a href="../arm_assembly_language/exercise_ldr_compile.htm">作业</a>
+				
+				4.<a href="../bootloader/Bootloader_index.htm">Bootloader</a>
+				-<a href="../bootloader/uboot/exercise_read_uboot.htm">作业</a>
+				
+				5.<a href="Linux_kernel_transplantation_index.htm">Linux内核移植</a>
+				
+				6.<a href="index_programming.htm">嵌入式Linux程序设计</a>
+				
+				7.<a href="../QT/Qt_index.htm">图形用户接口QT</a>
+				
+				8.<a href="../framwork_introduction.htm">其他框架介绍</a>;
+				9.嵌入式物联网应用系统设计
+			</div>
+<!-- #BeginEditable "body" -->
+
+<p class="MsoNormal"><font size="4">文件路径：书附光盘<span lang="EN-US">\6</span>应用例程</font><span lang="EN-US"><font size="4">\6Linux\driver\01_demo\demo.c</font></span></p>
+<p class="MsoNormal"><font size="4">文件内容：</font></p>
+<p class="a"><span lang="EN-US"><font size="4">1</font></span><font size="4"><span style="font-family: 黑体">．定义设备名</span></font><span lang="EN-US"><font size="4">- 
+DEMO</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US"><font size="4">#ifdef 
+MODULE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">需要编译为模块</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/module.h&gt;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#ifdef CONFIG_DEVFS_FS</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include 
+&lt;linux/devfs_fs_kernel.h&gt;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#endif</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/init.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">初始化相关头文件 
+ 
+</font> 
+</p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/kernel.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">与<span lang="EN-US">printk()</span>等函数有关的头文件  
+</font> </p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/slab.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">与<span lang="EN-US">kmalloc()</span>等函数有关的头文件 
+ 
+</font> 
+</p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/fs.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">与文件系统有关的头文件</font><span lang="EN-US"><font size="4">everything... 
+&nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/errno.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">错误代码处理头文件</font><span lang="EN-US"><font size="4">error 
+codes &nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/types.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">数据类型头文件</font><span lang="EN-US"><font size="4">size_t 
+&nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/proc_fs.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">与进程调度相关的头文件 
+ 
+</font> 
+</p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/fcntl.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//O_ACCMODE &nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;linux/poll.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//COPY_TO_USER &nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#include &lt;asm/system.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//cli(), *_flags &nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#define DEVICE_NAME "DEMO"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">定义虚拟设备的名称为</font><span lang="EN-US"><font size="4">DEMO 
+&nbsp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#define DEMORAW_MINOR 1</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#define DEMO_Devfs_path "demo/0"</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">//</font></span><font size="4">定义全局变量</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">static int demoMajor = 0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</font> </span>
+</p>
+<p class="a0"><span lang="EN-US"><font size="4">static int MAX_BUF_LEN=1024;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">定义缓冲区最大长度</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">static char drv_buf[1024];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">内核定义一缓冲区</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">static int WRI_LENGTH=0;</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">2</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">static 
+void do_write()</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+/************************************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">do_write()</font></span></p>
+<p class="a0"><font size="4">功能：将数组<span lang="EN-US">drv_buf[]</span>内容逆序重排，用于被<span lang="EN-US">demo_write()</span>调用。</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; </span>排序前数据存于数组<span lang="EN-US">drv_buf[]</span>，数组<span lang="EN-US">drv_buf[]</span>为全局变量。</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>排序后数据存于数组<span lang="EN-US">drv_buf[]</span>。</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+************************************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static void do_write(void)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; 
+i;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp; 
+len = WRI_LENGTH;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//WRI_LENGTH</font></span><font size="4">值来自<span lang="EN-US">demo_write()</span>函数</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; char&nbsp;&nbsp;&nbsp; 
+tmp;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; for(i = 0; i 
+&lt; (len&gt;&gt;1); i++,len--){</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tmp = drv_buf[len-1];</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+drv_buf[len-1] = drv_buf[i];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">对<span lang="EN-US">drv_buf[]</span>数组进行逆序排列</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+drv_buf[i] = tmp;}}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">3</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_write()</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+/************************************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">demo_write()</font></span></p>
+<p class="a0"><font size="4">功能：对应于应用层<span lang="EN-US">write</span>系统调用。</font></p>
+<p class="a0" style="text-indent: 27.0pt"><font size="4">将应用层用户定义缓冲区中数据复制到内核缓冲区<span lang="EN-US">drv_buf[]</span>。</font></p>
+<p class="a0" style="text-indent: 27.0pt"><font size="4">调用<span lang="EN-US">do_write()</span>函数对数组<span lang="EN-US">drv_buf[]</span>进行逆序排列。</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; *filp </span>操作设备文件的<span lang="EN-US">ID</span>，指向用户程序<span lang="EN-US">test_demo.c</span>中打开的设备。</font></p>
+<p class="a0" style="text-indent: 45.0pt"><span lang="EN-US"><font size="4">&nbsp; 
+*buffer 
+</font> </span>
+<font size="4">应用层用户定义缓冲区的起始地址</font></p>
+<p class="a0" style="text-indent: 45.0pt"><span lang="EN-US"><font size="4">&nbsp; 
+count 
+</font> </span>
+<font size="4">应用层用户定义缓冲区的长度</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>返回排序数组长度</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+************************************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static ssize_t demo_write(struct 
+file *filp,const char *buffer, size_t count)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; if(count &gt; 
+MAX_BUF_LEN)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">数据<span lang="EN-US">&lt;1024</span>，越界保护</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; count = 
+MAX_BUF_LEN;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font>
+</span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+copy_from_user(drv_buf , buffer, count);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">复制用户<span lang="EN-US">buffer</span>到内核空间</font><span lang="EN-US"><font size="4">drv_buf</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; WRI_LENGTH = 
+count;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; printk("user 
+write data to driver\n");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //</font></span><font size="4">输出提示行</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; do_write();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">调用排序函数</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return 
+count;}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">4</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_read</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+/************************************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">demo_read()</font></span></p>
+<p class="a0"><font size="4">功能：对应于应用层<span lang="EN-US">read</span>系统调用。</font></p>
+<p class="a0"><font size="4">将内核缓冲区<span lang="EN-US">drv_buf[]</span>中数据复制到应用层用户定义的缓冲区中。</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; *filp </span>操作设备文件的<span lang="EN-US">ID</span>，指向用户程序<span lang="EN-US">test_demo.c</span>中打开的设备。</font></p>
+<p class="a0" style="margin-left: 3.0cm"><span lang="EN-US"><font size="4">
+*buffer 
+</font> </span>
+<font size="4">应用层用户定义缓冲区的起始地址</font></p>
+<p class="a0" style="margin-left: 3.0cm"><span lang="EN-US"><font size="4">count 
+</font> </span>
+<font size="4">应用层用户定义缓冲区的长度</font></p>
+<p class="a0" style="margin-left: 3.0cm"><span lang="EN-US"><font size="4">*ppos 
+</font> </span>
+<font size="4">用户在文件中进行存储操作的位置</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>返回排序数组长度</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+************************************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static ssize_t demo_read(struct 
+file *filp, char *buffer, size_t count, loff_t *ppos)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; if(count &gt; 
+MAX_BUF_LEN)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+count=MAX_BUF_LEN;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+copy_to_user(buffer, drv_buf,count);&nbsp;&nbsp;&nbsp; //</font></span><font size="4">内核排列后的<span lang="EN-US">drv_buf</span>传递给用户</font><span lang="EN-US"><font size="4">buffer</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; printk("user 
+read data from driver\n"); //</font></span><font size="4">输出提示行</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return 
+count;}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">5</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_ioctl</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+/************************************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">demo_ioctl()</font></span></p>
+<p class="a0"><font size="4">功能：对应于应用层<span lang="EN-US">ioctl</span>系统调用。</font></p>
+<p class="a0"><font size="4">展示对用户空间传递过来的命令的处理过程</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; *filp</span>操作设备文件的<span lang="EN-US">ID</span>，指向用户程序<span lang="EN-US">test_demo.c</span>中打开的设备。</font></p>
+<p class="a0" style="margin-left: 3.0cm"><span lang="EN-US"><font size="4">cmd 
+</font> </span><font size="4">来自应用层参数</font></p>
+<p class="a0" style="margin-left: 3.0cm"><span lang="EN-US"><font size="4">arg 
+</font> </span>
+<font size="4">来自应用传递过来的参数列表</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>正确返回<span lang="EN-US">0 </span>
+，错误命令返回<span lang="EN-US">default </span>的提示内容</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+************************************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static int demo_ioctl(struct 
+inode *inode, struct file *file,unsigned int cmd, unsigned 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long arg)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; switch(cmd){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">对来自应用层参数的处理</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; case 
+1:printk("runing command 1 \n");break;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; case 
+2:printk("runing command 2 \n");break;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; default:</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; printk("error 
+cmd number\n");break;}</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return 0;}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">6</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_open</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+//**********************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">static 
+void demo_open()</font></span></p>
+<p class="a0"><font size="4">功能：定义设备文件打开函数，对应于应用层<span lang="EN-US">open</span>系统调用</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; </span>
+设备文件节点，可附加参数（如<span lang="EN-US">O_RDWR</span>表示以即读也写方式访问被打开文件）</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>无</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+**********************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static int demo_open(struct 
+inode *inode, struct file *file)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+printk(KERN_DEBUG" device open sucess!\n");</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return 0;}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">7</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_release
+</font>
+</span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+//**********************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">static 
+void demo_ release ()</font></span></p>
+<p class="a0"><font size="4">功能：设备文件释放函数，对应用应用层<span lang="EN-US">close</span>系统调用，</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; </span>设备文件节点</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>无</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+**********************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static int demo_release(struct 
+inode *inode, struct file *filp)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+printk(KERN_DEBUG "device release\n");</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return 0;}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">8</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_fops</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+//**********************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：<span lang="EN-US">demo_fops </span>设备文件结构</font></p>
+<p class="a0"><font size="4">功能： 设备驱动文件结构体</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</font> </span><font size="4">关联系统操作<span lang="EN-US">write</span>、<span lang="EN-US">read</span>、<span lang="EN-US">ioctl</span>、<span lang="EN-US">open</span>、<span lang="EN-US">release</span>与实体函数</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+**********************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static struct file_operations 
+demo_fops = {</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; owner: 
+THIS_MODULE,</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; write: 
+demo_write,</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+read:demo_read,</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; ioctl: 
+demo_ioctl,</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; open: 
+demo_open,</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; release: 
+demo_release}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">9</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_init 
+(register)</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+//**********************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">static 
+void demo_init ()</font></span></p>
+<p class="a0"><font size="4">功能：设备注册函数，通过<span lang="EN-US">register_chrdev</span>向内核字符设备链表注册该字符设备</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; </span>无</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>无</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+**********************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static int __init 
+demo_init(void)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; int ret;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; ret = 
+register_chrdev(0, DEVICE_NAME, &amp;pxa270_fops);</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; if (ret &lt; 0) 
+{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+printk(DEVICE_NAME "can't get major number\n");</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return ret;}</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+demoMajor=ret;</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; return 0;}</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">10</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">demo_ 
+exit (unregister)</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">
+//**********************************************************************************</font></span></p>
+<p class="a0"><font size="4">名称：</font><span lang="EN-US"><font size="4">static 
+void demo_ exit()</font></span></p>
+<p class="a0"><font size="4">功能：设备注销函数，通过<span lang="EN-US">unregister_chrdev </span>
+向内核字符设备链表注销该字符设备</font></p>
+<p class="a0"><font size="4">入口参数：<span lang="EN-US">&nbsp; </span>无</font></p>
+<p class="a0"><font size="4">出口参数：<span lang="EN-US">&nbsp; </span>无</font></p>
+<p class="a0"><span lang="EN-US">
+<font size="4">
+************************************************************************************/</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#ifdef MODULE</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">static void __exit 
+demo_exit(void)</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">{</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">&nbsp;&nbsp;&nbsp; 
+unregister_chrdev(demoMajor, DEVICE_NAME);</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">}</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">module_exit(demo_exit);</font></span></p>
+<p class="a0"><span lang="EN-US"><font size="4">#endif</font></span></p>
+<p class="a"><span lang="EN-US"><font size="4">11</font></span><font size="4"><span style="font-family: 黑体">．</span></font><span lang="EN-US"><font size="4">Module_</font></span></p>
+<p class="a0" style="margin-top: 6.0pt"><span lang="EN-US">
+<font size="4">module_init(demo_init);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">模块初始化</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">MODULE_LICENSE("Dual BSD/GPL");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//</font></span><font size="4">版权信息</font></p>
+<p class="a0"><span lang="EN-US"><font size="4">#endif //MODULE</font></span></p>
+
+<!-- #EndEditable -->
+		</div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		<p>Copyright © 2015 Company Name. All Rights Reserved.</p>
+		<p>your-name@your-domain.com
+		<a href="../../../privacy-policy.html" title="Privacy Policy.">Privacy Policy</a>
+		</p>
+		<p class="smltxt">Template Design:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

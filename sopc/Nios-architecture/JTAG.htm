@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../sopc_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>JTAG接口</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../index.html" title="Home">主页</a></li>
+			<li><a href="../../about.html" title="About">关于</a></li>
+			<li><a href="../../contact.html" title="Contact">联系</a></li>
+			<li><a href="../../links.html" title="Links">课程</a></li>
+			<li><a href="../../search.html" title="Search">搜索</a></li>
+			<li><a href="../../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000;"  >
+					<div id="content1" onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第一章 概述</div> 
+					<div id="child1" align="left" style="display:none"> 
+						1.<a href="../SOPC基本概念.htm">SOPC系统的基本概念</a> <br> 
+						2.<a href="../IP-core.htm">IP核</a> <br> 
+						3.<a href="../sopc-dev-process.htm">SOPC开发基本流程</a> <br> 
+						4.<a href="../NiosII-introduction.htm">Nios II处理器介绍</a> <br>
+						5.<a href="../FPGA-implemented-sopc.htm">用FPGA实现SOPC</a><br>
+						6.<a href="../nios-app.htm">应用</a><br>
+					</div> 
+					
+					<div id="content2" onclick="document.all.child2.style.display=(document.all.child2.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第二章 Nios II处理器体系结构 </div> 
+					<div id="child2" align="left" style="display:none"> 
+						1.<a href="../NiosII-architecture.htm">Nios II处理器结构</a> <br> 
+						2.<a href="nios-register.htm">Nios II寄存器的配置</a> <br> 
+						3.<a href="nios-alu.htm">ALU</a> <br>
+						4.<a href="operating-modes.htm">Nios II处理器运行模式及</a><br>
+						  <a href="exception.htm">异常和中断</a> <br>
+						5.<a href="memory.htm">存储器和外设访问</a><br>
+						附录：<a href="implement-cpu-instruction.htm">计算机指令执行</a><br>
+					</div> 
+					<div id="content3" onclick="document.all.child3.style.display=(document.all.child3.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第三章 Avalon接口规范 </div> 
+					<div id="child3" style="display:none"> 
+						1.<a href="../avalon/avalon-introduction.htm">Avalon总线简介</a> <br> 
+						2.<a href="../avalon/avalon-concept.htm">Avalon总线基本概念</a> <br> 
+						3.<a href="../avalon/avalon-signal.htm">Avalon信号</a>  <br>
+						4.<a href="../avalon/avalon-slave.htm">从端口传输</a> <br>
+						5.<a href="../avalon/avalon-master.htm">主端口传输</a> <br>
+						6.<a href="../avalon/avalon-streaming.htm">流水线传输</a> <br>
+						7.<a href="../avalon/avalon-tristate.htm">三态传输</a> <br>
+					</div> 
+					
+					<div id="content4" onclick="document.all.child5.style.display=(document.all.child5.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第四章 SOPC软硬件开发平台 </div> 
+					<div id="child5" style="display:none"> 
+						1.<a href="../sopcdevelopment/sopc-dev-platform.htm">SOPC系统开发的软硬件平台</a> <br> 
+						2.<a href="#">Quartus II下的SOPC Builder工具</a>(Qsys) <br> 
+						3.<a href="#">Nios II IDE集成开发环境</a><br>
+						4.<a href="../sopcdevelopment/software/HAL/Nios_HAL.htm">软硬件接口的硬件抽象层（HAL)</a><br>
+						5.<a href="../sopcdevelopment/example-list.htm">例子</a>
+					</div> 
+					
+					<div id="content5" onclick="document.all.child4.style.display=(document.all.child4.style.display =='none')?'':'none'" > 
+					第五章 Nios II处理器常用外设 </div> 
+					<div id="child4" style="display:none"> 
+						1.<a href="#">并行I/O</a>(重点讲解结构) <br> 
+						2.<a href="#">定时器</a> <br> 
+						3.<a href="#">异步串口UART</a> <br>
+						4.<a href="#">Optrex 1207 LCD</a><br>
+						5.<a href="../sopcdevelopment/devices/SDRAM.htm">SDRAM</a>
+					</div> 
+					
+					<div id="content6" onclick="document.all.child6.style.display=(document.all.child6.style.display =='none')?'':'none'" > 
+					第六章 μC/OS II操作系统移植 </div> 
+					<div id="child6" style="display:none"> 
+						1.<a href="../sopcdevelopment/software/os/os.htm">操作系统概念</a> <br> 
+						2.<a href="../sopcdevelopment/software/os/ucos/first_ucos.htm">μC/OS II运行在Nios II</a> <br> 
+						3.<a href="../sopcdevelopment/software/os/ucos/ucos_api.htm">μC/OS II编程介绍</a> 
+					</div> 
+					
+					<div id="content8" onclick="document.all.child7.style.display=(document.all.child7.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第七章 Nios II系统深入设计 </div> 
+					<div id="child7" style="display:none"> 
+						1.<a href="../sopcdevelopment/hardware/user_instructions/user_instructions.htm">用户定制指令</a> <br> 
+						2.<a href="../sopcdevelopment/develop_user_devices.htm">用户定制外设</a> 
+					</div>
+					
+					<div id="content8" onclick="document.all.child8.style.display=(document.all.child8.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第八章 调试技术 </div> 
+					<div id="child8" style="display:none"> 
+						1.<a href="../debug-tech/hardware/ModelSim/modelsim_introduction.htm">ModelSim</a><br>
+						2.<a href="../debug-tech/hardware/signaltap/signaltap_introduction.htm">SignalTap</a><br>
+						3.Nios EDS调试<br> 
+					</div> 
+			</div>
+			<hr/>
+			<!-- #BeginEditable "content" -->
+			
+<div class="body-wrapper" jQuery111109252757381226515="177">
+	<div class="content-wrapper" jQuery111109252757381226515="179">
+		<div class="content" jQuery111109252757381226515="180">
+			<div class="main-content" jQuery111109252757381226515="181">
+				<dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-" jQuery111109252757381226515="197">
+					<dd class="lemmaWgt-lemmaTitle-title" jQuery111109252757381226515="198">
+					<h1 jQuery111109252757381226515="199">JTAG接口</h1>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+<p>
+<a href="http://baike.baidu.com/link?url=ysANO2mOWyQ3s2IdsbEOmMapsZlOZwVO_iIx6rVsRh1FyVBPo8KQAO7mP-YaGQ61B96s7ed9gcZlX0JCNbMHu_">
+http://baike.baidu.com/link?url=ysANO2mOWyQ3s2IdsbEOmMapsZlOZwVO_iIx6rVsRh1FyVBPo8KQAO7mP-YaGQ61B96s7ed9gcZlX0JCNbMHu_</a></p>
+<p>　</p>
+<div class="body-wrapper" jQuery111109252757381226515="177">
+	<div class="content-wrapper" jQuery111109252757381226515="179">
+		<div class="content" jQuery111109252757381226515="180">
+			<div class="main-content" jQuery111109252757381226515="181">
+				<div class="lemma-summary" jQuery111109252757381226515="204">
+					<div class="para" jQuery111109252757381226515="205">
+						<font size="5">JTAG(Joint Test Action 
+						Group；联合测试工作组)是一种国际标准测试协议（IEEE 
+						1149.1兼容），主要用于芯片内部测试。现在多数的高级器件都支持JTAG协议，如<a target="_blank" jQuery111109252757381226515="206" href="http://baike.baidu.com/subview/1192/10810131.htm">DSP</a>、<a target="_blank" jQuery111109252757381226515="207" href="http://baike.baidu.com/view/51371.htm">FPGA</a>器件等。标准的JTAG接口是4线：TMS、TCK、TDI、TDO，分别为模式选择、时钟、数据输入和<a target="_blank" jQuery111109252757381226515="208" href="http://baike.baidu.com/view/324739.htm">数据输出</a>线。</font><p>
+						　</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="body-wrapper" jQuery111109252757381226515="177">
+	<div class="content-wrapper" jQuery111109252757381226515="179">
+		<div class="content" jQuery111109252757381226515="180">
+			<div class="main-content" jQuery111109252757381226515="181">
+				<div class="para" jQuery111109252757381226515="286">
+					<font size="5">JTAG最初是用来对芯片进行测试的，JTAG的基本原理是在器件内部定义一个<font color="#FF0000"><b>TAP（Test 
+					Access Port；测试访问口）</b></font>通过专用的JTAG测试工具对内部节点进行测试。JTAG测试允许多个器件通过JTAG接口串联在一起，形成一个JTAG链，能实现对各个器件分别测试。如今，JTAG接口还常用于实现ISP（In-System 
+					Programmer，在系统编程），对FLASH等器件进行编程。</font></div>
+				<div class="para" jQuery111109252757381226515="287">
+					<font size="5">
+					JTAG编程方式是在线编程，传统生产流程中先对芯片进行预编程然后再装到板上，简化的流程为先固定器件到电路板上，再用JTAG编程，从而大大加快工程进度。JTAG接口可对DSP芯片内部的所有部件进行编程。</font><p>
+					<font size="5">JTAG芯片的边界扫描寄存器 
+					JTAG标准定义了一个串行的移位寄存器。寄存器的每一个单元分配给IC芯片的相应引脚，每一个独立的单元称为BSC（Boundary-Scan 
+					Cell）边界扫描单元。这个串联的BSC在IC内部构成JTAG回路，所有的BSR（Boundary-Scan 
+					Register）边界扫描寄存器通过JTAG测试激活，平时这些引脚保持正常的IC功能。 </font></p>
+					<p>　</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="body-wrapper" jQuery111109252757381226515="177">
+	<div class="content-wrapper" jQuery111109252757381226515="179">
+		<div class="content" jQuery111109252757381226515="180">
+			<div class="main-content" jQuery111109252757381226515="181">
+				<div class="para" jQuery111109252757381226515="389">
+					<font size="5">如今大多数比较复杂的器件都支持 JTAG 协议，如 ARM 、 DSP 、 FPGA 
+					器件等。标准的 JTAG 接口是 4 线： TMS 、 TCK 、 TDI 、 TDO 
+					，分别为测试模式选择、测试时钟、测试数据输入和测试<a target="_blank" jQuery111109252757381226515="390" href="http://baike.baidu.com/view/324739.htm">数据输出</a>。如今 
+					JTAG 接口的连接有两种标准，即 14 针接口和 20 针接口，其定义分别如下所示。</font></div>
+				<div class="anchor-list" jQuery111109252757381226515="391">
+					<a class="lemma-anchor para-title" name="3_1" jQuery111109252757381226515="392">
+					</a>
+					<a class="lemma-anchor " name="sub1231341_3_1" jQuery111109252757381226515="393">
+					</a>
+					<a class="lemma-anchor " name="14针JTAG接口" jQuery111109252757381226515="394">
+					</a></div>
+				<h3 class="para-title level-3" jQuery111109252757381226515="395">
+				<span class="title-text" jQuery111109252757381226515="396">
+				<font size="5">14针JTAG接口</font></span><font size="5"> </font>
+				</h3>
+				<div class="para" jQuery111109252757381226515="397">
+					<font size="5">1 、 13 　 VCC 接电源</font></div>
+				<div class="para" jQuery111109252757381226515="398">
+					<font size="5">2 、 4 、 6 、 8 、 10 、 14 　 GND 接地</font></div>
+				<div class="para" jQuery111109252757381226515="399">
+					<font size="5">3 　nTRST 　测试系统复位信号</font></div>
+				<div class="para" jQuery111109252757381226515="400">
+					<font size="5">5 　TDI 　 测试数据串行输入</font></div>
+				<div class="para" jQuery111109252757381226515="401">
+					<font size="5">7 　TMS 　测试模式选择</font></div>
+				<div class="para" jQuery111109252757381226515="402">
+					<font size="5">9 　TCK 　测试时钟</font></div>
+				<div class="para" jQuery111109252757381226515="403">
+					<font size="5">11　TDO 　 测试数据串行输出</font></div>
+				<div class="para" jQuery111109252757381226515="404">
+					<font size="5">12　NC 　 未连接</font><p>　</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="body-wrapper" jQuery111109252757381226515="177">
+	<div class="content-wrapper" jQuery111109252757381226515="179">
+		<div class="content" jQuery111109252757381226515="180">
+			<div class="main-content" jQuery111109252757381226515="181">
+				<h3 class="para-title level-3" jQuery111109252757381226515="395">
+				<font size="5">
+				<span class="title-text" jQuery111109252757381226515="396">
+				20针JTAG接口</span> </font></h3>
+				<div class="para" jQuery111109252757381226515="411">
+					<font size="5">1　VTref 　 目标板参考电压，接电源</font></div>
+				<div class="para" jQuery111109252757381226515="412">
+					<font size="5">2 VCC 　 接电源</font></div>
+				<div class="para" jQuery111109252757381226515="413">
+					<font size="5">3 nTRST 　 测试系统复位信号</font></div>
+				<div class="para" jQuery111109252757381226515="414">
+					<font size="5">4、6、8、10、12、14、16、18、20 　GND 接地</font></div>
+				<div class="para" jQuery111109252757381226515="415">
+					<font size="5">5 TDI 　 测试数据串行输入</font></div>
+				<div class="para" jQuery111109252757381226515="416">
+					<font size="5">7 TMS 　 测试模式选择</font></div>
+				<div class="para" jQuery111109252757381226515="417">
+					<font size="5">9 TCK 　 测试时钟</font></div>
+				<div class="para" jQuery111109252757381226515="418">
+					<font size="5">11 RTCK 　测试时钟返回信号</font></div>
+				<div class="para" jQuery111109252757381226515="419">
+					<font size="5">13 TDO 　 测试数据串行输出</font></div>
+				<div class="para" jQuery111109252757381226515="420">
+					<font size="5">15 nRESET 　 目标系统复位信号</font></div>
+				<div class="para" jQuery111109252757381226515="421">
+					<font size="5">17 、 19 NC 　未连接</font><p>　</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="body-wrapper" jQuery111109252757381226515="177">
+	<div class="content-wrapper" jQuery111109252757381226515="179">
+		<div class="content" jQuery111109252757381226515="180">
+			<div class="main-content" jQuery111109252757381226515="181">
+				<font size="5"><b>10针JTAG接口</b> </font>
+				<div class="para" jQuery111109252757381226515="428">
+					<font size="5">
+					<a target="_blank" jQuery111109252757381226515="430" href="http://baike.baidu.com/view/557623.htm">
+					仿真器</a>端口 AVR端口 备注</font></div>
+				<div class="para" jQuery111109252757381226515="431">
+					<font size="5">1. TCK TCK</font></div>
+				<div class="para" jQuery111109252757381226515="432">
+					<font size="5">2. NC NC</font></div>
+				<div class="para" jQuery111109252757381226515="433">
+					<font size="5">3. TDO TDO</font></div>
+				<div class="para" jQuery111109252757381226515="434">
+					<font size="5">4. Vtref VCC</font></div>
+				<div class="para" jQuery111109252757381226515="435">
+					<font size="5">5. TMS TMS</font></div>
+				<div class="para" jQuery111109252757381226515="436">
+					<font size="5">6. nSRST RESET</font></div>
+				<div class="para" jQuery111109252757381226515="437">
+					<font size="5">7. NC / Vsupply NC / VCC JTAG ICE仿真器：VCC；JTAG 
+					ICE mkII仿真器：NC</font></div>
+				<div class="para" jQuery111109252757381226515="438">
+					<font size="5">8. nTRST NC ATMEL尚且保留该端口，如今暂不使用它，未来可能会使用</font></div>
+				<div class="para" jQuery111109252757381226515="439">
+					<font size="5">9. TDI TDI</font></div>
+				<div class="para" jQuery111109252757381226515="440">
+					<font size="5">10.GND GND</font></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

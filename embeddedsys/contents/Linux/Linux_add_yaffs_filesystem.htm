@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../../embeddedsys_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>建立Yaffs文件系统</title>
+<!-- #EndEditable -->
+<meta content="insert DESCRIPTION here" name="description" />
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" class="scalable" src="../../../images/masthead-logo.jpg" style="width: 1024px; height: 139px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../../index.html" title="主页">主页</a></li>
+			<li><a href="../../../about.html" title="关于">关于</a></li>
+			<li><a href="../../../contact.html" title="联系方式">联系方式</a></li>
+			<li><a href="../../../links.html" title="外网课件">外网课件</a></li>
+			<li><a href="../../../search.html" title="搜索">搜索</a></li>
+			<li><a href="../../../site-map.html" title="网站地图">网站地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程列表</p>
+			<ul>
+				<li>
+				<a href="../../../电子线路计算机辅助设计/课件/目录.htm" title="电子线路计算机辅助设计">电子线路计算机辅助设计</a></li>
+				<li><a href="../../contents.htm" title="嵌入式系统设计">嵌入式系统设计</a></li>
+				<li><a href="../../../sopc系统设计/目录.htm" title="SOPC系统设计">SOPC系统设计</a></li>
+			</ul>
+			<p class="heading">基本问题</p>
+			<ul>
+				<li><a href="#" title="计算机组成">自制计算机</a></li>
+			</ul>
+			<p class="heading">开源资源</p>
+			<ul>
+				<li><a href="#" title="开源cpu">开源cpu</a></li>
+				<li><a href="#" title="gcc">gcc</a></li>
+			</ul>
+
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">好好学习天天向上</p>
+			
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000; "  >
+				联大大纲—<a href="../../communication_syllabus.htm">通信</a>—<a href="../../普通本科教学大纲-嵌入式系统原理及应用(电子3学分).htm">电子</a>
+				;<a href="../../lixiaofeng_inf.htm">教师介绍</a>;
+				<a href="../单片机原理与应用目录.htm">单片机课程学习经验</a>-
+				<a href="../learning_map.htm">学习路线图</a>;
+				1.<a href="../Embedded_system_introduction.htm">概述</a>
+				-<a href="../application.htm">应用</a>
+				-<a href="../definition.htm">定义</a>
+				-<a href="../features.htm">特点</a>
+				-<a href="../architecture.htm">构成</a>;
+				2.嵌入式处理器
+				—<a href="../most_simple_cpu/cpu_learn_tru_diy.htm">DIY CPU</a>
+				—<a href="../general_cpu.htm">处理器</a>
+				—<a href="../ARM_index.htm">ARM处理器</a>
+				—<a href="../Cortex-A8/Cortex-A8-index.htm">Cortex-A8</a>
+				—<a href="../S5PV210/S5PV210_index.htm">S5PV210</a>
+				—<a href="../armv7-contexa8-s5pv210-rel.htm">讨论</a>;
+				
+				3.<a href="../arm_assembly_language/arm_assembly_index.htm">汇编语言</a>
+				-<a href="../arm_assembly_language/exercise_ldr_compile.htm">作业</a>
+				
+				4.<a href="../bootloader/Bootloader_index.htm">Bootloader</a>
+				-<a href="../bootloader/uboot/exercise_read_uboot.htm">作业</a>
+				
+				5.<a href="Linux_kernel_transplantation_index.htm">Linux内核移植</a>
+				
+				6.<a href="index_programming.htm">嵌入式Linux程序设计</a>
+				
+				7.<a href="../QT/Qt_index.htm">图形用户接口QT</a>
+				
+				8.<a href="../framwork_introduction.htm">其他框架介绍</a>;
+				9.嵌入式物联网应用系统设计
+			</div>
+<!-- #BeginEditable "body" -->
+
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 19.2pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; font-weight: bold"><font size="5">建立Yaffs文件系统：</font></span><span style="font-family: 微软雅黑; color: black"><font size="5">在内核源码中添加yaffs2补丁</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 19.2pt; margin-bottom: 0pt">
+<font size="5" face="微软雅黑">Yaffs (Yet Another Flash File System) is an
+<font color="#FF0000">open-source file system</font> specifically designed to be 
+fast, robust and suitable for embedded use with <span class="caps">NAND</span> 
+and <span class="caps">NOR</span> Flash.&nbsp; It is widely used with Linux, 
+RTOSs, or no <span class="caps">OS</span> at all, in consumer devices. It is 
+available under <span class="caps">GNU</span> Public License, <span class="caps">
+GPL</span>, or on commercial terms from Aleph&nbsp;One.</font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 19.2pt; margin-bottom: 0pt">
+<font face="微软雅黑" size="5">网址：<a href="http://www.yaffs.net">http://www.yaffs.net</a></font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 19.2pt; margin-bottom: 0pt">
+<img border="0" src="filesystem.gif"></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 19.2pt; margin-bottom: 0pt">
+<font size="7" color="#FF0000">一、在内核源码中添加yaffs2补丁</font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+Linux默认不支持Yaffs2文件系统，因此需要为内核添加yaffs2文件补丁，具体步骤如下。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000; font-weight:700"><font size="5">
+1．获取yaffs2 源代码</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">yaffs2源码：\书附光盘\9 
+系统文件\yaffs2.tar.bz2 </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+yaffs2官网：http://www.yaffs.net</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+将yaffs2.tar.bz2复制到/JY-CBT/目录下。在终端窗口中进入到/JY-CBT/目录下，执行解压命令完成yaffs2文件源码文件的解压过程，在/JY-CBT/目录下建有yaffs2文件夹，内含源码文件。随后书中将/JY-CBT/yaffs2/目录称为文件系统源码根目录。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@/jy-cbt]# tar 
+-jxvf yaffs2.tar.bz2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@/jy-cbt]# ls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Linux-2.6.34.14&nbsp; 
+Linux-2.6.35.7&nbsp; yaffs2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font size="5">
+<span style="font-family: 微软雅黑; color: #FF0000; font-weight:700">2．获得操作权限</span></font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+进入文件系统源码根目录。为了后续操作需要获取patch-ker.sh文件的读、写和运行三项权限。执行chmod命令，获取文件权限。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@/jy-cbt]# cd 
+yaffs2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+yaffs2]# chmod 777 patch-ker.sh　　　　　　　　　　　　 </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+yaffs2]# ls -l patch-ker.sh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">-rwxrwxrwx. 1 root 
+root 3013 Jan 21&nbsp; 2009 patch-ker.sh </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font size="5">
+<span style="font-family: 微软雅黑; color: #FF0000; font-weight:700">3．添加补丁</span></font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+当前路径下运行patch-ker.sh文件。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+yaffs2]# ./patch-ker.sh c /jy-cbt/linux-2.6.35.7/　　　 </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Updating /jy-cbt/ 
+linux-2.6.35.7/fs/Kconfig　　　　　　　　　　　　　　 </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Updating /jy-cbt/ 
+linux-2.6.35.7/fs/Makefile　　　　　　　　　　　　　&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+通过运行patch-ker.sh，附加参数“c”且指定内核根目录后后，会自动完成以下三件事情，实现在内核文件中添加yaffs2补丁过程。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="5">
+（1/3）更新linux-2.6.35.7/fs/Kconfig配置文件文件。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">在Kconfig文件中添加以下内容：</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">menuconfig 
+MISC_FILESYSTEMS </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">if MISC_FILESYSTEMS
+</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5"># Patched by YAFFS
+</font></span></p>
+<span style="font-family: 微软雅黑; color: black"><font size="5">source 
+			"fs/yaffs2/Kconfig"</font></span><p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+			在/linux-2.6.35.7/fs/Kconfig配置文件中新增加一行，使得Kconfig树包含子目录yaffs2下的Kconfig文件。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+在fs/yaffs2/Kconfig配置文件中定义了yaffs2文件系统“YAFFS2 file system support” 
+选项。该选项在配置菜单中的位置由当前Kconfig位置决定。依据Kconfig的当前位置路径，可以在配置选项主菜单中的对应位置见到所添加的选项内容。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">File systems ---&gt; 
+[*] Miscellaneous filesystems---&gt; &lt;*&gt;YAFFS2 file system support </font></span>
+</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="5">
+（2/3）更新/linux-2.6.35.7/fs/Makefile文件</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">在Makefile文件中添加以下内容：</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+:ojb-$(CONFIG_YAFFS_FS) +=yaffs2/&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">功能释义：</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+Makefile递归遍历到yaffs2目录。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="5">
+（3/3）在/linux-2.6.35.7/fs/目录下创建yaffs2目录</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+将yaffs2源码目录下面的Makefile.kernel文件复制为内核fs/yaffs2/Makefie。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">将yaffs2 
+源码目录的Kconfig文件复制到内核fs/yaffs2目录下。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">将yaffs2源码目录下的*.c 
+*.h文件复制到内核fs/yaffs2目录下。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+此时进入/linux-2.6.35.7/fs目录，可以看到已经多了一个yaffs2目录。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font size="5">
+<span style="font-family: 微软雅黑; color: #FF0000; font-weight:700">4．查看内核配置菜单</span></font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">在内核根目录下执行make 
+menuconfig</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+Linux-2.6.34.14]# make menuconfig&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">可以看到在“File 
+systems”下新添加的YAFFS2文件系统配置选项。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">File systems ---&gt; 
+[*] Miscellaneous filesystems ---&gt; &lt; &gt; YAFFS2 file system support</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="7">
+二、配置内核支持yaffs2文件系统</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+在编译系统内核之前，需要借助核配置菜单选取合适的文件系统。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+1．在宿主机Linux环境进入内核配置菜单</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost /]# 
+cd ..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost /]# 
+cd jy-cbt/Linux-2.6.34.14/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+Linux-2.6.34.14]#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+Linux-2.6.34.14]# make menuconfig&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">2．有效YAFFS2 文件系统选项</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">进入File systems -à 
+[*] Miscellaneous filesystems-à&lt; &gt; YAFFS2 file system support</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">通过空格键选中“&lt;*&gt; YAFFS2 
+file system support”，配置内核来支持Yaffs2文件系统</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">3．保存配置</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+完成修改后，保存配置，退出。此时完成内核中添加yaffs2 文件系统支持。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">4．编译内核</font></span></p>
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+			2.6以后的Linux版本内核中只需使用make 
+			命令，即可完成内核编译过程。最终可在内核源码根目录生成支持yaffs2文件系统的内核镜像文件uImage。</font></span><p>
+			　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font size="7" color="#FF0000">三、定制yaffs2格式文件系统（rootfs.img）</font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="5">1．获取源代码</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+将busybox-1.17.2.tgz复制到/JY-CBT/目录下。在终端窗口中进入到/JY-CBT/目录下，执行解压命令完成busybox文件源码文件的解压过程，在/JY-CBT/目录下建有busybox-1.17.2文件夹，内含源码文件。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@/jy-cbt]# tar 
+xzvf busybox-1.17.2.tgz</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@/jy-cbt]# ls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">busybox-1.17.2&nbsp; 
+Linux-2.6.34.14&nbsp; netpbm-10.35.81&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">fblogo-0.5.2&nbsp;&nbsp;&nbsp; 
+Linux-2.6.35.7&nbsp;&nbsp; yaffs2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="5">2．修改编译选项</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+进入busybox-1.17.2目录修改root@/jy-cbt/busybox-1.17.2/Makefile文件中的ARCH ?和CROSS_COMPILE 
+?=&nbsp; 两项宏定义后退出保存。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Makefile文件修改内容：</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">164 ＃CROSS_COMPILE 
+?&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">164 CROSS_COMPILE 
+?= arm-Linux-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">190 ＃ARCH ?= 
+$(SUBARCH)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<span style="font-family: 微软雅黑; color: black"><font size="5">190 ARCH ?= arm
+</font></span>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: #FF0000"><font size="5">3．定制文件系统</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+利用bosybox工具可以制作文件系统所需的工具及命令。如可以借助busybox生成which 
+命令，并将其复制到文件系统根目录的usr/bin目录下，这样根文件系统就可以支持which命令。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">使用bosybox过程如下</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">（1）运行make 
+menuconifg。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+&nbsp;[root@/jy-cbt/busybox-1.17.2]# make menuconfig</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">（2）定制。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">添加以下选项：Busybox 
+Settings ---&gt;Busybox Library Tuning ---&gt;[*] Fancy shell prompts</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+去除以下选项：Miscellaneous Utilities ---&gt; [ ] inotifyd（NEW）</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">（3）退出保存设置。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">（4）编译busybox。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+[root@/jy-cbt/busybox-1.17.2]# make　　　　　　　　　　　　　　　　　&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">（5）安装busybox。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+[root@/jy-cbt/busybox-1.17.2]# make installs　　　　　　　　　　　　　&nbsp; </font></span></p>
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+			最终会在当前目录下生成默认的安装目录_install。里面存放着制作好的工具集和命令。</font></span><p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+			[root@/jy-cbt/busybox-1.17.2]# ls _install/　　　　　　　　　　　　　　 </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">bin&nbsp; Linux&nbsp; 
+rc&nbsp; sbin&nbsp; usr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+busybox-1.17.2]#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">可以看到_install 
+目录下生成了根文件系统常用的命令及工具，接下来可以根据需要将_install 目录下生成的命令复制到文件系统根目录下。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">（6）制作YAFFS2 
+格式的根文件系统镜像</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+将mkyaffs2image工具软件复制到在/jy-cbt/目录下，下利用mkyaffs2image工具将根文件系统目录yaffs2 打包制作成YAFFS2 
+格式的根文件系统镜像，得到rootfs.img文件。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+jy-cbt]# ./mkyaffs2image yaffs2/ rootfs.img</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font size="7" color="#FF0000"><span style="font-family: 微软雅黑">四</span></font><span style="font-family: 微软雅黑; color: #FF0000"><font size="7">、下载Linux 
+根文件系统</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">1．准备系统文件</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+拷贝生成的根文件系统rootfs.img 内核至宿主机tftpboot下载目录。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[root@localhost 
+rootfs]# cp rootfs.img /tftpboot/</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+确保宿主机Linux系统使用网卡为桥接方式或物理网卡，这样才能和外部ARM设备进行网络通讯和文件传输。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">2．进入U-Boot下载模式</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+启动目标板，打开U-Boot控制台进入下载模式。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">3．设置目标板网络环境</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+在U-Boot控制台，使用命令配置宿主机和目标机的网络IP。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[CBT-210]# setenv 
+serverip 192.168.1.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[CBT-210]# setenv 
+ipaddr 192.168.1.199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[CBT-210]# saveenv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Saving Environment 
+to NAND...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Erasing Nand...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span>
+</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Erasing at 0x40000 
+-- 100% complete.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">Writing to Nand... 
+done&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+[CBT-210]#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+</span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">宿主机（Linux环境）IP: 
+192.168.1.7。作为TFTP服务器端。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+目标机（U-Boot环境）IP:192.168.1.199。作为TFTP客户端，需要设置成与宿主机同一个网段的IP即可。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">4．下载根文件系统镜像文件至内存</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[CBT-210]# tftp 
+0x21000000 rootfs.img　　　　　　　　　　　　　　　&nbsp; 　　　　</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+上述命令将rootfs.img文件从宿主机端下载至ARM系统内存SDRAM的0x21000000地址处。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">5．烧写文件系统到NAND FLASH</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[CBT-210]# nand 
+erase 0xe00000 0x10000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">[CBT-210]# nand 
+write.yaffs 0x21000000 0xe00000 0x********&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span>
+</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 微软雅黑; color: black"><font size="5">
+向nandflash烧写YAFFS2格式的文件，其中“0x********”参数由tftp下载的YAFFS2格式文件实际大小指定，用户可以根据下载根文件系统镜像文件至内存后提示大小输入该参数即可。上述命令将文件系统固化到系统的NAND 
+FLASH 设备中。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+
+<!-- #EndEditable -->
+		</div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		<p>Copyright © 2015 Company Name. All Rights Reserved.</p>
+		<p>your-name@your-domain.com
+		<a href="../../../privacy-policy.html" title="Privacy Policy.">Privacy Policy</a>
+		</p>
+		<p class="smltxt">Template Design:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

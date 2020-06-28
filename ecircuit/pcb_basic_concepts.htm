@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>PCB基本术语</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="from-name.htm">课程名称</a>
+				<a href="protel-history.htm">课程工具</a> 
+				<a href="altium_web.htm">官网资源</a>
+				<a href="setup.htm">软件安装</a>
+				<a href="schematic_design.htm">原理图设计</a>
+				<a href="讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="pcb_design.htm">印制板图设计</a> 
+				<a href="component_package.htm">器件的封装</a>
+				<a href="pcb_examples.htm">PCB实例</a>
+				<a href="实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<p><font size="7">PCB基本术语</font></p>
+<p><b><font size="5"><a href="物理概念/电路板概念讲解例图.jpg">图示1</a>、<a href="物理概念/电路板概念讲解例图2.jpg">图示2</a>、<a href="物理概念/暴力拆解PCB.htm">通过拆解理解</a></font></b></p>
+<p><font>层（layer）：PCB中的铜箔层。</font></p>
+<p><font>单层板（single layer）：一面敷铜，另一面没有敷铜的PCB。</font></p>
+<p><font>双层板(double layer)：两面敷铜。分别称为顶层（top layer）和底层（bottom 
+layer），两面都可以布线，顶层放置元器件，底层是焊接面。</font></p>
+<p><font>多层板（multi layer）：通常四层板是在双面板的基础上，加上电源和接地两个板层，六层板则是再加上两层布线层。</font></p>
+<p><font>信号层（signal layers）：用于放置元器件或布线，DXP 2004中最多可以有32层。</font></p>
+<p><font>内部电源/接地层（internal 
+planes）：内部电源/接地层又称为内层电源层，主要用于铺设电源和地，从而提高电路抗电磁干扰。</font></p>
+<p><font>屏蔽层（mask layers）：确保PCB上不需要镀锡的地方不被镀锡。是阻焊层（top solder、bottom 
+solder）和锡膏防护层（top paste、bottom paste）总称。 
+阻焊层用于在焊盘以外的各部分涂覆一层涂料，如防焊漆，用于阻止这部分上锡。锡膏防护层是在需要焊接的地方涂一层助焊剂，以增强焊盘的着锡能力，一般<a href="SMD_BOARD.jpg">SMD</a>（Surface 
+Mounted Devices的缩写，意为：表面贴装器件，）的焊盘都有这个层。</font></p>
+<p><font>丝印层（silkscreen layers）：丝印层是在PCB上印的注释，有顶层丝印（top 
+overlay）和底层丝印（bottom overlay）。</font></p>
+<p><font>钻孔方位层（drill guide）：标志PCB上钻孔的位置。</font></p>
+<p><font>钻孔绘图层（drill drawing）：设定钻孔形状。</font></p>
+<p><font>过孔（via）：用于连接各层之间的线路，钻孔费用占到PCB制版费的30%~40%。过孔有盲孔（blind 
+via）、埋孔（buried via）和通孔（through via）。</font></p>
+<p><img border="0" src="via.png" width="435" height="256"></p>
+<p><font>焊盘（pad）：焊盘有不同形状，根据器件大小、形状、布置形式、振动、以及受热、受力方向等因素选择。</font></p>
+<p><font>安全距离：【设计】/【规则】中的electrical-&gt;clearance-&gt;clearance</font></p>
+<p><font>
+覆铜：在PCB布线结束后，在无导线布线的区域内铺设铜膜，从而加大系统接地面积，提高系统抗干扰能力，提高电源效率，增强散热效果。多数情况下，覆铜和地连接。</font></p>
+<p><b><i><font size="5">PCB中的单位mil：密耳，千分之一英寸 1mil=1/1000inch=0.00254cm=0.0254mm</font></i></b></p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

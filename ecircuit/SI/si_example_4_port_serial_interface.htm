@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word">
+
+<!-- #BeginTemplate "../ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>信号完整性示例</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../index.html" title="Home">主页</a></li>
+			<li><a href="../../about.html" title="About">关于</a></li>
+			<li><a href="../../contact.html" title="Contact">联系</a></li>
+			<li><a href="../../links.html" title="Links">课程</a></li>
+			<li><a href="../../search.html" title="Search">搜索</a></li>
+			<li><a href="../../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="../from-name.htm">课程名称</a>
+				<a href="../protel-history.htm">课程工具</a> 
+				<a href="../altium_web.htm">官网资源</a>
+				<a href="../setup.htm">软件安装</a>
+				<a href="../schematic_design.htm">原理图设计</a>
+				<a href="../讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="../pcb_design.htm">印制板图设计</a> 
+				<a href="../component_package.htm">器件的封装</a>
+				<a href="../pcb_examples.htm">PCB实例</a>
+				<a href="../实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<div class=WordSection1>
+
+<p><span style='font-size:18.0pt'>信号完整性示例：</span><span lang=EN-US
+style='font-size:18.0pt;font-family:"微软雅黑","sans-serif"'>4 port serial interface</span></p>
+
+<p><span style='font-size:18.0pt'>来自于：<span class=SpellE><span lang=EN-US>dxp</span></span><span
+lang=EN-US> 2004</span>示例文件 </span><span lang=EN-US style='font-size:18.0pt;
+font-family:"微软雅黑","sans-serif"'>Example\Reference Designs\4 port serial 
+interface</span></p>
+
+<p>　</p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:
+14.0pt'>、打开项目。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>2</span><span style='font-size:
+14.0pt'>、打开“<span lang=EN-US>4 port serial <span class=SpellE>interface.pcbdoc</span></span>”。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>3</span><span style='font-size:
+14.0pt'>、执行【设计】<span lang=EN-US>/</span>【层堆栈管理区】，打开【图层堆栈管理器】对话框。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span style='font-size:14.0pt'>　<span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1047" type="#_x0000_t75"
+ style='width:6in;height:276pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image001.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=368
+src="si_example_4_port_serial_interface.files/image002.jpg" v:shapes="图片_x0020_1"><![endif]></span><span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>4</span><span style='font-size:
+14.0pt'>、移动光标到“<span class=SpellE><span lang=EN-US>Toplayer</span></span>”，双击鼠标左键，弹出【编辑层】对话框，将铜厚度设置为“<span
+lang=EN-US>1.4mil</span>”。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_2" o:spid="_x0000_i1046" type="#_x0000_t75" style='width:321.75pt;
+ height:203.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image003.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=429 height=271
+src="si_example_4_port_serial_interface.files/image003.png" v:shapes="图片_x0020_2"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>5</span><span style='font-size:
+14.0pt'>、同样方法将“<span class=SpellE><span lang=EN-US>Bottomlayer</span></span>”厚度设为“<span
+lang=EN-US>1.4mil</span>”。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>6</span><span style='font-size:
+14.0pt'>、在【图层堆栈管理器】中点击【阻抗计算】，设置微带线和带状线计算公式，本例中使用缺省设置。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_i1045" type="#_x0000_t75" style='width:6in;
+ height:314.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image004.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=419
+src="si_example_4_port_serial_interface.files/image005.jpg" v:shapes="图片_x0020_3"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>7</span><span style='font-size:
+14.0pt'>、返回<span lang=EN-US>PCB</span>编辑界面。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>8</span><span style='font-size:
+14.0pt'>、执行【设计】<span lang=EN-US>/</span>【规则】<span lang=EN-US>,</span>弹出【<span
+lang=EN-US>PCB</span>规则和约束编辑器】对话框，找到“<span lang=EN-US>signal integrity</span>”规则项，设置其参数，如下图，点击鼠标右键，添加新的激励信号。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:708.75pt;
+ height:500.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image006.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=945 height=667
+src="si_example_4_port_serial_interface.files/image006.png" v:shapes="图片_x0020_4"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>9</span><span style='font-size:
+14.0pt'>、双击新的激励信号，对信号进行设置。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:6in;
+ height:303pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image007.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=404
+src="si_example_4_port_serial_interface.files/image008.jpg" v:shapes="图片_x0020_5"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>10</span><span style='font-size:
+14.0pt'>、设置供电网络“<span lang=EN-US>supply nets</span>”，采用本例中的默认设置。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_i1042" type="#_x0000_t75" style='width:6in;
+ height:303pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image009.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=404
+src="si_example_4_port_serial_interface.files/image010.jpg" v:shapes="图片_x0020_6"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_7" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:6in;
+ height:303pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image011.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=404
+src="si_example_4_port_serial_interface.files/image012.jpg" v:shapes="图片_x0020_7"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>11</span><span style='font-size:
+14.0pt'>、执行【工具】<span lang=EN-US>/</span>【信号完整性】，出现错误或警告对话框，如下：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_8" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:268.5pt;
+ height:96.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image013.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=358 height=129
+src="si_example_4_port_serial_interface.files/image013.png" v:shapes="图片_x0020_8"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>12</span><span style='font-size:
+14.0pt'>、执行【<span lang=EN-US>Model Assignments</span>】，出现“信号完整性模型分配窗口”，如下，在此窗口中可以修改元器件的信号完整性模型，此例子中我们采用默认值，然后点击【分析设计】。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_9" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:6in;
+ height:325.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image014.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=434
+src="si_example_4_port_serial_interface.files/image015.jpg" v:shapes="图片_x0020_9"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>13</span><span style='font-size:
+14.0pt'>、出现导线设定选项，采用缺省值。点击【分析设计】。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span style='font-size:14.0pt'>曼哈顿距离<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_10" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:318.75pt;
+ height:276.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image016.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=425 height=369
+src="si_example_4_port_serial_interface.files/image016.png" v:shapes="图片_x0020_10"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>14</span><span style='font-size:
+14.0pt'>、出现信号完整性窗口。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_11"
+ o:spid="_x0000_i1037" type="#_x0000_t75" style='width:6in;height:322.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image017.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=430
+src="si_example_4_port_serial_interface.files/image018.jpg" v:shapes="图片_x0020_11"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>15</span><span style='font-size:
+14.0pt'>、将<span lang=EN-US>DTRA</span>网络加到<span class=GramE>待分析</span>网络中。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_12" o:spid="_x0000_i1036" type="#_x0000_t75" style='width:641.25pt;
+ height:479.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image019.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=855 height=639
+src="si_example_4_port_serial_interface.files/image019.png" v:shapes="图片_x0020_12"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>16</span><span style='font-size:
+14.0pt'>、在左侧【网络】列表中选择<span lang=EN-US>DTRA</span>，然后执行【菜单】<span lang=EN-US>/</span>【详细】，弹出【全部结果】对话框，从这个对话框中可以看出该网络标号是否进行了相应的信号完整性规则设置。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_13"
+ o:spid="_x0000_i1035" type="#_x0000_t75" style='width:409.5pt;height:314.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image020.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=546 height=419
+src="si_example_4_port_serial_interface.files/image020.png" v:shapes="图片_x0020_13"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>17</span><span style='font-size:
+14.0pt'>、执行【菜单】<span lang=EN-US>/</span>【优先设定】，弹出【信号完整性优先设定选项】对话框，此例中选择默认设置，<span
+class=GramE>点解【确认】</span>。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_14"
+ o:spid="_x0000_i1034" type="#_x0000_t75" style='width:315pt;height:257.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image021.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=420 height=343
+src="si_example_4_port_serial_interface.files/image021.png" v:shapes="图片_x0020_14"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>18</span><span style='font-size:
+14.0pt'>、在【信号完整性】对话框中点击【<span lang=EN-US>Reflection…</span>】<span lang=EN-US>,</span>进行反射分析。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span style='font-size:14.0pt'>
+【注：如果直接在目录安装目录下执行以上操作，可能会出现没有波形的情况，这种情况是因为项目目录是只读】<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_15"
+ o:spid="_x0000_i1033" type="#_x0000_t75" style='width:6in;height:233.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image022.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=311
+src="si_example_4_port_serial_interface.files/image023.jpg" v:shapes="图片_x0020_15"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><span
+style='mso-spacerun:yes'>&nbsp;</span><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>19</span><span style='font-size:
+14.0pt'>、点击工作区面板的【<span class=SpellE><span lang=EN-US>Sim</span></span><span
+lang=EN-US> Data</span>】选项卡，用鼠标右键点击结果图右侧文字，可以创建标尺<span lang=EN-US>a</span>和<span
+lang=EN-US>b</span>来获得确切的波形数。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_17" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:1023.75pt;
+ height:507.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image024.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=1365 height=677
+src="si_example_4_port_serial_interface.files/image024.png" v:shapes="图片_x0020_17"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>20</span><span style='font-size:
+14.0pt'>、执行【仿真图表】<span lang=EN-US>/</span>【创建<span lang=EN-US>FFT</span>图表】，创建仿真波形进行<span
+lang=EN-US>FFT</span>变换。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_18" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:465.75pt;
+ height:273.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image025.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=621 height=365
+src="si_example_4_port_serial_interface.files/image025.png" v:shapes="图片_x0020_18"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_19"
+ o:spid="_x0000_i1030" type="#_x0000_t75" style='width:6in;height:233.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image026.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=311
+src="si_example_4_port_serial_interface.files/image027.jpg" v:shapes="图片_x0020_19"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>21</span><span style='font-size:
+14.0pt'>、对于<span lang=EN-US>DTRA</span>网络，可以设置【终端补偿】方式为“<span lang=EN-US>Parallel 
+Res to VCC</span>”，设定相应的上拉电阻，【扫描步数】为<span lang=EN-US>10</span>，然后执行【<span
+lang=EN-US>Reflection</span>】。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_20"
+ o:spid="_x0000_i1029" type="#_x0000_t75" style='width:6in;height:322.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image028.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=430
+src="si_example_4_port_serial_interface.files/image029.jpg" v:shapes="图片_x0020_20"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>22</span><span style='font-size:
+14.0pt'>、对<span lang=EN-US>DTRA</span>和<span lang=EN-US>TXB</span>进行串扰分析。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>1</span><span style='font-size:
+14.0pt'>）将<span lang=EN-US>DTRA</span>和<span lang=EN-US>TXB</span>添加到<span
+class=GramE>待分析</span>网络中<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_21"
+ o:spid="_x0000_i1028" type="#_x0000_t75" style='width:6in;height:322.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image030.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=430
+src="si_example_4_port_serial_interface.files/image031.jpg" v:shapes="图片_x0020_21"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>2</span><span style='font-size:
+14.0pt'>）在左边待测网络中，选择<span lang=EN-US>TXB</span>，然后单击鼠标右键，弹出快捷菜单，执行【设置入侵者】。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_22" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:645pt;
+ height:219.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image032.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=860 height=293
+src="si_example_4_port_serial_interface.files/image032.png" v:shapes="图片_x0020_22"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_23"
+ o:spid="_x0000_i1026" type="#_x0000_t75" style='width:6in;height:343.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image033.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=458
+src="si_example_4_port_serial_interface.files/image034.jpg" v:shapes="图片_x0020_23"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'>3</span><span style='font-size:
+14.0pt'>）单击执行【<span lang=EN-US>Crosstalk</span>】，出现串扰分析波形。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_24"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:6in;height:233.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="si_example_4_port_serial_interface.files/image035.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=311
+src="si_example_4_port_serial_interface.files/image036.jpg" v:shapes="图片_x0020_24"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt'><o:p></o:p></span></p>
+
+<p><span lang=EN-US style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../../embeddedsys_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>/* linux/arch/arm/mach-s5pv210/g</title>
+<!-- #EndEditable -->
+<meta content="insert DESCRIPTION here" name="description" />
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" class="scalable" src="../../../images/masthead-logo.jpg" style="width: 1024px; height: 139px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../../index.html" title="主页">主页</a></li>
+			<li><a href="../../../about.html" title="关于">关于</a></li>
+			<li><a href="../../../contact.html" title="联系方式">联系方式</a></li>
+			<li><a href="../../../links.html" title="外网课件">外网课件</a></li>
+			<li><a href="../../../search.html" title="搜索">搜索</a></li>
+			<li><a href="../../../site-map.html" title="网站地图">网站地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程列表</p>
+			<ul>
+				<li>
+				<a href="../../../电子线路计算机辅助设计/课件/目录.htm" title="电子线路计算机辅助设计">电子线路计算机辅助设计</a></li>
+				<li><a href="../../contents.htm" title="嵌入式系统设计">嵌入式系统设计</a></li>
+				<li><a href="../../../sopc系统设计/目录.htm" title="SOPC系统设计">SOPC系统设计</a></li>
+			</ul>
+			<p class="heading">基本问题</p>
+			<ul>
+				<li><a href="#" title="计算机组成">自制计算机</a></li>
+			</ul>
+			<p class="heading">开源资源</p>
+			<ul>
+				<li><a href="#" title="开源cpu">开源cpu</a></li>
+				<li><a href="#" title="gcc">gcc</a></li>
+			</ul>
+
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">好好学习天天向上</p>
+			
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000; "  >
+				联大大纲—<a href="../../communication_syllabus.htm">通信</a>—<a href="../../普通本科教学大纲-嵌入式系统原理及应用(电子3学分).htm">电子</a>
+				;<a href="../../lixiaofeng_inf.htm">教师介绍</a>;
+				<a href="../单片机原理与应用目录.htm">单片机课程学习经验</a>-
+				<a href="../learning_map.htm">学习路线图</a>;
+				1.<a href="../Embedded_system_introduction.htm">概述</a>
+				-<a href="../application.htm">应用</a>
+				-<a href="../definition.htm">定义</a>
+				-<a href="../features.htm">特点</a>
+				-<a href="../architecture.htm">构成</a>;
+				2.嵌入式处理器
+				—<a href="../most_simple_cpu/cpu_learn_tru_diy.htm">DIY CPU</a>
+				—<a href="../general_cpu.htm">处理器</a>
+				—<a href="../ARM_index.htm">ARM处理器</a>
+				—<a href="../Cortex-A8/Cortex-A8-index.htm">Cortex-A8</a>
+				—<a href="../S5PV210/S5PV210_index.htm">S5PV210</a>
+				—<a href="../armv7-contexa8-s5pv210-rel.htm">讨论</a>;
+				
+				3.<a href="../arm_assembly_language/arm_assembly_index.htm">汇编语言</a>
+				-<a href="../arm_assembly_language/exercise_ldr_compile.htm">作业</a>
+				
+				4.<a href="../bootloader/Bootloader_index.htm">Bootloader</a>
+				-<a href="../bootloader/uboot/exercise_read_uboot.htm">作业</a>
+				
+				5.<a href="Linux_kernel_transplantation_index.htm">Linux内核移植</a>
+				
+				6.<a href="index_programming.htm">嵌入式Linux程序设计</a>
+				
+				7.<a href="../QT/Qt_index.htm">图形用户接口QT</a>
+				
+				8.<a href="../framwork_introduction.htm">其他框架介绍</a>;
+				9.嵌入式物联网应用系统设计
+			</div>
+<!-- #BeginEditable "body" -->
+
+<pre><font size="3">/* linux/arch/arm/mach-s5pv210/gpiolib.c
+ *
+ * Copyright (c) 2010 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com/
+ *
+ * S5PV210 - GPIOlib support
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */</font></pre>
+<pre><font size="3">#include &lt;linux/kernel.h&gt;
+#include &lt;linux/irq.h&gt;
+#include &lt;linux/io.h&gt;
+#include &lt;linux/gpio.h&gt;
+#include &lt;plat/gpio-core.h&gt;
+#include &lt;plat/gpio-cfg.h&gt;
+#include &lt;plat/gpio-cfg-helpers.h&gt;
+#include &lt;mach/map.h&gt;</font></pre>
+<pre><font size="3">static struct s3c_gpio_cfg gpio_cfg = {
+	.set_config	= s3c_gpio_setcfg_s3c64xx_4bit,
+	.set_pull	= s3c_gpio_setpull_updown,
+	.get_pull	= s3c_gpio_getpull_updown,
+};</font></pre>
+<pre><font size="3">static struct s3c_gpio_cfg gpio_cfg_noint = {
+	.set_config	= s3c_gpio_setcfg_s3c64xx_4bit,
+	.set_pull	= s3c_gpio_setpull_updown,
+	.get_pull	= s3c_gpio_getpull_updown,
+};</font></pre>
+<pre><font size="3">/* GPIO bank's base address given the index of the bank in the
+ * list of all gpio banks.
+ */
+#define S5PV210_BANK_BASE(bank_nr)	(S5P_VA_GPIO + ((bank_nr) * 0x20))</font></pre>
+<pre><font size="3">/*
+ * Following are the gpio banks in v210.
+ *
+ * The 'config' member when left to NULL, is initialized to the default
+ * structure gpio_cfg in the init function below.
+ *
+ * The 'base' member is also initialized in the init function below.
+ * Note: The initialization of 'base' member of s3c_gpio_chip structure
+ * uses the above macro and depends on the banks being listed in order here.
+ */
+static struct s3c_gpio_chip s5pv210_gpio_4bit[] = {
+	{
+		.chip	= {
+			.base	= S5PV210_GPA0(0),
+			.ngpio	= S5PV210_GPIO_A0_NR,
+			.label	= "GPA0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPA1(0),
+			.ngpio	= S5PV210_GPIO_A1_NR,
+			.label	= "GPA1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPB(0),
+			.ngpio	= S5PV210_GPIO_B_NR,
+			.label	= "GPB",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPC0(0),
+			.ngpio	= S5PV210_GPIO_C0_NR,
+			.label	= "GPC0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPC1(0),
+			.ngpio	= S5PV210_GPIO_C1_NR,
+			.label	= "GPC1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPD0(0),
+			.ngpio	= S5PV210_GPIO_D0_NR,
+			.label	= "GPD0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPD1(0),
+			.ngpio	= S5PV210_GPIO_D1_NR,
+			.label	= "GPD1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPE0(0),
+			.ngpio	= S5PV210_GPIO_E0_NR,
+			.label	= "GPE0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPE1(0),
+			.ngpio	= S5PV210_GPIO_E1_NR,
+			.label	= "GPE1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPF0(0),
+			.ngpio	= S5PV210_GPIO_F0_NR,
+			.label	= "GPF0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPF1(0),
+			.ngpio	= S5PV210_GPIO_F1_NR,
+			.label	= "GPF1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPF2(0),
+			.ngpio	= S5PV210_GPIO_F2_NR,
+			.label	= "GPF2",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPF3(0),
+			.ngpio	= S5PV210_GPIO_F3_NR,
+			.label	= "GPF3",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPG0(0),
+			.ngpio	= S5PV210_GPIO_G0_NR,
+			.label	= "GPG0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPG1(0),
+			.ngpio	= S5PV210_GPIO_G1_NR,
+			.label	= "GPG1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPG2(0),
+			.ngpio	= S5PV210_GPIO_G2_NR,
+			.label	= "GPG2",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPG3(0),
+			.ngpio	= S5PV210_GPIO_G3_NR,
+			.label	= "GPG3",
+		},
+	}, {
+		.config	= &amp;gpio_cfg_noint,
+		.chip	= {
+			.base	= S5PV210_GPI(0),
+			.ngpio	= S5PV210_GPIO_I_NR,
+			.label	= "GPI",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPJ0(0),
+			.ngpio	= S5PV210_GPIO_J0_NR,
+			.label	= "GPJ0",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPJ1(0),
+			.ngpio	= S5PV210_GPIO_J1_NR,
+			.label	= "GPJ1",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPJ2(0),
+			.ngpio	= S5PV210_GPIO_J2_NR,
+			.label	= "GPJ2",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPJ3(0),
+			.ngpio	= S5PV210_GPIO_J3_NR,
+			.label	= "GPJ3",
+		},
+	}, {
+		.chip	= {
+			.base	= S5PV210_GPJ4(0),
+			.ngpio	= S5PV210_GPIO_J4_NR,
+			.label	= "GPJ4",
+		},
+	}, {
+		.config	= &amp;gpio_cfg_noint,
+		.chip	= {
+			.base	= S5PV210_MP01(0),
+			.ngpio	= S5PV210_GPIO_MP01_NR,
+			.label	= "MP01",
+		},
+	}, {
+		.config	= &amp;gpio_cfg_noint,
+		.chip	= {
+			.base	= S5PV210_MP02(0),
+			.ngpio	= S5PV210_GPIO_MP02_NR,
+			.label	= "MP02",
+		},
+	}, {
+		.config	= &amp;gpio_cfg_noint,
+		.chip	= {
+			.base	= S5PV210_MP03(0),
+			.ngpio	= S5PV210_GPIO_MP03_NR,
+			.label	= "MP03",
+		},
+	}, {
+		.config	= &amp;gpio_cfg_noint,
+		.chip	= {
+			.base	= S5PV210_MP04(0),
+			.ngpio	= S5PV210_GPIO_MP04_NR,
+			.label	= "MP04",
+		},
+	}, {
+		.config	= &amp;gpio_cfg_noint,
+		.chip	= {
+			.base	= S5PV210_MP05(0),
+			.ngpio	= S5PV210_GPIO_MP05_NR,
+			.label	= "MP05",
+		},
+	}, {
+		.base	= (S5P_VA_GPIO + 0xC00),
+		.config	= &amp;gpio_cfg_noint,
+		.irq_base = IRQ_EINT(0),
+		.chip	= {
+			.base	= S5PV210_GPH0(0),
+			.ngpio	= S5PV210_GPIO_H0_NR,
+			.label	= "GPH0",
+			.to_irq = samsung_gpiolib_to_irq,
+		},
+	}, {
+		.base	= (S5P_VA_GPIO + 0xC20),
+		.config	= &amp;gpio_cfg_noint,
+		.irq_base = IRQ_EINT(8),
+		.chip	= {
+			.base	= S5PV210_GPH1(0),
+			.ngpio	= S5PV210_GPIO_H1_NR,
+			.label	= "GPH1",
+			.to_irq = samsung_gpiolib_to_irq,
+		},
+	}, {
+		.base	= (S5P_VA_GPIO + 0xC40),
+		.config	= &amp;gpio_cfg_noint,
+		.irq_base = IRQ_EINT(16),
+		.chip	= {
+			.base	= S5PV210_GPH2(0),
+			.ngpio	= S5PV210_GPIO_H2_NR,
+			.label	= "GPH2",
+			.to_irq = samsung_gpiolib_to_irq,
+		},
+	}, {
+		.base	= (S5P_VA_GPIO + 0xC60),
+		.config	= &amp;gpio_cfg_noint,
+		.irq_base = IRQ_EINT(24),
+		.chip	= {
+			.base	= S5PV210_GPH3(0),
+			.ngpio	= S5PV210_GPIO_H3_NR,
+			.label	= "GPH3",
+			.to_irq = samsung_gpiolib_to_irq,
+		},
+	},
+};</font></pre>
+<pre><font size="3">__init int s5pv210_gpiolib_init(void)
+{
+	struct s3c_gpio_chip *chip = s5pv210_gpio_4bit;
+	int nr_chips = ARRAY_SIZE(s5pv210_gpio_4bit);
+	int gpioint_group = 0;
+	int i = 0;</font></pre>
+<pre><font size="3">	for (i = 0; i &lt; nr_chips; i++, chip++) {
+		if (chip-&gt;config == NULL) {
+			chip-&gt;config = &amp;gpio_cfg;
+			chip-&gt;group = gpioint_group++;
+		}
+		if (chip-&gt;base == NULL)
+			chip-&gt;base = S5PV210_BANK_BASE(i);
+	}</font></pre>
+<pre><font size="3">	samsung_gpiolib_add_4bit_chips(s5pv210_gpio_4bit, nr_chips);
+	s5p_register_gpioint_bank(IRQ_GPIOINT, 0, S5P_GPIOINT_GROUP_MAXNR);</font></pre>
+<pre><font size="3">	return 0;
+}
+//core_initcall(s5pv210_gpiolib_init);</font></pre>
+
+<!-- #EndEditable -->
+		</div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		<p>Copyright © 2015 Company Name. All Rights Reserved.</p>
+		<p>your-name@your-domain.com
+		<a href="../../../privacy-policy.html" title="Privacy Policy.">Privacy Policy</a>
+		</p>
+		<p class="smltxt">Template Design:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
