@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Xiaofeng‘s web</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Xiaofeng‘s Web</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+					
+					<div class="bio mb-3">简单介绍一下<br><a href="about.html">如需沟通，email</a></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Web Home <span class="sr-only">(current)</span></a>
+					</li>
+					
+					<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+					
+					<li class="nav-item active">
+					    <a class="nav-link" href="publications.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Publications</a>
+					</li>
+				</ul>
+				
+				
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">《网络空间安全数学基础》</h2>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    
+				    <p>此网页中的《网络空间安全数学基础》为一学期的本科课程。 </p>
+				    
+				    <h3 class="mt-5 mb-3">自编教材</h3>
+					<ul class="mb-5">
+					  <li class="mb-2"><a href="https://gitee.com/buuer_xxtxiaofeng/FoCysMath/releases/" rel="nofollow">发布版PDF（CryBook）</a></li>
+					  <li class="mb-2"><a href="https://gitee.com/buuer_xxtxiaofeng/FoCysMath" rel="nofollow">Latex源码</a></li>
+					</ul>
+				    
+					<h3 class="mt-5 mb-3">习题</h3>
+					<ul class="mb-5">
+					  <li class="mb-2"><a href="https://gitee.com/buuer_xxtxiaofeng/FoCysMath/releases/" rel="nofollow">发布版PDF（ex.pdf带答案）</a></li>
+					  <li class="mb-2"><a href="https://gitee.com/buuer_xxtxiaofeng/FoCysMath/tree/master/ex" rel="nofollow">Latex源码</a></li>
+					</ul>
+					
+					<h3 class="mt-5 mb-3">编程练习</h3>
+					以下顺序，也是实际授课时编程练习的顺序。除了第一埃拉托色尼算法练习，剩下的练习是一个系列练习，先实现一个交互式命令行框架，然后在此框架下，依次实现不同的算法。
+					<ol class="mb-5">
+					  <li class="mb-2">EratosthenesAlg：编程实现埃拉托色尼 (Eratosthenes，古希腊数学家)筛选法寻找素数，按一定的步长计算一系列不同范围内的素数(500∼1000000)，并记录算法所用时间，并画出不同范围时算法所用时间的变化曲线。注：不同范围搜寻的时间可以以一定的格式写到文本文件中，比如 34,500 < 换行 >，每一个搜寻范围形成这样一行数据，然后将这个数据文件导入 excel，用 excel 生成图形。
+					  任务说明(<a href="https://gitee.com/buuer/EratosthenesAlg" rel="nofollow">reame</a>)，
+					  <a href="https://gitee.com/buuer/EratosthenesAlg" rel="nofollow">作业初始仓库</a>，
+					  )
+					  </li>
+					  
+					  <li class="mb-2">最大公约数gcdalg:利用C 语言已有的运算，利用欧几里得算法实现求解 n 和 m 的最大公约数。在编写时，要意识到计算位数的限制。任务说明(<a href="https://gitee.com/InfoSec2018/gcdalg" rel="nofollow">readme</a>)，
+					  <a href="https://gitee.com/InfoSec2018/gcdalg" rel="nofollow">作业初始仓库</a>，
+					  )
+					  
+					  <li class="mb-2">框架:实现一个交互式命令行程序的框架。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">prime_erat(n,m):利用 Eratosthenese筛选法，从屏幕输出从 n 到 m 的所有素数，如果此范围内不存在素数，输出none。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">gcd(n,m):利用GMP大数库，实现两个数最大公约数的计算。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">lcm(n,m):利用GMP大数库，求解 n 和 m 的最小公倍数的算法。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">factor(n):求解整数n的标准分解式。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">eulerfun(n):计算 n 的欧拉函数。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">inverse(n,m):实现扩展欧几里得算法，求解 n 模 m 的逆元，如果不存在，输出 none。。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">crt(a,b,c,d,e,f) :实现CRT算法。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">order(a,m) :a 对模 m 的次数。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">primroot(m) :求 m 的原根。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  <li class="mb-2">legendresym(a,p) :利用二次互反律，计算a对p的legendre符号。
+					  任务文档(<a href="https://gitee.com/buuer_xxtxiaofeng/modern_cryptography_free_book/releases" rel="nofollow">ex.PDF</a>)，
+					  <a href="https://gitee.com/InfoSec2018/NumThBasicAlg" rel="nofollow">作业初始仓库</a>
+					  )
+					  </li>
+					  
+					  
+					</ol>
+					
+					<h3 class="mt-5 mb-4">编程练习评价</h3>
+					<ul class="mb-5">
+					  <li class="mb-2"><a href="https://gitee.com/buuer_xxtxiaofeng/FoCysMath/releases" rel="nofollow">发布版PDF</a></li>
+					  
+					</ul>
+					<p>对于编程类练习，应该有个评价指导过程，此课的评价方法所对应的条件是一个授课老师的情况，本着评分尽量公平合理的原则下制定的，对于一些练习，学生练习结果不理想，应采取指导评价再指导再评价的反复循环，一个练习多个循环。</p>
+					<p>对于有条件的学校，建议配几个助教，评分方法可以改变，可以形成对学生有针对性的个性化指导、提高。
+					</p>
+					
+					
+					
+				</div><!--//blog-comments-section-->
+				
+		    </div><!--//container-->
+	    </article>
+	    
+
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div><!--//panel-inner-->
+    </div><!--//configure-panel-->
+
+    
+       
+     
+    
+
+</body>
+</html> 
+
