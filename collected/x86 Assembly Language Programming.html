@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://cs.lmu.edu/~ray/notes/x86assembly/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<p>为了大家浏览方便，将原网页拷贝至此，如有侵权，请联系我，我将删除。</p>
+<p>此网页拷贝于Loyola Marymount
+ University
+ 大学的Ray Toal老师的课程网站上，https://cs.lmu.edu/~ray/notes/x86assembly/，他的网站上还有很多其他课程资源。</p>
+<title>x86 Assembly Language Programming</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./x86 Assembly Language Programming_files/default.css">
+<link rel="stylesheet" type="text/css" href="./x86 Assembly Language Programming_files/prettify.css">
+<link href="./x86 Assembly Language Programming_files/css" rel="stylesheet">
+<script src="./x86 Assembly Language Programming_files/prettify.js.下载"></script>
+</head>
+  <body class="coursenotes">
+    <script>onload = function () {prettyPrint();}</script>
+    <div class="container">
+      <div class="innercontent">
+        <h1>x86 Assembly Language Programming</h1>
+
+<script src="./x86 Assembly Language Programming_files/lang-asm.js.下载"></script>
+
+<div class="abstract">The x86 architecture is the most popular architecture
+for desktop and laptop computers. Let’s see how we can program in assembly language
+for processors in this family.</div><div id="contents"><div>CONTENTS</div><div>Introduction • Assemblers and Linkers • Programming for Linux • Programming for OS X • Programming for Win32 • Programming for DOS • Writing Optimized Code • Differences between NASM, MASM, and GAS</div></div>
+
+<h2>Introduction</h2>
+
+<p>This document contains very brief examples of assembly language
+programs for the x86.  The topic of x86 assembly language programming is
+messy because:</p>
+
+<ul>
+<li>There are many different assemblers out there: MASM, NASM, gas,
+as86, TASM, a86, Terse, etc.  All use radically different assembly
+languages.
+</li><li>There are differences in the way you have to code for Linux,
+OS/X, Windows, etc.
+</li><li>Many different object file formats exist: ELF, COFF, Win32,
+OMF, a.out for Linux, a.out for FreeBSD, rdf, IEEE-695, as86, etc.
+</li><li>You generally will be calling functions residing in the operating system or
+other libraries so you will have to know some technical details about
+how libraries are linked, and not all linkers work the same way.
+</li><li>Modern x86 processors run in either 32 or 64-bit mode; there are
+quite a few differences between these.
+</li></ul>
+
+<p>We’ll give examples written for NASM, MASM and gas for both Win32
+and Linux.  We will even include a section on DOS assembly language
+programs for historical interest.  These notes are not
+intended to be a substitute for the documentation that accompanies
+the processor and the assemblers, nor is it intended to teach you
+assembly language.  Its only purpose is to show how to assemble
+and link programs using different assemblers and linkers.</p>
+
+<h2>Assemblers and Linkers</h2>
+
+<p>Regardless of the assembler, object file format, linker or
+operating system you use, the programming process is always the same:</p>
+
+<p><img src="./x86 Assembly Language Programming_files/asmlink.gif" alt="asmlink.gif"></p>
+<p>Each assembly language file is assembled into an "object file"
+and the object files are linked with other object files to form
+an executable.  A "static library" is really nothing more than
+a collection of (probably related) object files.  Application
+programmers generally make use of libraries for things like
+I/O and math.</p>
+
+<p>Assemblers you should know about include</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Microsoft_Macro_Assembler"><b>MASM</b></a>, the
+    Microsoft Assembler. It outputs
+    OMF files (but Microsoft’s linker can convert them to
+    win32 format).  It supports a massive and clunky
+    assembly language.  <strong>Memory addressing is not intuitive.</strong>
+    The directives required to set up a program make programming
+    unpleasant.
+</li><li><a href="http://en.wikipedia.org/wiki/GNU_Assembler"><b>GAS</b></a>, the
+    GNU assember.  This uses the rather ugly AT&amp;T-style
+    syntax so many people do not like it; however, you can configure it to
+    use and understand the Intel-style.  It was designed to be
+    part of the back end of the GNU compiler collection (gcc).
+</li><li><a href="http://www.nasm.us/"><b>NASM</b></a>, the "Netwide Assembler."
+    It is free, small, and
+    best of all it can output zillions of different types
+    of object files.  The language is much more sensible than
+    MASM in many respects.
+</li></ul>
+
+<p class="commentary">This document does not cover how to use all the different
+assemblers; you need to read the documentation that comes with
+them.  We will, however, give step-by-step instructions and
+complete examples of all three of these assemblers for a few extremely
+simple programs.</p>
+
+<p>There are many object file formats.  Some you should know
+about include</p>
+<ul>
+<li><b>OMF</b>: used in DOS but has 32-bit extensions for Windows.  Old.
+</li><li><b>AOUT</b>: used in early Linux and BSD variants
+</li><li><b>COFF</b>: "Common object file format"
+</li><li><b>Win, Win32</b>: Microsoft’s version of COFF, not exactly the same! Replaces OMF.
+</li><li><b>Win64</b>: Microsoft’s format for Win64.
+</li><li><b>ELF, ELF32</b>: Used in modern 32-bit Linux and elsewhere
+</li><li><b>ELF64</b>: Used in 64-bit Linux and elsewhere
+</li><li><b>macho32</b>: NeXTstep/OpenStep/Rhapsody/Darwin/OS X 32-bit
+</li><li><b>macho64</b>: NeXTstep/OpenStep/Rhapsody/Darwin/OS X 64-bit
+</li></ul>
+<p>The NASM documentation has great descriptions of these.</p>
+
+<p>You’ll need to get a linker that (1) understands the object
+file formats you produce, and (2) can write executables for
+the operating systems you want to run code on.  Some linkers
+out there include</p>
+<ul>
+<li><b>LINK.EXE</b>, for Microsoft operating systems.
+</li><li><b>ld</b>, which exists on all Unix systems; Windows programmers get this in any gcc distribution.
+</li></ul>
+
+<h2>Programming for Linux</h2>
+
+<h3>Programming Using System Calls</h3>
+
+<p>64-bit Linux installations use the processor’s SYSCALL instruction to jump into the portion
+of memory where operating system services are stored.  To use SYSCALL, first put the system call
+number in RAX, then the arguments, if any, in RDI, RSI, RDX, R10, R8, and R9, respectively.
+In our first example we will use system calls for writing to a file (call number 1) and exiting a
+process (call number 60).  Here it is in the NASM assembly language:</p>
+
+<div class="filename"><span>hello.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; Writes "Hello, World" to the console using only system calls. Runs on 64-bit Linux only.</span><span class="pln"><br></span><span class="com">; To assemble and run:</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; &nbsp; &nbsp; nasm -felf64 hello.asm &amp;&amp; ld hello.o &amp;&amp; ./a.out</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; global &nbsp; &nbsp;_start<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; section &nbsp; .text<br>_start: &nbsp; mov &nbsp; &nbsp; &nbsp; </span><span class="kwd">rax</span><span class="pln">, 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; system call for write</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; &nbsp; </span><span class="kwd">rdi</span><span class="pln">, 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; file handle 1 is stdout</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; &nbsp; </span><span class="kwd">rsi</span><span class="pln">, message &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; address of string to output</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; &nbsp; </span><span class="kwd">rdx</span><span class="pln">, 13 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; number of bytes</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; syscall &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; invoke operating system to do the write</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; &nbsp; </span><span class="kwd">rax</span><span class="pln">, 60 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; system call for exit</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; xor &nbsp; &nbsp; &nbsp; </span><span class="kwd">rdi</span><span class="pln">, </span><span class="kwd">rdi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; exit code 0</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; syscall &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; invoke operating system to exit</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; section &nbsp; .data<br>message: &nbsp;db &nbsp; &nbsp; &nbsp; &nbsp;"Hello, World", 10 &nbsp; &nbsp; &nbsp;</span><span class="com">; note the newline at the end</span></pre>
+<p>Here’s the same program in gas:</p>
+
+<div class="filename"><span>hello.s</span></div><pre class="prettyprint lang-gas"><span class="com"># ----------------------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com"># Writes "Hello, World" to the console using only system calls. Runs on 64-bit Linux only.</span><span class="pln"><br></span><span class="com"># To assemble and run:</span><span class="pln"><br></span><span class="com">#</span><span class="pln"><br></span><span class="com"># &nbsp; &nbsp; gcc -c hello.s &amp;&amp; ld hello.o &amp;&amp; ./a.out</span><span class="pln"><br></span><span class="com">#</span><span class="pln"><br></span><span class="com"># or</span><span class="pln"><br></span><span class="com">#</span><span class="pln"><br></span><span class="com"># &nbsp; &nbsp; gcc -nostdlib hello.s &amp;&amp; ./a.out</span><span class="pln"><br></span><span class="com"># ----------------------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.global</span><span class="pln"> _start<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.text</span><span class="pln"><br>_start</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># write(1, message, 13)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="lit">$1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rax</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># system call 1 is write</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="lit">$1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rdi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># file handle 1 is stdout</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="pun">$</span><span class="pln">message</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rsi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># address of string to output</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="lit">$13</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rdx</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># number of bytes</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; syscall &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># invoke operating system to do the write</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># exit(0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="lit">$60</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rax</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># system call 60 is exit</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; xor &nbsp; &nbsp; </span><span class="typ">%rdi</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rdi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># we want return code 0</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; syscall &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># invoke operating system to exit</span><span class="pln"><br>message</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.ascii</span><span class="pln"> &nbsp;</span><span class="str">"Hello, world\n"</span><span class="pln"><br></span></pre>
+<p>Since gas is the "native" assembler under Linux, assembling and
+linking is automatic with <code>gcc</code>, as explained in the
+program’s comments.  If you just enter  "<code>gcc hello.s</code>"
+then <code>gcc</code> will assemble and then try to link with a C
+library.  You can suppress the link step with the <code>-c</code> option
+to <code>gcc</code>, or do the assembly and linking in one step
+by telling the linker not to use the C library with
+<code>-nostdlib</code>.
+
+</p><h3>System Calls in 32-bit Linux</h3>
+
+<p>There are some systems with 32-bit builds of Linux out there still.  On these systems you
+invoke operating systems services through an INT instruction, and use different registers
+for system call arguments (specifically EAX for the call number and EBX, ECX, EDX, EDI, and ESI
+for the arguments).  Although it might be interesting to show some examples for historical reasons,
+this introduction is probably better kept short.</p>
+
+<h3>Programming with a C Library</h3>
+
+<p>Sometimes you might like to use your favorite C library
+functions in your assembly code.  This should be trivial because
+the C library functions are all stored in a C library, such as
+<code>libc.a</code>.  Technically the code is probably in a dynamic
+library, like <code>libc.so</code>, and <code>libc.a</code> just has
+calls into the dynamic library.  Still, all we have to
+do is place calls to C functions in our assembly language program,
+and link with the static C library and we are set.</p>
+
+<p>Before looking at an example, note that the C library already
+defines <code>_start</code>, which does some initialization,
+calls a function named <code>main</code>, does some clean up,
+then calls the system function <code>exit</code>!  So if we link
+with a C library, all we have to do is define <code>main</code>
+and end with a <code>ret</code> instruction!  Here is a simple example
+in NASM, which illustrates calling <code>puts</code>.</p>
+
+<div class="filename"><span>hola.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; Writes "Hola, mundo" to the console using a C library. Runs on Linux.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; &nbsp; &nbsp; nasm -felf64 hola.asm &amp;&amp; gcc hola.o &amp;&amp; ./a.out</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; global &nbsp; &nbsp;main<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp; &nbsp;puts<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; section &nbsp; .text<br>main: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; This is called by the C library startup code</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; &nbsp; </span><span class="kwd">rdi</span><span class="pln">, message &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; First integer (or pointer) argument in rdi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp; &nbsp;puts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; puts(message)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ret &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; Return from main back into C library wrapper</span><span class="pln"><br>message:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; db &nbsp; &nbsp; &nbsp; &nbsp;"Hola, mundo", 0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; Note strings must be terminated with 0 in C</span></pre>
+<p>And the equivalent program in GAS:</p>
+
+<div class="filename"><span>hola.s</span></div><pre class="prettyprint lang-gas"><span class="com"># ----------------------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com"># Writes "Hola, mundo" to the console using a C library. Runs on Linux or any other system</span><span class="pln"><br></span><span class="com"># that does not use underscores for symbols in its C library. To assemble and run:</span><span class="pln"><br></span><span class="com">#</span><span class="pln"><br></span><span class="com"># &nbsp; &nbsp; gcc hola.s &amp;&amp; ./a.out</span><span class="pln"><br></span><span class="com"># ----------------------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.global</span><span class="pln"> main<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.text</span><span class="pln"><br>main</span><span class="pun">:</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># This is called by C library's startup code</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="pun">$</span><span class="pln">message</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%rdi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># First integer (or pointer) parameter in %rdi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;puts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># puts(message)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; ret &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># Return to C library code</span><span class="pln"><br>message</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.asciz</span><span class="pln"> </span><span class="str">"Hola, mundo"</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com"># asciz puts a 0 byte at the end</span></pre>
+<p>The previous example shows that the first argument to a C function, if it’s an integer or pointer,
+goes in register RDI. Subsequent arguments go in RSI, RDX, RCX, R8, R9, and then subsequent arguments
+(which no sane programmer would ever use) will go "on the stack" (more about this stack
+thing later).  If you have floating point arguments, they’ll go in XMM0, XMM1, etc.  There is
+even quite a bit more to calling functions; we’ll see this later.</p>
+
+<h2>Programming for OS X</h2>
+
+<p>Rather than getting into OS X system calls, let’s just show the simple hello program using the C library.
+We’ll assume a 64-bit OS, and we’ll also assume you’ve installed gcc (usually obtained via downloading xcode).
+
+</p><div class="filename"><span>hola.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; This is an macOS console program that writes "Hola, mundo" on one line and then exits.</span><span class="pln"><br></span><span class="com">; It uses puts from the C library. &nbsp;To assemble and run:</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; &nbsp; &nbsp; nasm -fmacho64 hola.asm &amp;&amp; gcc hola.o &amp;&amp; ./a.out</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; global &nbsp; &nbsp;_main<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp; &nbsp;_puts<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; section &nbsp; .text<br>_main: &nbsp; &nbsp;push &nbsp; &nbsp; &nbsp;</span><span class="kwd">rbx</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; Call stack must be aligned</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lea &nbsp; &nbsp; &nbsp; </span><span class="kwd">rdi</span><span class="pln">, [rel message] &nbsp; &nbsp; &nbsp;</span><span class="com">; First argument is address of message</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp; &nbsp;_puts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; puts(message)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pop &nbsp; &nbsp; &nbsp; </span><span class="kwd">rbx</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; Fix up stack before returning</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ret<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; section &nbsp; .data<br>message: &nbsp;db &nbsp; &nbsp; &nbsp; &nbsp;"Hola, mundo", 0 &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; C strings need a zero byte at the end</span></pre>
+<p>There are some differences here! C library functions have underscores, and we had to say <code>default
+rel</code> for some strange reason, which you can read about in the NASM documentation.</p>
+
+<h2>Programming for Win32</h2>
+
+<p>Win32 is the primary operating system API found in most of
+Microsoft’s 32-bit operating systems including Windows 9x,
+NT, 2000 and XP.  We will follow the plan of the previous section
+and first look at programs that just use system calls and
+then programs that use a C library.</p>
+
+<blockquote class="warning"><b>For historical reference only.</b><br><br>These
+notes are pretty old. I’ve never learned Win64.</blockquote>
+
+<h3>Calling the Win32 API Directly</h3>
+
+<p>Win32 defines thousands of functions!  The code for these
+functions is spread out in many different dynamic libraries, but
+the majority of them are in <code>KERNEL32.DLL</code>, <code>USER32.DLL</code>
+and <code>GDI32.DLL</code> (which exist on all Windows installations).
+The interrupt to execute system calls on the x86 processor
+is hex 2E, with EAX containing the system call number and
+EDX pointing to the parameter table in memory.  However, according to
+<a href="http://z0mbie.host.sk/ntoskrnl.txt">z0mbie</a>, the
+actually system call numbers are not consistent across different
+operating systems, so, to write portable code you should stick to
+the API calls in the various system DLLs.</p>
+
+<p>Here is the "Hello, World" program in NASM, using only Win32
+calls.</p>
+
+<div class="filename"><span>hello.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; hello.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; This is a Win32 console program that writes "Hello, World" on one line and</span><span class="pln"><br></span><span class="com">; then exits. &nbsp;It uses only plain Win32 system calls from kernel32.dll, so it</span><span class="pln"><br></span><span class="com">; is very instructive to study since it does not make use of a C library.</span><span class="pln"><br></span><span class="com">; Because system calls from kernel32.dll are used, you need to link with</span><span class="pln"><br></span><span class="com">; an import library. &nbsp;You also have to specify the starting address yourself.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Assembler: NASM</span><span class="pln"><br></span><span class="com">; OS: Any Win32-based OS</span><span class="pln"><br></span><span class="com">; Other libraries: Use gcc's import library libkernel32.a</span><span class="pln"><br></span><span class="com">; Assemble with "nasm -fwin32 hello.asm"</span><span class="pln"><br></span><span class="com">; Link with "ld -e go hello.obj -lkernel32"</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; global &nbsp;go<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_ExitProcess@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_GetStdHandle@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_WriteConsoleA@20<br><br>&nbsp; &nbsp; &nbsp; &nbsp; section .data<br>msg: &nbsp; &nbsp;db &nbsp; &nbsp; &nbsp;'Hello, World', 10<br>handle: db &nbsp; &nbsp; &nbsp;0<br>written:<br>&nbsp; &nbsp; &nbsp; &nbsp; db &nbsp; &nbsp; &nbsp;0<br><br>&nbsp; &nbsp; &nbsp; &nbsp; section .text<br>go:<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; handle = GetStdHandle(-11)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword -11<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_GetStdHandle@4<br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; [handle], </span><span class="kwd">eax</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; WriteConsole(handle, &amp;msg[0], 13, &amp;written, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;written<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 13<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;msg<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [handle]<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_WriteConsoleA@20<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; ExitProcess(0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_ExitProcess@4</span></pre>
+<p>Here you can see that the Win32 calls we are using are</p>
+<pre>GetStdHandle
+WriteConsoleA
+ExitProcess
+</pre>
+<p>and parameters are passed to these calls on the stack.
+The comments instruct us to assemble into an object format
+of "win32" (not "coff"!) then link with the linker <code>ld</code>.
+Of course you can use any linker you want, but <code>ld</code> comes
+with <code>gcc</code> and you can download a whole Win32 port
+of <code>gcc</code> for free.  We pass the
+starting address to the linker, and specify the static library
+<code>libkernel32.a</code> to link with.  This static library
+is part of the Win32 <code>gcc</code> distribution, and it
+contains the right calls into the system DLLs.</p>
+
+<p>The gas version of this program looks very similar:</p>
+
+<div class="filename"><span>hello.s</span></div><pre class="prettyprint lang-gas"><span class="pun">/*****************************************************************************</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> hello</span><span class="kwd">.s</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> This is a Win32 console program that writes </span><span class="str">"Hello, World"</span><span class="pln"> on one line and<br></span><span class="pun">*</span><span class="pln"> then exits</span><span class="pun">.</span><span class="pln"> &nbsp;It uses only plain Win32 system calls from kernel32</span><span class="kwd">.dll</span><span class="pun">,</span><span class="pln"> so it<br></span><span class="pun">*</span><span class="pln"> is very instructive to study since it does not make use of a C library</span><span class="pun">.</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> Because system calls from kernel32</span><span class="kwd">.dll</span><span class="pln"> are used</span><span class="pun">,</span><span class="pln"> you need to link with<br></span><span class="pun">*</span><span class="pln"> an import library</span><span class="pun">.</span><span class="pln"> &nbsp;You also have to specify the starting address yourself</span><span class="pun">.</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> Assembler</span><span class="pun">:</span><span class="pln"> gas<br></span><span class="pun">*</span><span class="pln"> OS</span><span class="pun">:</span><span class="pln"> Any Win32</span><span class="pun">-</span><span class="pln">based OS<br></span><span class="pun">*</span><span class="pln"> Other libraries</span><span class="pun">:</span><span class="pln"> Use gcc s import library libkernel32</span><span class="kwd">.a</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> Assemble with </span><span class="str">"gcc -c hello.s"</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> Link with </span><span class="str">"ld -e go hello.o -lkernel32"</span><span class="pln"><br></span><span class="pun">*****************************************************************************/</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">.global</span><span class="pln"> go<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">.data</span><span class="pln"><br>msg</span><span class="pun">:</span><span class="pln"> &nbsp; &nbsp; </span><span class="kwd">.ascii</span><span class="pln"> &nbsp;</span><span class="str">"Hello, World\n"</span><span class="pln"><br>handle</span><span class="pun">:</span><span class="pln"> &nbsp;</span><span class="kwd">.int</span><span class="pln"> &nbsp; &nbsp;</span><span class="lit">0</span><span class="pln"><br>written</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">.int</span><span class="pln"> &nbsp; &nbsp;</span><span class="lit">0</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">.text</span><span class="pln"><br>go</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> handle </span><span class="pun">=</span><span class="pln"> GetStdHandle</span><span class="pun">(</span><span class="lit">-11</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; </span><span class="lit">$-11</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;call &nbsp; &nbsp;_GetStdHandle</span><span class="pun">@</span><span class="lit">4</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;mov &nbsp; &nbsp; </span><span class="typ">%eax</span><span class="pun">,</span><span class="pln"> handle<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> WriteConsole</span><span class="pun">(</span><span class="pln">handle</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">msg</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln"> </span><span class="lit">13</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">written</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; </span><span class="lit">$0</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; </span><span class="pun">$</span><span class="pln">written<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; </span><span class="lit">$13</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; </span><span class="pun">$</span><span class="pln">msg<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; handle<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;call &nbsp; &nbsp;_WriteConsoleA</span><span class="pun">@</span><span class="lit">20</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> ExitProcess</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pushl &nbsp; </span><span class="lit">$0</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;call &nbsp; &nbsp;_ExitProcess</span><span class="pun">@</span><span class="lit">4</span></pre>
+<p>In fact the differences between the two programs are really only
+syntactic.  Another minor point is that gas doesn’t really care
+if you define external systems with some sort of "extern" directive
+or not.</p>
+
+<p>As in the NASM version, we’ve specified our entry point, and
+will be passing it to the linker in the -e option.  To assemble
+this code, do</p>
+<pre>gcc -c hello.s
+</pre>
+<p>The -c option is important!  It tells gcc to assemble <em>but not
+link</em>.  Without the -c option, gcc will try to link the
+object file with a C runtime library.  Since we are not using
+a C runtime library, and in fact are specifying our own starting
+point, and cleaning up ourselves with <code>ExitProcess</code> we
+definitely want to link ourselves.  The linking step is the
+same as the NASM example; the only difference is that gcc
+produces win32 object files with extension .o rather than .obj.</p>
+
+<p>If you really want to pay a vendor for an assembler and linker
+you can use Microsoft’s MASM assembler.  Anything less
+than version 6.14 will be extremely painful to use.
+Here is the version of the <code>hello</code> program in MASM</p>
+
+<div class="filename"><span>hello.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; hello.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; This is a Win32 console program that writes "Hello, World" on one line and</span><span class="pln"><br></span><span class="com">; then exits. &nbsp;It uses only plain Win32 system calls from kernel32.dll, so it</span><span class="pln"><br></span><span class="com">; is very instructive to study since it does not make use of a C library.</span><span class="pln"><br></span><span class="com">; Because system calls from kernel32.dll are used, you need to link with</span><span class="pln"><br></span><span class="com">; an import library.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Processor: 386 or later</span><span class="pln"><br></span><span class="com">; Assembler: MASM</span><span class="pln"><br></span><span class="com">; OS: Any Win32-based OS</span><span class="pln"><br></span><span class="com">; Other libraries: Use Microsoft's import library kernel32.lib</span><span class="pln"><br></span><span class="com">; Assemble with "ml hello.asm /c"</span><span class="pln"><br></span><span class="com">; Link with "link hello kernel32.lib /subsystem:console /entry:go"</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; .386P<br>&nbsp; &nbsp; &nbsp; &nbsp; .model &nbsp;flat<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_ExitProcess@4:near<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_GetStdHandle@4:near<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_WriteConsoleA@20:near<br>&nbsp; &nbsp; &nbsp; &nbsp; public &nbsp;_go<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .data<br>msg &nbsp; &nbsp; byte &nbsp; &nbsp;'Hello, World', 10<br>handle &nbsp;dword &nbsp; ?<br>written dword &nbsp; ?<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .stack<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .code<br>_go: &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; handle = GetStdHandle(-11)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;-11<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_GetStdHandle@4<br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; handle, </span><span class="kwd">eax</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; WriteConsole(handle, &amp;msg[0], 13, &amp;written, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;offset written<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;13<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;offset msg<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;handle<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_WriteConsoleA@20<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; ExitProcess(0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;0<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_ExitProcess@4<br><br>&nbsp; &nbsp; &nbsp; &nbsp; end</span></pre>
+<p>The processor (.386P) and model (.model) directives
+are an annoyance, but they have to be there and the processor
+directive must precede the model directive or the assembler will
+think the processor is running in 16-bit mode (<code>*sigh*</code>).
+As before we have to specify an entry point and pass it to
+the linker.  Assemble with</p>
+<pre>    ml hello.asm /c</pre>
+<p>The <code>/c</code> option is required since <code>ml</code> will try to link.
+Not only is the MASM assembler, <code>ml</code>, not free, but neither is
+Microsoft’s linker, <code>link.exe</code>, nor are static versions of the
+Win32 libraries, such as <code>kernel32.lib</code>.  After you buy those
+you link your code with</p>
+<pre>    link hello.obj kernel32.lib /subsystem:console /entry:go</pre>
+<p>To get this to work, <code>kernel32.lib</code> needs to be in a known
+library path or additional options must be passed to the linker.
+You might find the <code>/subsystem</code> option interesting; leave it
+out to see a ridiculous error message when running the linked
+executable (at least under Win9x).</p>
+
+<p>Most of MASM’s syntactic weirdness, like using the "offset"
+keyword to get the address of a variable are not present in
+NASM.  While NASM is probably gaining popularity, there is far more
+MASM code out there, and it is a good idea to have
+at least a passing acquaintance with MASM, since most
+publications use it.  It is the closest thing
+to a "standard" x86 assembly language there is.</p>
+
+<h3>Using a C Runtime Library for Win32 Programming</h3>
+
+<p>As under Linux, using a C runtime library makes it very
+easy to write simple assembly language programs.  Here is
+one in NASM:</p>
+
+<div class="filename"><span>powers.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; powers.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Displays powers of 2 from 2^0 to 2^31, one per line, to standard output.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Assembler: NASM</span><span class="pln"><br></span><span class="com">; OS: Any Win32-based OS</span><span class="pln"><br></span><span class="com">; Other libraries: Use gcc's C runtime library</span><span class="pln"><br></span><span class="com">; Assemble with "nasm -fwin32 powers.asm"</span><span class="pln"><br></span><span class="com">; Link with "gcc powers.obj" (C runtime library linked automatically)</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; extern _printf<br>&nbsp; &nbsp; &nbsp; &nbsp; global _main<br><br>&nbsp; &nbsp; &nbsp; &nbsp; section .text<br>_main:<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; callee-save registers</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">edi</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">esi</span><span class="pln">, 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; current value</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">edi</span><span class="pln">, 31 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; counter</span><span class="pln"><br>L1:<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; push value to print</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;format &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; push address of format string</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_printf<br>&nbsp; &nbsp; &nbsp; &nbsp; add &nbsp; &nbsp; </span><span class="kwd">esp</span><span class="pln">, 8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; pop off parameters passed to printf</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; add &nbsp; &nbsp; </span><span class="kwd">esi</span><span class="pln">, </span><span class="kwd">esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; double value</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; dec &nbsp; &nbsp; </span><span class="kwd">edi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; keep counting</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; jne &nbsp; &nbsp; L1<br><br>&nbsp; &nbsp; &nbsp; &nbsp; pop &nbsp; &nbsp; </span><span class="kwd">edi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; pop &nbsp; &nbsp; </span><span class="kwd">esi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; ret<br><br>format: db &nbsp; &nbsp; &nbsp;'%d', 10, 0</span></pre>
+<p>The same program in gas looks like this:</p>
+
+<div class="filename"><span>powers.s</span></div><pre class="prettyprint lang-gas"><span class="pun">/*****************************************************************************</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> powers</span><span class="kwd">.s</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> Displays powers of </span><span class="lit">2</span><span class="pln"> from </span><span class="lit">2</span><span class="pun">^</span><span class="lit">0</span><span class="pln"> to </span><span class="lit">2</span><span class="pun">^</span><span class="lit">31</span><span class="pun">,</span><span class="pln"> one per line</span><span class="pun">.</span><span class="pln"> &nbsp;It should be linked<br></span><span class="pun">*</span><span class="pln"> with a C runtime library</span><span class="pun">.</span><span class="pln"> &nbsp;The C runtime library contains startup code<br></span><span class="pun">*</span><span class="pln"> so you do not have to specify a starting label</span><span class="pun">.</span><span class="pln"> &nbsp;The startup code in<br></span><span class="pun">*</span><span class="pln"> the C library eventually calls main</span><span class="pun">.</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"><br></span><span class="pun">*</span><span class="pln"> Assembler</span><span class="pun">:</span><span class="pln"> gas<br></span><span class="pun">*</span><span class="pln"> OS</span><span class="pun">:</span><span class="pln"> Any Win32</span><span class="pun">-</span><span class="pln">based OS<br></span><span class="pun">*</span><span class="pln"> Other libraries</span><span class="pun">:</span><span class="pln"> Use the gccs C runtime library<br></span><span class="pun">*</span><span class="pln"> Assemble and link</span><span class="pun">:</span><span class="pln"> </span><span class="str">"gcc powers.s"</span><span class="pln"> </span><span class="pun">(</span><span class="pln">gcc links the C library automatically</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">*****************************************************************************/</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.global</span><span class="pln"> _main<br><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">.text</span><span class="pln"><br>format</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">.asciz</span><span class="pln"> &nbsp;</span><span class="str">"%d\n"</span><span class="pln"><br><br>_main</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; pushl &nbsp; </span><span class="typ">%esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> callee save registers </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; pushl &nbsp; </span><span class="typ">%edi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; movl &nbsp; &nbsp;</span><span class="lit">$1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> current value </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; movl &nbsp; &nbsp;</span><span class="lit">$31</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%edi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">/*</span><span class="pln"> counter </span><span class="pun">*/</span><span class="pln"><br>L1</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; pushl &nbsp; </span><span class="typ">%esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> push value of number to print </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; pushl &nbsp; </span><span class="pun">$</span><span class="pln">format &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">/*</span><span class="pln"> push address of format </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_printf<br>&nbsp; &nbsp; &nbsp; &nbsp; addl &nbsp; &nbsp;</span><span class="lit">$8</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%esp</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; addl &nbsp; &nbsp;</span><span class="typ">%esi</span><span class="pun">,</span><span class="pln"> </span><span class="typ">%esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> double value </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; decl &nbsp; &nbsp;</span><span class="typ">%edi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pun">/*</span><span class="pln"> keep counting </span><span class="pun">*/</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; jnz &nbsp; &nbsp; L1<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; popl &nbsp; &nbsp;</span><span class="typ">%edi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; popl &nbsp; &nbsp;</span><span class="typ">%esi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; ret</span></pre>
+<p>Note you can assemble and link with</p>
+<pre>    gcc powers.s</pre>
+
+<p>For the MASM version of this program, you can go purchase C
+Runtime Libraries from Microsoft as well.
+There are many versions of the library, but for single
+threaded programs, <code>libc.lib</code> is fine.  Here
+is the powers program in MASM:</p>
+
+<div class="filename"><span>powers.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; powers.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Displays powers of 2 from 2^0 to 2^31, one per line, to standard output.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Processor: 386 or later</span><span class="pln"><br></span><span class="com">; Assembler: MASM</span><span class="pln"><br></span><span class="com">; OS: Any Win32-based OS</span><span class="pln"><br></span><span class="com">; Other libraries: Use a Microsoft-compatible C library (e.g. libc.lib).</span><span class="pln"><br></span><span class="com">; Assemble with "ml powers.asm /c"</span><span class="pln"><br></span><span class="com">; Link with "link powers libc.lib"</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; By default, the linker uses "/subsystem:console /entry:mainCRTStartup".</span><span class="pln"><br></span><span class="com">; The function "mainCRTStartup" is inside libc.lib. &nbsp;It does some</span><span class="pln"><br></span><span class="com">; initialization, calls a function "_main" (which will end up in powers.obj)</span><span class="pln"><br></span><span class="com">; then does more work and finally calls ExitProcess.</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; .386P<br>&nbsp; &nbsp; &nbsp; &nbsp; .model &nbsp;flat<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_printf:near<br>&nbsp; &nbsp; &nbsp; &nbsp; public &nbsp;_main<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .code<br>_main:<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; callee-save registers</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">edi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">esi</span><span class="pln">, 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; current value</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">edi</span><span class="pln">, 31 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; counter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pln"><br>L1:<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; push value to print</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;offset format &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; push address of format string</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_printf<br>&nbsp; &nbsp; &nbsp; &nbsp; add &nbsp; &nbsp; </span><span class="kwd">esp</span><span class="pln">, 8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; pop off parameters passed to printf</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; add &nbsp; &nbsp; </span><span class="kwd">esi</span><span class="pln">, </span><span class="kwd">esi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; double value</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; dec &nbsp; &nbsp; </span><span class="kwd">edi</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; keep counting</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; jnz &nbsp; &nbsp; L1<br><br>&nbsp; &nbsp; &nbsp; &nbsp; pop &nbsp; &nbsp; </span><span class="kwd">edi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; pop &nbsp; &nbsp; </span><span class="kwd">esi</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; ret<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>format: byte &nbsp; &nbsp;'%d', 10, 0<br><br>&nbsp; &nbsp; &nbsp; &nbsp; end</span></pre>
+<p>When linking with libc.lib you get nice linker defaults. To
+assemble and link:</p>
+<pre>    ml powers.asm /c
+    link powers.obj libc.lib</pre>
+<p>You’ll have to make sure the linker knows where to find libc.lib
+by setting some environment variables, of course, but you
+get the idea.</p>
+
+<h3>OpenGL Programming in NASM for Win32</h3>
+
+<p>For fun, here is a complete assembly language program that implements an OpenGL
+application running under GLUT on Windows systems:</p>
+
+<div class="filename"><span>triangle.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; triangle.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; A very simple *Windows* OpenGL application using the GLUT library. &nbsp;It</span><span class="pln"><br></span><span class="com">; draws a nicely colored triangle in a top-level application window. &nbsp;One</span><span class="pln"><br></span><span class="com">; interesting thing is that the Windows GL and GLUT functions do NOT use the</span><span class="pln"><br></span><span class="com">; C calling convention; instead they use the "stdcall" convention which is</span><span class="pln"><br></span><span class="com">; like C except that the callee pops the parameters.</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; global &nbsp;_main<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glClear@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glBegin@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glEnd@0<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glColor3f@12<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glVertex3f@12<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glFlush@0<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutInit@8<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutInitDisplayMode@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutInitWindowPosition@8<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutInitWindowSize@8<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutCreateWindow@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutDisplayFunc@4<br>&nbsp; &nbsp; &nbsp; &nbsp; extern &nbsp;_glutMainLoop@0<br><br>&nbsp; &nbsp; &nbsp; &nbsp; section .text<br>title: &nbsp;db &nbsp; &nbsp; &nbsp;'A Simple Triangle', 0<br>zero: &nbsp; dd &nbsp; &nbsp; &nbsp;0.0<br>one: &nbsp; &nbsp;dd &nbsp; &nbsp; &nbsp;1.0<br>half: &nbsp; dd &nbsp; &nbsp; &nbsp;0.5<br>neghalf:dd &nbsp; &nbsp; &nbsp;-0.5<br><br>display:<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 16384<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glClear@4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glClear(GL_COLOR_BUFFER_BIT)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 9<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glBegin@4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glBegin(GL_POLYGON)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [one]<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glColor3f@12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; glColor3f(1, 0, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [neghalf]<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [neghalf]<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glVertex3f@12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glVertex(-.5, -.5, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [one]<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glColor3f@12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; glColor3f(0, 1, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [neghalf]<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [half]<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glVertex3f@12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glVertex(.5, -.5, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [one]<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glColor3f@12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; glColor3f(0, 0, 1)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [half]<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glVertex3f@12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glVertex(0, .5, 0)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glEnd@0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glEnd()</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glFlush@0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; glFlush()</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; ret<br><br>_main:<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword [</span><span class="kwd">esp</span><span class="pln">+8] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; push argv</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; lea &nbsp; &nbsp; </span><span class="kwd">eax</span><span class="pln">, [</span><span class="kwd">esp</span><span class="pln">+8] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; get addr of argc (offset changed :-)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;</span><span class="kwd">eax</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutInit@8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; glutInit(&amp;argc, argv)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 0<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutInitDisplayMode@4<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 80<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 80<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutInitWindowPosition@8<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 300<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;dword 400<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutInitWindowSize@8<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;title<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutCreateWindow@4<br>&nbsp; &nbsp; &nbsp; &nbsp; push &nbsp; &nbsp;display<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutDisplayFunc@4<br>&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp; &nbsp;_glutMainLoop@0<br>&nbsp; &nbsp; &nbsp; &nbsp; ret</span></pre>
+<h2>Programming for DOS</h2>
+
+<p>Both MASM and NASM can create DOS executables.  DOS is a primitive
+operating system (indeed, many people, perhaps correctly, refuse
+to call it an operating system), which runs in real mode only.
+Real mode addresses are 20-bit values written in the form
+SEGMENT:OFFSET where the segment and offset are each 16-bits
+wide and the physical address is SEGMENT * 16 + OFFSET.</p>
+
+<p>A DOS program is a collection of segments.  When the program
+is loaded, DS:0 and ES:0 points to a 256-byte section of memory
+called the program segment prefix and this is immediately followed
+by the segments of the program.  CS:0 will point to the code segment
+and SS:0 to the stack segment.  SP will be loaded with the size of
+the stack specified by the programmer, which is perfect because
+on the x86 a PUSH instruction decrements the stack pointer and
+then moves the pushed value into the memory addressed by SS:SP.
+The length of the command line argument string is placed in the
+byte at offset 80h of the prefix and the actual argument string
+begins at offset 81h.</p>
+
+<p>Here is a simple DOS program to echo the command line argument
+string:</p>
+
+<div class="filename"><span>echo.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; echo.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Echoes the command line to standard output. &nbsp;Illustrates DOS system calls</span><span class="pln"><br></span><span class="com">; 40h = write to file, and 4ch = exit process.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Processor: 386 or later</span><span class="pln"><br></span><span class="com">; Assembler: MASM</span><span class="pln"><br></span><span class="com">; OS: DOS 2.0 or later only</span><span class="pln"><br></span><span class="com">; Assemble and link with "ml echo.asm"</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; .model &nbsp;small<br>&nbsp; &nbsp; &nbsp; &nbsp; .stack &nbsp;64 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="com">; 64 byte stack</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; .386<br>&nbsp; &nbsp; &nbsp; &nbsp; .code<br>start: &nbsp;movzx &nbsp; </span><span class="kwd">cx</span><span class="pln">,byte ptr ds:[80h] &nbsp; &nbsp;</span><span class="com">; size of parameter string</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">ah</span><span class="pln">, 40h &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; write</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">bx</span><span class="pln">, 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; ... to standard output</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">dx</span><span class="pln">, 81h &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; ... the parameter string</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; int &nbsp; &nbsp; 21h &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">; ... by calling DOS</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">ah</span><span class="pln">, 4ch<br>&nbsp; &nbsp; &nbsp; &nbsp; int &nbsp; &nbsp; 21h<br>&nbsp; &nbsp; &nbsp; &nbsp; end &nbsp; &nbsp; start &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></pre>
+<p>Note with the MASM assembler you have to place the .model directive
+before the processor directive to make the processor use 16-bit mode
+required for DOS.</p>
+
+<p>Note that all "operating system services" such as input/output
+are accessible through the processor’s interrupt instruction
+so there is no need to link your program to a special library.
+Of course if you wanted to link to a 16-bit C runtime library
+you certainly can.</p>
+
+<p>The echo program defines only a code and stack segment; an
+example of a program with a programmer-defined data segment is:</p>
+
+<div class="filename"><span>hello1.asm</span></div><pre class="prettyprint lang-asm"><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br></span><span class="com">; hello1.asm</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Displays a silly message to standard output. &nbsp;Illustrates user-defined data.</span><span class="pln"><br></span><span class="com">; The easiest way to do this is to put the data in a data segment, separate </span><span class="pln"><br></span><span class="com">; from the code, and access it via the ds register. &nbsp;Note that you must have</span><span class="pln"><br></span><span class="com">; ds:0 pointing to your data segment (technically to your segment's GROUP) </span><span class="pln"><br></span><span class="com">; before you reference your data. &nbsp;The predefined symbol @data referes to </span><span class="pln"><br></span><span class="com">; the group containing the segments created by .data, .data?, .const, </span><span class="pln"><br></span><span class="com">; .fardata, and .fardata?.</span><span class="pln"><br></span><span class="com">;</span><span class="pln"><br></span><span class="com">; Processor: 386 or later</span><span class="pln"><br></span><span class="com">; Assembler: MASM</span><span class="pln"><br></span><span class="com">; OS: DOS 2.0 or later only</span><span class="pln"><br></span><span class="com">; Assemble and link with "ml hello1.asm"</span><span class="pln"><br></span><span class="com">; ----------------------------------------------------------------------------</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; .model &nbsp;small<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .stack &nbsp;128<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .code<br>start: &nbsp;mov &nbsp; &nbsp; </span><span class="kwd">ax</span><span class="pln">, @data<br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; ds, </span><span class="kwd">ax</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">ah</span><span class="pln">, 9<br>&nbsp; &nbsp; &nbsp; &nbsp; lea &nbsp; &nbsp; </span><span class="kwd">dx</span><span class="pln">, Msg<br>&nbsp; &nbsp; &nbsp; &nbsp; int &nbsp; &nbsp; 21h<br>&nbsp; &nbsp; &nbsp; &nbsp; mov &nbsp; &nbsp; </span><span class="kwd">ah</span><span class="pln">, 4ch<br>&nbsp; &nbsp; &nbsp; &nbsp; int &nbsp; &nbsp; 21h<br><br>&nbsp; &nbsp; &nbsp; &nbsp; .data<br>Msg &nbsp; &nbsp; byte &nbsp; &nbsp;'Hello, there.', 13, 10, '$'<br><br>&nbsp; &nbsp; &nbsp; &nbsp; end &nbsp; &nbsp; start</span></pre>
+<p>Although DOS has been obsolete for many years, a brief study
+of DOS systems and the x86 real-addressing mode is somewhat
+interesting.  First, real-mode addresses correspond to real,
+physical memory, so one can watch exactly what is happening
+in the machine very easily with a good debugger.  In fact,
+most embedded microprocessors work in a kind of "real mode."
+Less than 1% of microprocessors run desktop PCs, servers
+and workstations; most are simple embedded processors.
+Finally a lot of DOS applications still exist, so it might
+be useful to know what kind of technology underlies it all.</p>
+
+<h2>Writing Optimized Code</h2>
+
+<p>Assembly language programmers and compiler writers should take
+great care in producing efficient code.  This requires a fairly
+deep understanding of the x86 architecture, especially the
+behavior of the cache(s), pipelines and alignment bias.  These
+specifics are well beyond the scope of this little document,
+but an excellent place to begin your study of this material
+is <a href="http://www.agner.org/optimize/">Agner Fog’s Optimization Guide</a>
+or even <a href="http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-optimization-manual.html">Intel’s</a>.
+</p>
+
+<h2>Differences between NASM, MASM, and GAS</h2>
+
+<p>The complete syntactic specification of each assembly language can
+be found elsewhere, but you can learn 99% of what you need to
+know by looking at a comparison table:</p>
+
+<table class="fullwidth">
+<tbody><tr>
+  <th>Operation
+  </th><th style="width:20%">NASM
+  </th><th style="width:20%">MASM
+  </th><th style="width:20%">GAS
+
+</th></tr><tr>
+  <td>Move contents of esi into ebx
+  </td><td colspan="2">mov ebx, esi
+  </td><td>movl %esi, %ebx
+
+</td></tr><tr>
+  <td>Move contents of si into dx
+  </td><td colspan="2">mov dx, si
+  </td><td>movw %si, %dx
+
+</td></tr><tr>
+  <td>Clear the eax register
+  </td><td colspan="2">xor eax, eax
+  </td><td>xorl %eax, %eax
+
+</td></tr><tr>
+  <td>Move immediate value 10 into register al
+  </td><td colspan="2">mov al, 10
+  </td><td>movb $10, %al
+
+</td></tr><tr>
+  <td>Move contents of address 10 into register ecx
+  </td><td>mov ecx, [10]
+  </td><td>I DON’T KNOW
+  </td><td>movl 10, %ecx
+
+</td></tr><tr>
+  <td>Move <em>contents</em> of variable dog into register eax
+  </td><td>mov eax, [dog]
+  </td><td>mov eax, dog
+  </td><td>movl dog, %eax
+
+</td></tr><tr>
+  <td>Move <em>address</em> of variable dog into register eax
+  </td><td>mov eax, dog
+  </td><td>I DON’T KNOW
+  </td><td>movl $dog, %eax
+
+</td></tr><tr>
+  <td>Move immediate byte value 10 into memory pointed to by edx
+  </td><td>mov byte [edx], 10
+  </td><td>mov byte ptr [edx], 10
+  </td><td>movb $10, (%edx)
+
+</td></tr><tr>
+  <td>Move immediate 16-bit value 10 into memory pointed to by edx
+  </td><td>mov word [edx], 10
+  </td><td>mov word ptr [edx], 10
+  </td><td>movw $10, (%edx)
+
+</td></tr><tr>
+  <td>Move immediate 32-bit value 10 into memory pointed to by edx
+  </td><td>mov dword [edx], 10
+  </td><td>mov dword ptr [edx], 10
+  </td><td>movl $10, (%edx)
+
+</td></tr><tr>
+  <td>Compare eax to the contents of memory 8 bytes past the cell
+      pointed to by ebp
+  </td><td colspan="2">cmp eax, [ebp+8]
+  </td><td>cmpl $8(%ebp), %eax
+
+</td></tr><tr>
+  <td>Add into esi the value in memory ecx quadwords past the cell
+      pointed to by eax
+  </td><td colspan="2">add esi, [eax+ecx*8]
+  </td><td>addl (%eax,%ecx,8), %esi
+
+</td></tr><tr>
+  <td>Add into esi the value in memory ecx doublewords past
+      128 bytes past the cell pointed to by eax
+  </td><td colspan="2">add esi, [eax+ecx*4+128]
+  </td><td>addl&nbsp;$128(%eax,%ecx,4),&nbsp;%esi
+
+</td></tr><tr>
+  <td>Add into esi the value in memory ecx doublewords past
+      eax bytes past the beginning of the variable named array
+  </td><td colspan="2">add esi, [eax+ecx*4+array]
+  </td><td>addl array(%eax,%ecx,4), %esi
+
+</td></tr><tr>
+  <td>Add into esi the value in memory ecx words past the beginning of
+      the variable named array
+  </td><td colspan="2">add esi, [ecx*2+array]
+  </td><td>addl array(,%ecx,2), %esi
+
+</td></tr><tr>
+  <td>Move the immediate value 4 into the memory cell pointed to by
+      eax using selector fs
+  </td><td>mov byte [fs:eax], 4
+  </td><td>mov byte ptr fs:eax, 4
+  </td><td>movb $4, %fs:(%eax)
+
+</td></tr><tr>
+  <td>Jump into another segment
+  </td><td>?
+  </td><td>jump far S:O
+  </td><td>ljmp $S, $O
+
+</td></tr><tr>
+  <td>Call to another segment
+  </td><td>?
+  </td><td>call far S:O
+  </td><td>lcall $S, $O
+
+</td></tr><tr>
+  <td>Return from an intersegment call
+  </td><td>retf V
+  </td><td>ret far V
+  </td><td>lret $V
+
+</td></tr><tr>
+  <td>Sign-extend al into ax
+  </td><td colspan="2">cbw
+  </td><td>cbtw
+
+</td></tr><tr>
+  <td>Sign-extend ax into eax
+  </td><td colspan="2">cwde
+  </td><td>cwtl
+
+</td></tr><tr>
+  <td>Sign-extend ax into dx:ax
+  </td><td colspan="2">cwd
+  </td><td>cwtd
+
+</td></tr><tr>
+  <td>Sign-extend eax into edx:eax
+  </td><td colspan="2">cdq
+  </td><td>cltd
+
+</td></tr><tr>
+  <td>Sign-extend bh into si
+  </td><td colspan="2">movsx si, bh
+  </td><td>movsbw %bh, %si
+
+</td></tr><tr>
+  <td>Sign-extend bh into esi
+  </td><td colspan="2">movsx esi, bh
+  </td><td>movsbl %bh, %esi
+
+</td></tr><tr>
+  <td>Sign-extend cx into esi
+  </td><td colspan="2">movsx esi, cx
+  </td><td>movswl %cx, %esi
+
+</td></tr><tr>
+  <td>Zero-extend bh into si
+  </td><td colspan="2">movzx si, bh
+  </td><td>movzbw %bh, %si
+
+</td></tr><tr>
+  <td>Zero-extend bh into esi
+  </td><td colspan="2">movzx esi, bh
+  </td><td>movzbl %bh, %esi
+
+</td></tr><tr>
+  <td>Zero-extend cx into esi
+  </td><td colspan="2">movzx esi, cx
+  </td><td>movzwl %cx, %esi
+
+</td></tr><tr>
+  <td>100 doublewords, all initialized to 8192
+  </td><td>times 100 dd 8192
+  </td><td>dd 100 dup (8192)
+  </td><td>I DON’T KNOW
+
+</td></tr><tr>
+  <td>Reserve 64 bytes of storage
+  </td><td>resb 64
+  </td><td>db 64 dup (?)
+  </td><td>.space 64
+
+</td></tr><tr>
+  <td>Hello World
+  </td><td colspan="2">db 'Hello, World'
+  </td><td>.ascii "Hello, World"
+
+</td></tr><tr>
+  <td>Hello World with a newline, and zero-terminated
+  </td><td colspan="2">db 'Hello, World', 10, 0
+  </td><td>.asciz&nbsp;"Hello,&nbsp;World\n"
+
+</td></tr></tbody></table>
+
+<p>Good to know:</p>
+<ul>
+<li>NASM and MASM use what is sometimes called the Intel syntax,
+    while GAS uses what is called the AT&amp;T syntax.
+</li><li>GAS uses % to prefix registers
+</li><li>GAS is source(s) first, destination last; MASM and NASM go the other way.
+</li><li>GAS denotes operand sizes on instructions (with b, w, l suffixes),
+    rather than on operands
+</li><li>GAS uses $ for immediates, but also for addresses of variables.
+</li><li>GAS puts rep/repe/repne/repz/repnz prefixes on separate lines
+    from the instructions they modify
+</li><li>MASM tries to simplify things for the programmer but makes headaches
+    instead: it tries to "remember" segments, variable sizes and so on.
+    The result is a requirement for stupid ASSUME directives, and the
+    inability to tell what an instrction does by looking at it (you
+    have to go look for declarations; e.g. <code>dw</code> vs. <code>equ</code>).
+</li><li>MASM writes FPU registers as ST(0), ST(1), etc.
+</li><li>NASM treats labels case-sensitively; MASM is case-insensitive.
+</li></ul>
+
+<script src="./x86 Assembly Language Programming_files/lang-gas.js.下载"></script>
+      </div>
+    </div>
+    <script>
+      var title = document.getElementsByTagName("h1")[0];
+      if (title) document.title = title.innerHTML;
+      var abstract = document.querySelector(".abstract");
+      if (abstract) {
+        var contentsDiv = document.createElement('div');
+        contentsDiv.setAttribute('id', 'contents');
+        var s = Array.from(document.getElementsByTagName("h2")).map(el => el.textContent);
+        contentsDiv.innerHTML = '<div>CONTENTS</b></div><div>' + s.join(' • ') + '</div>';
+        abstract.parentNode.insertBefore(contentsDiv, abstract.nextSibling);
+      }
+      function makeHidden(element, control) {
+        element.style.display = "none";
+        control.style.backgroundColor = "green";
+        control.innerHTML = "SHOW&nbsp;ANSWER";
+      }
+      function makeShown(element, control) {
+        element.style.display = "block";
+        control.style.backgroundColor = "red";
+        control.innerHTML = "HIDE&nbsp;ANSWER";
+      }
+      var elements = document.getElementsByClassName("answer");
+      for (var i = 0; i < elements.length; i++) {
+        var a = elements[i];
+        var link = document.createElement('span');
+        link.style.color = "white"
+        link.style.fontSize = "75%";
+        link.style.fontFamily = "sans-serif"
+        link.style.borderRadius = "10px";
+        link.style.padding = "2px 8px";
+        link.style.marginLeft = "0.1em";
+        makeHidden(a, link);
+        link.onclick = (function (a, link) {
+          return function () {
+            if (a.style.display === "none") {
+              makeShown(a, link);
+            } else {
+              makeHidden(a, link);
+            }
+          }
+        }(a, link));
+        a.parentNode.insertBefore(link, a);
+      }
+    </script>
+  
+
+</body></html>
