@@ -1,1 +1,0 @@
-树莓派电路图练习图来源网址：https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/RPI-3B-V1_2-SCHEMATIC-REDUCED.pdf
