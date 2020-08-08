@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../../../sopc_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>μC/OS-II II介绍</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../../../../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../../../index.html" title="Home">主页</a></li>
+			<li><a href="../../../../about.html" title="About">关于</a></li>
+			<li><a href="../../../../contact.html" title="Contact">联系</a></li>
+			<li><a href="../../../../links.html" title="Links">课程</a></li>
+			<li><a href="../../../../search.html" title="Search">搜索</a></li>
+			<li><a href="../../../../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../../../目录.htm" title="SOPC">SOPC</a></li>
+				<li>
+				<a href="../../../../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../../../../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000;"  >
+					<div id="content1" onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第一章 概述</div> 
+					<div id="child1" align="left" style="display:none"> 
+						1.<a href="../../../SOPC基本概念.htm">SOPC系统的基本概念</a> <br> 
+						2.<a href="../../../IP-core.htm">IP核</a> <br> 
+						3.<a href="../../../sopc-dev-process.htm">SOPC开发基本流程</a> <br> 
+						4.<a href="../../../NiosII-introduction.htm">Nios II处理器介绍</a> <br>
+						5.<a href="../../../FPGA-implemented-sopc.htm">用FPGA实现SOPC</a><br>
+						6.<a href="../../../nios-app.htm">应用</a><br>
+					</div> 
+					
+					<div id="content2" onclick="document.all.child2.style.display=(document.all.child2.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第二章 Nios II处理器体系结构 </div> 
+					<div id="child2" align="left" style="display:none"> 
+						1.<a href="../../../NiosII-architecture.htm">Nios II处理器结构</a> <br> 
+						2.<a href="../../../Nios-architecture/nios-register.htm">Nios II寄存器的配置</a> <br> 
+						3.<a href="../../../Nios-architecture/nios-alu.htm">ALU</a> <br>
+						4.<a href="../../../Nios-architecture/operating-modes.htm">Nios II处理器运行模式及</a><br>
+						  <a href="../../../Nios-architecture/exception.htm">异常和中断</a> <br>
+						5.<a href="../../../Nios-architecture/memory.htm">存储器和外设访问</a><br>
+						附录：<a href="../../../Nios-architecture/implement-cpu-instruction.htm">计算机指令执行</a><br>
+					</div> 
+					<div id="content3" onclick="document.all.child3.style.display=(document.all.child3.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第三章 Avalon接口规范 </div> 
+					<div id="child3" style="display:none"> 
+						1.<a href="../../../avalon/avalon-introduction.htm">Avalon总线简介</a> <br> 
+						2.<a href="../../../avalon/avalon-concept.htm">Avalon总线基本概念</a> <br> 
+						3.<a href="../../../avalon/avalon-signal.htm">Avalon信号</a>  <br>
+						4.<a href="../../../avalon/avalon-slave.htm">从端口传输</a> <br>
+						5.<a href="../../../avalon/avalon-master.htm">主端口传输</a> <br>
+						6.<a href="../../../avalon/avalon-streaming.htm">流水线传输</a> <br>
+						7.<a href="../../../avalon/avalon-tristate.htm">三态传输</a> <br>
+					</div> 
+					
+					<div id="content4" onclick="document.all.child5.style.display=(document.all.child5.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第四章 SOPC软硬件开发平台 </div> 
+					<div id="child5" style="display:none"> 
+						1.<a href="../../sopc-dev-platform.htm">SOPC系统开发的软硬件平台</a> <br> 
+						2.<a href="#">Quartus II下的SOPC Builder工具</a>(Qsys) <br> 
+						3.<a href="#">Nios II IDE集成开发环境</a><br>
+						4.<a href="../HAL/Nios_HAL.htm">软硬件接口的硬件抽象层（HAL)</a><br>
+						5.<a href="../../example-list.htm">例子</a>
+					</div> 
+					
+					<div id="content5" onclick="document.all.child4.style.display=(document.all.child4.style.display =='none')?'':'none'" > 
+					第五章 Nios II处理器常用外设 </div> 
+					<div id="child4" style="display:none"> 
+						1.<a href="#">并行I/O</a>(重点讲解结构) <br> 
+						2.<a href="#">定时器</a> <br> 
+						3.<a href="#">异步串口UART</a> <br>
+						4.<a href="#">Optrex 1207 LCD</a><br>
+						5.<a href="../../devices/SDRAM.htm">SDRAM</a>
+					</div> 
+					
+					<div id="content6" onclick="document.all.child6.style.display=(document.all.child6.style.display =='none')?'':'none'" > 
+					第六章 μC/OS II操作系统移植 </div> 
+					<div id="child6" style="display:none"> 
+						1.<a href="os.htm">操作系统概念</a> <br> 
+						2.<a href="ucos/first_ucos.htm">μC/OS II运行在Nios II</a> <br> 
+						3.<a href="ucos/ucos_api.htm">μC/OS II编程介绍</a> 
+					</div> 
+					
+					<div id="content8" onclick="document.all.child7.style.display=(document.all.child7.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第七章 Nios II系统深入设计 </div> 
+					<div id="child7" style="display:none"> 
+						1.<a href="../../hardware/user_instructions/user_instructions.htm">用户定制指令</a> <br> 
+						2.<a href="../../develop_user_devices.htm">用户定制外设</a> 
+					</div>
+					
+					<div id="content8" onclick="document.all.child8.style.display=(document.all.child8.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第八章 调试技术 </div> 
+					<div id="child8" style="display:none"> 
+						1.<a href="../../../debug-tech/hardware/ModelSim/modelsim_introduction.htm">ModelSim</a><br>
+						2.<a href="../../../debug-tech/hardware/signaltap/signaltap_introduction.htm">SignalTap</a><br>
+						3.Nios EDS调试<br> 
+					</div> 
+			</div>
+			<hr/>
+			<!-- #BeginEditable "content" -->
+			
+<p><font size="7">μC/OS-II介绍</font></p>
+<p><font size="5">是由Micrium ( Micrium’s headquarters in Weston, Florida ) 
+公司研发的实时操作系统（RTOS），公司网站其提供操作系统的源代码，商业用途需要付费。</font></p>
+<p><font size="5">公司网址：http://micrium.com</font></p>
+<p><font size="5">(以下信息来源于Micrium官网的μC/OS-II User Manual)</font></p>
+<p><font size="5">μC/OS-II pronounced <b>“Micro C OS 2”</b>, which stands for <b>
+Micro-Controller Operating System Version 2</b>.</font></p>
+<p><font size="5">μC/OS-II的第一个版本发布与1992年。</font></p>
+<p><font size="5">μC/OS-II的特点是满足安全关键系统的需求。</font></p>
+<p><font size="5">Meets the requirements of Safety Critical Systems.</font></p>
+<p><font size="5">其他译法：安全攸关系统、安全苛求系统</font></p>
+<p><font size="5" face="黑体">应用领域</font></p>
+<p><img border="0" src="ucos/applicaion.png" width="748" height="497"></p>
+<p><font size="5" face="黑体">系统概念</font></p>
+<p><font size="5">Foreground/Background Systems（前台/后台系统）</font></p>
+<p>（图）</p>
+<p><img border="0" src="ucos/foreback-system.png" width="690" height="671"></p>
+<p><font size="5">Critical Section of Code（关键代码区）</font></p>
+<p>不能被中断的代码</p>
+<p>A critical section of code, also called a critical region, is code that needs 
+to be treated indivisibly. Once the section of code starts executing, it must 
+not be interrupted. </p>
+<p><font size="5">Resource（资源）</font></p>
+<p>A resource is any entity used by a task. A resource can thus be an I/O 
+device, such as a printer, a keyboard, or a display, or a variable, a structure, 
+or an array.</p>
+<p><font size="5">Shared Resource（共享资源）</font></p>
+<p>多任务带来的问题，从而产生响应的解决方案——互斥。</p>
+<p>A shared resource is a resource that can be used by more than one task. Each 
+task should gain exclusive access to the shared resource to prevent data 
+corruption. This is called mutual exclusion.</p>
+<p><font size="5">Multitasking（多任务执行）</font></p>
+<p>多任务执行就是在不同任务之间调度和交替使用CPU。</p>
+<p>Multitasking is the process of scheduling and switching the CPU (Central 
+Processing Unit) between several tasks; a single CPU switches its attention 
+between several sequential tasks.</p>
+<p><font size="5">Task（任务）</font></p>
+<p>任务，也称线程。每个任务用于独立的CPU寄存器和堆栈区域。</p>
+<p>A task, also called a thread, is a simple program that thinks it has the CPU 
+all to itself. The design process for a real-time application involves splitting 
+the work to be done into tasks responsible for a portion of the problem. Each 
+task is assigned a priority, its own set of CPU registers, and its own stack 
+area.</p>
+<p><font size="5">Context Switch (or Task Switch)（上下文切换）</font></p>
+<p>When a multitasking kernel decides to run a different task, it simply saves 
+the current task’s context (CPU registers) in the current task’s context storage 
+area — its stack.</p>
+<p><font size="5">Kernel（内核）</font></p>
+<p>The kernel is the part of a multitasking system responsible for the <b>
+management of tasks</b> (i.e., for managing the CPU’s time) and communication 
+between tasks. The fundamental service provided by the kernel is context 
+switching. The use of a real-time kernel generally simplifies the design of 
+systems by allowing the application to be divided into multiple tasks managed by 
+the kernel.</p>
+<p>A kernel adds overhead to your system because the services provided by the 
+kernel require execution time. The amount of overhead depends on how often you 
+invoke these services. In a well designed application, a kernel will use up 
+between <b>2 and 5% of CPU time</b>. Because a kernel is software that gets 
+added to your application, it requires <b>extra ROM (code space) and additional 
+RAM for the kernel data structures</b> and, each task requires its own stack 
+space, which has a tendency to eat up RAM quickly.</p>
+<p><font size="5">Scheduler(调度器)</font></p>
+<p>The scheduler, also called the dispatcher, is the part of the kernel 
+responsible for determining which task will run next. Most real-time kernels are 
+priority based. Each task is assigned a priority based on its importance. </p>
+<p><font size="5">Non-Preemptive Kernel（非抢占式内核、无优先内核）</font></p>
+<p>每个任务需要明确地放弃对CPU的控制。</p>
+<p>（图）</p>
+<p>
+<img border="0" src="ucos/non-Preemptive-kernel.png" width="656" height="560"></p>
+<p>Non-preemptive kernels require that each task does something to explicitly 
+give up control of the CPU. To maintain the illusion of concurrency, this 
+process must be done frequently. Non-preemptive scheduling is also called 
+cooperative multitasking; tasks cooperate with each other to share the CPU. 
+Asynchronous events are still handled by ISRs. An ISR can make a higher priority 
+task ready to run, but the ISR always returns to the interrupted task. The new 
+higher priority task will gain control of the CPU only when the current task 
+gives up the CPU.</p>
+<p><font size="5">Preemptive Kernel（抢占式内核）</font></p>
+<p>高优先级的先执行。</p>
+<p>（图）</p>
+<p><img border="0" src="ucos/Preemptive-kernel.png" width="615" height="545"></p>
+<p>A preemptive kernel is used when system responsiveness is important. Because 
+of this, <b>µC/OS-II and most commercial real-time kernels are preemptive</b>. 
+The highest priority task ready to run is always given control of the CPU. When 
+a task makes a higher priority task ready to run, the current task is preempted 
+(suspended) and the higher priority task is immediately given control of the 
+CPU. If an ISR makes a higher priority task ready, when the ISR completes, the 
+interrupted task is suspended and the new higher priority task is resumed.</p>
+<p><font size="5">Reentrancy（重入性）</font></p>
+<p>可重入函数可以被两个以上任务调用，而不会产生数据冲突。</p>
+<p>A reentrant function can be <b>used by more than one task without fear of 
+data corruption</b>. A reentrant function can be interrupted at any time and 
+resumed at a later time without loss of data. Reentrant functions either use 
+local variables (i.e., CPU registers or variables on the stack) or protect data 
+when global variables are used. </p>
+<p>例1：</p>
+<p>void strcpy(char *dest, char *src) </p>
+<p>{ </p>
+<p>&nbsp; while (*dest++ = *src++) { </p>
+<p>&nbsp;&nbsp; ; </p>
+<p>&nbsp;&nbsp; } </p>
+<p>&nbsp; *dest = NUL; </p>
+<p>}</p>
+<p>Because copies of the arguments to strcpy() are placed on the task’s stack, 
+strcpy() can be invoked by multiple tasks without fear that the tasks will 
+corrupt each other’s pointers.</p>
+<p>例2：不可重入</p>
+<p>int Temp; </p>
+<p>void swap(int *x, int *y) </p>
+<p>{ </p>
+<p>&nbsp; Temp = *x; </p>
+<p>&nbsp; *x = *y;</p>
+<p>&nbsp; *y = Temp; </p>
+<p>}</p>
+<p><font size="5">Round-Robin Scheduling（轮询调度算法）</font></p>
+<p>相同优先级的任务，内核将按时间片分配每个任务执行。</p>
+<p>When two or more tasks have the same priority, the kernel allows one task to 
+run for a predetermined amount of time, called a quantum, then selects another 
+task. This is also called time slicing. The kernel gives control to the next 
+task in line if the current task has no work to do during its time slice or the 
+current task completes before the end of its time slice or the time slice ends.
+</p>
+<p><font color="#FF0000">µC/OS-II does not currently support round-robin 
+scheduling. Each task must have a <b>unique priority</b> in your application.</font></p>
+<p><font size="5">Task Priority(任务优先权)</font></p>
+<p>A priority is assigned to each task. The more important the task, the higher 
+the priority given to it. With most kernels, you are generally responsible for 
+deciding what priority each task gets.</p>
+<p><font size="5">Static Priorities</font></p>
+<p>任务优先权在执行期间不能被改变。</p>
+<p>Task priorities are said to be static when the priority of each task does not 
+change during the application’s execution. Each task is thus given a fixed 
+priority at compile time. All the tasks and their timing constraints are known 
+at compile time in a system where priorities are static.</p>
+<p><font size="5">Dynamic Priorities</font></p>
+<p>任务优先权在执行期间可以被改变。</p>
+<p>Task priorities are said to be dynamic if the priority of tasks can be 
+changed during the application’s execution; each task can change its priority at 
+run time. This is a desirable feature to have in a real-time kernel to avoid 
+priority inversions.</p>
+<p><font size="5">Priority Inversions（优先权反转）</font></p>
+<p>Priority inversion is a <b>problem</b> in real-time systems and occurs mostly 
+when you use a real-time kernel.</p>
+<p>例子：</p>
+<p>（图）</p>
+<p><img border="0" src="ucos/priority-inversions.png" width="661" height="545"></p>
+<p>μC/OS-II采用优先权继承的策略解决此问题。</p>
+<p>A multitasking kernel should allow <b>task priorities to change dynamically 
+to help prevent priority inversions</b>. However, it takes some time to change a 
+task’s priority. <b>What if Task 3 had completed access of the resource before 
+it was preempted by Task 1 and then by Task 2?</b> Had you raised the priority 
+of Task 3 before accessing the resource and then lowered it back when done, you 
+would have wasted valuable CPU time. What is really needed to avoid priority 
+inversion is a kernel that changes the priority of a task automatically. This is 
+called priority inheritance and µC/OS-II provides this feature.</p>
+<p>（图）</p>
+<p><img border="0" src="ucos/priority-inheritance.png" width="675" height="604"></p>
+<p><font size="5">Assigning Task Priorities（分配任务优先权）</font></p>
+<p>Assigning task priorities is not a <b>trivial undertaking</b> because of the 
+complex nature of real-time systems. In most systems, not all tasks are 
+considered critical. Noncritical tasks should obviously be given low priorities. 
+Most real-time systems have a combination of SOFT and HARD requirements. <b>In a 
+SOFT real-time system, tasks are performed as quickly as possible, but they 
+don’t have to finish by specific times</b>. In <b>HARD real-time systems</b>, 
+tasks have to be performed <b>not only correctly, but on time</b>.</p>
+<p>Rate Monotonic Scheduling (RMS)（单调速率调度算法）</p>
+<p>In computer science, rate-monotonic scheduling (RMS) is a scheduling 
+algorithm used in real-time operating systems (RTOS) with a static-priority 
+scheduling class.The static priorities are assigned on the basis of the cycle 
+duration of the job: the shorter the cycle duration is, the higher is the job's 
+priority.</p>
+<p>RMS makes a number of assumptions: </p>
+<p>&nbsp;&nbsp; All tasks are periodic (they occur at regular intervals). </p>
+<p>&nbsp;&nbsp; Tasks do not synchronize with one another, share resources, or 
+exchange data. </p>
+<p>&nbsp;&nbsp; The CPU must always execute the highest priority task that is 
+ready to run. In other words, preemptive scheduling must be used.</p>
+<p>Liu, C. L.; Layland, J. (1973), "Scheduling algorithms for multiprogramming 
+in a hard real-time environment", Journal of the ACM 20 (1): 46–61, 
+doi:10.1145/321738.321743.</p>
+<p>这篇文章证明了以下事情：</p>
+<p>a set of n periodic tasks with unique periods, a feasible schedule that will 
+always meet deadlines exists if the CPU utilization is below a specific bound 
+(depending on the number of tasks). The schedulability test for RMS is:</p>
+<p>
+<img class="mwe-math-fallback-image-inline tex" alt="U = \sum_{i=1}^{n} \frac{C_i}{T_i} \leq n({2}^{1/n} - 1)" src="https://upload.wikimedia.org/math/b/d/c/bdca9e9f15cb35563cbb49a048a66b19.png"></p>
+<p>where, Ci corresponds to the maximum execution time of task i and Ti 
+corresponds to the execution period of task i. In other words, Ci/Ti corresponds 
+to the fraction of CPU time required to execute task i. The upper bound for an 
+infinite number of tasks is given by <b>ln(2), or 0.693</b>. 
+<font color="#FF0000">This means that to meet all HARD real-time deadlines based 
+on RMS, CPU utilization of all time-critical tasks should be less than 70 
+percent!</font></p>
+<p>（图）</p>
+<p><font color="#FF0000">
+<img border="0" src="ucos/RMS.png" width="764" height="409">）</font></p>
+<p><font size="5">Mutual Exclusion（互斥）</font></p>
+<p>The easiest way for tasks to communicate with each other is through shared 
+data structures. This is especially easy when all tasks exist in a single 
+address space and can reference global variables, pointers, buffers, linked 
+lists, ring buffers, etc. Although sharing data simplifies the exchange of 
+information, you must ensure that each task has exclusive access to the data to 
+avoid contention and data corruption. The most common methods of obtaining 
+exclusive access to shared resources are: </p>
+<blockquote>
+	<p>disabling interrupts</p>
+	<p>performing test-and-set operations</p>
+	<p>disabling scheduling</p>
+	<p>using semaphores（信号量）.</p>
+</blockquote>
+<p><i><b>disabling interrupts（中断不使能）</b></i></p>
+<p><b><i>伪代码如下：</i></b></p>
+<p>Disable interrupts;</p>
+<p>Access the resource (read/write from/to variables); </p>
+<p>Reenable interrupts;</p>
+<p><i><b>μc/os的实现：</b></i></p>
+<blockquote>
+	<p>void Function (void) </p>
+	<p>{ </p>
+	<p>OS_ENTER_CRITICAL(); </p>
+	<p>/* You can access shared data in here */ </p>
+	<p>OS_EXIT_CRITICAL(); </p>
+	<p>}</p>
+</blockquote>
+<p><i><b>test-and-set operations（测试-设置操作）</b></i></p>
+<p>If you are not using a kernel, two functions could ‘agree’ that to access a 
+resource, they must <b>check a global variable and if the variable is 0, the 
+function has access to the resource</b>. To prevent the other function from 
+accessing the resource, however, the first function that gets the resource 
+simply sets the variable to 1. This is commonly called a Test-And-Set (or TAS) 
+operation.</p>
+<p><i><b>disabling scheduling（调度不使能）</b></i></p>
+<p>If your task is not sharing variables or data structures with an ISR, you can 
+disable and enable scheduling . In this case, <b>two or more tasks can share 
+data without the possibility of contention</b>. You should note that while the 
+scheduler is locked, interrupts are enabled, and if an interrupt occurs while in 
+the critical section, the ISR is executed immediately. At the end of the ISR, 
+the kernel always returns to the interrupted task, even if a higher priority 
+task has been made ready to run by the ISR. </p>
+<p><i><b>μc/os例子</b></i></p>
+<blockquote>
+	<p>void Function (void) </p>
+	<p>{ </p>
+	<p>OSSchedLock(); </p>
+	<p>. . /* You can access shared data in here (interrupts are recognized) */
+	</p>
+	<p>OSSchedUnlock(); </p>
+	<p>}</p>
+</blockquote>
+<p><i><b>semaphores（信号量）</b></i></p>
+<p>The semaphore was invented by Edgser Dijkstra in the mid-1960s. It is a 
+protocol mechanism offered by most multitasking kernels. Semaphores are used to 
+control access to a shared resource (mutual exclusion), signal the occurrence of 
+an event, and allow two tasks to synchronize their activities.</p>
+<p>μc/os的例子：</p>
+<blockquote>
+	<p>OS_EVENT *SharedDataSem; </p>
+	<p>void Function (void) </p>
+	<p>{ </p>
+	<p>INT8U err; </p>
+	<p>OSSemPend(SharedDataSem, 0, &amp;err); </p>
+	<p>. . /* You can access shared data in here (interrupts are recognized) */
+	</p>
+	<p>OSSemPost(SharedDataSem); </p>
+	<p>&nbsp;}</p>
+</blockquote>
+<p>　</p>
+<p><font size="5">Deadlock (or Deadly Embrace)（死锁）</font></p>
+<p>两个任务相互等待一个共享资源的释放。</p>
+<p>A deadlock, also called a deadly embrace, is a situation in which two tasks 
+are each unknowingly waiting for resources held by the other. </p>
+<p>举例：</p>
+<p><b><i>任务A获得变量x的共享锁，任务B获得变量y的共享锁，任务A执行中等待y的共享锁，任务B执行中等待获得x的共享锁。</i></b></p>
+<p><font size="5">Synchronization（同步）</font></p>
+<p>任务可以使用信号量来达成同步。</p>
+<p>A task can be synchronized with an ISR (or another task when no data is being 
+exchanged) by using a semaphore.</p>
+<p><font size="5">Event Flags（事件标志）</font></p>
+<p>当一个任务需要与多个事件发生同步时，使用事件标志。</p>
+<p>Event flags are used when a task needs to synchronize with the occurrence of 
+multiple events. The task can be synchronized when any of the events have 
+occurred. This is called disjunctive synchronization (logical OR). A task can 
+also be synchronized when all events have occurred. This is called conjunctive 
+synchronization (logical AND). </p>
+<p><font color="#FF0000">Kernels like µC/OS-II which support event flags offer 
+services</font> to SET event flags, CLEAR event flags, and WAIT for event flags 
+(conjunctively or disjunctively).</p>
+<p><font size="5">Intertask Communication（任务见通信）</font></p>
+<p>任务间通信可以使用全局变量或发送消息。</p>
+<p>It is sometimes necessary for a task or an ISR to communicate information to 
+another task. This information transfer is called intertask communication. 
+Information may be communicated between tasks in two ways: through global data 
+or by sending messages.</p>
+<p><font size="5">Message Mailboxes（消息邮箱）</font></p>
+<p>消息邮箱也称消息交换，通过内核提供服务。</p>
+<p>Messages can be sent to a task through kernel services. A Message Mailbox, 
+also called a message exchange, is typically a pointer-size variable. Through a 
+service provided by the kernel, a task or an ISR can deposit a message (the 
+pointer) into this mailbox. Similarly, one or more tasks can receive messages 
+through a service provided by the kernel. Both the sending task and receiving 
+task agree on what the pointer is actually pointing to.</p>
+<p><font size="5">Message Queues（消息队列）</font></p>
+<p>A message queue is used to send one or more messages to a task. A message 
+queue is basically an array of mailboxes. Through a service provided by the 
+kernel, a task or an ISR can deposit a message (the pointer) into a message 
+queue. Similarly, one or more tasks can receive messages through a service 
+provided by the kernel. Both the sending task and receiving task or tasks have 
+to agree as to what the pointer is actually pointing to. Generally, the first 
+message inserted in the queue will be the first message extracted from the queue 
+(FIFO).<font color="#FF0000"> In addition, to extract messages in a FIFO 
+fashion, µC/OS-II allows a task to get messages Last-In-First-Out (LIFO).</font></p>
+<p><font size="5">Interrupts（中断）</font></p>
+<p>An interrupt is a hardware mechanism used to inform the CPU that an 
+asynchronous event has occurred. When an interrupt is recognized, the CPU saves 
+part (or all) of its context (i.e., registers) and jumps to a special subroutine 
+called an Interrupt Service Routine, or ISR. </p>
+<p><font size="5">Interrupt Latency（中断延时）</font></p>
+<p>Probably the most important specification of a real-time kernel is the amount 
+of time interrupts are disabled. All real-time systems disable interrupts to 
+manipulate critical sections of code and reenable interrupts when the critical 
+section has executed. The longer interrupts are disabled, the higher the 
+interrupt latency. </p>
+<p><font size="5">Interrupt Response（中断响应）</font></p>
+<p>Interrupt recovery is defined as the time required for the processor to 
+return to the interrupted code or to a higher priority task in the case of a 
+preemptive kernel. Interrupt recovery in a foreground/background system simply 
+involves restoring the processor’s context and returning to the interrupted 
+task. </p>
+<p><font size="5">Interrupt Recovery</font></p>
+<p><font size="5">Interrupt Latency, Response, and Recovery</font></p>
+<p><font size="5">ISR Processing Time</font></p>
+<p><font size="5">Nonmaskable Interrupts (NMIs)</font></p>
+<p>Sometimes, an interrupt must be serviced as quickly as possible and cannot 
+afford to have the latency imposed by a kernel. In these situations, you may be 
+able to use the Nonmaskable Interrupt (NMI) provided on most microprocessors. 
+Because the NMI cannot be disabled, interrupt latency, response, and recovery 
+are minimal. </p>
+<p><font size="5">Clock Tick（时钟节拍）</font></p>
+<p>时钟节拍是一个特殊中断，是系统的心跳。</p>
+<p>A clock tick is a special interrupt that occurs periodically. This interrupt 
+can be viewed as the system’s heartbeat. The time between interrupts is 
+application specific and is generally between 10 and 200ms. The clock tick 
+interrupt allows a kernel to delay tasks for an integral number of clock ticks 
+and to provide timeouts when tasks are waiting for events to occur. The faster 
+the tick rate, the higher the overhead imposed on the system.</p>
+<p><font size="5">Memory Requirements</font></p>
+<p>ROM和RAM的确定，RAM的确定要考虑到每个任务的堆栈以及中断嵌套等因素。</p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>原理图高级功能</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="from-name.htm">课程名称</a>
+				<a href="protel-history.htm">课程工具</a> 
+				<a href="altium_web.htm">官网资源</a>
+				<a href="setup.htm">软件安装</a>
+				<a href="schematic_design.htm">原理图设计</a>
+				<a href="讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="pcb_design.htm">印制板图设计</a> 
+				<a href="component_package.htm">器件的封装</a>
+				<a href="pcb_examples.htm">PCB实例</a>
+				<a href="实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<p><b><font size="5">2、简化设计（问题导向）</font></b></p>
+<table border="1" cellspacing="1" width="1010" height="107">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top"><font>
+		在通常的系统中会有很多上拉电阻，滤波电容，对这样的器件标注通常都是以一定的顺序进行标注，一个个标注非常费事。</font></td>
+		<td valign="top" height="52"><font>
+		元器件自动标注，【工具】/【注释】/【更新变化表】/【接受变化】（<a href="parts_automatic_annotation.htm">图</a>13.0，<a href="auto-annotation/DXP2004auto-annotation.htm">DXP2004</a>）</font></td>
+	</tr>
+	<tr>
+		<td valign="top"><font>很多元器件如何自动排列</font></td>
+		<td valign="top" height="52"><font>【编辑】/【排列】(13.0 对齐)</font></td>
+	</tr>
+	<tr>
+		<td valign="top"><font>为使线路清晰，需要在导线上进行连接。</font><p>
+		<font>清晰地表示多个端点电气互联的情况。</font></td>
+		<td valign="top" height="52"><font>电气节点，【放置】/【手工放置接点】</font></td>
+	</tr>
+	<tr>
+		<td valign="top"><font>要修改所有类似组件的属性</font></td>
+		<td valign="top" height="52"><font>
+		鼠标左键点击对象，选中，点击鼠标右键，选择【查找相似对象】菜单指令。</font></td>
+	</tr>
+	<tr>
+		<td valign="top"><font>对于一个电路中的主器件，通常会有上百个管脚，如果连线都画出来，连线太多了</font></td>
+		<td valign="top" height="52"><font>解决办法1：放置网络标签，【放置】/【网络标签】 
+		，在网络标签的属性窗口可以看到可以设置的网络标签的其他属性。<br>
+		解决办法2：<a href="use_bus.htm">总线</a></font></td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>需要加一下说明性文字、图形</font></td>
+		<td height="50" width="596" valign="top"><font>非电气绘图工具 
+		，指令有【放置】/【文本字符串】、【放置】/【文本框】、【放置】/【描绘工具】、【放置】/【注解】。</font></td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>对于大多数系统，所有的器件画在一张图里，很难编辑，阅读。</font><p>
+		<font>
+		我们的设计思路是模块化的，当采用自顶向下的设计思路时，也就是分解的问题的设计思路进行设计，设计是由抽象到具体，由粗设计到细的过程。原理图绘制过程就是设计过程，只有体现这样的过程才能更利于设计者使用。</font></td>
+		<td height="50" width="596" valign="top"><font>概念：顶层原理图、子原理图。</font><p>
+		<font>实现方式：图纸符号、图纸入口。</font></p>
+		<p>
+		<font>图纸符号是自定义的一个复杂元器件，图纸入口相当于这个器件的引脚。</font></p>
+<p><font>主要步骤：</font></p>
+		<p><font>1、创建图纸符号。【放置】/【图纸符号】</font></p>
+		<p><font>2、添加图纸入口。【放置】/【加图纸入口】</font></p>
+		<p><font>3、连接图纸入口。</font></p>
+		<p><font>4、创建子电路原理图。关键指令是【设计】/【根据符号创建图纸】。</font></p>
+		<p><font>其他操作：</font></p>
+		<p><font>层次图的切换：【工具】/【改变设计层次】。在顶层，点击图纸符号向下。在子原理图，点击任何端口向上。</font></td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>如何按照组合的设计思路进行设计（自底向上）</font></td>
+		<td height="39" width="596" valign="top"><font>
+		关键指令是【设计】/【根据图纸创建图纸符号】。</font></td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>图纸管理</font></td>
+		<td height="61" width="596" valign="top"><font>
+		使用模板：【设计】中的相关模板操作。</font><p><font size="5">
+		<a href="create_sch_template.htm">创建自己的模板</a>。</font></td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>
+		厂家没有提供元器件的Altium库文件</font><p>　</p>
+		<p>　</td>
+		<td height="50" width="596" valign="top"><font>
+		建立元器件库（【文件】/【创建】/【库】/【原理图库】）和制作元器件（【工具】/【新元件】）。</font><p><font>
+		集成元器件库（原理图器件库+PCB封装库）。</font></p>
+		<p><font>注意事项：设置参考点。（ctrl+home，【编辑】/【跳转到】/【原点】）</font></p>
+		<p><font>创建含有子部件的库元器件需要使用【工具】/【创建元件】。</font></p>
+		<p><font>（过程图：<a href="create_part/create_sch_part/create_sch_part_01.png">1</a>,<a href="create_part/create_sch_part/create_sch_part_02.png">2</a>,<a href="create_part/create_sch_part/create_sch_part_03.png">3</a>,<a href="create_part/create_sch_part/create_sch_part_04.png">4</a>,<a href="create_part/create_sch_part/create_sch_part_05.png">5</a>（图五可以演示各种设置的表现形式）,<a href="create_part/create_sch_part/create_sch_part_06.png">6</a>,<a href="create_part/create_sch_part/create_sch_part_07.png">7</a>,<a href="create_part/create_sch_part/create_sch_part_08.png">8</a>,<a href="create_part/create_sch_part/create_sch_part_09.png">9</a>）</font></p>
+		　</td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>需要知道使用的所有元器件</font></td>
+		<td height="50" width="596" valign="top"><font>
+		生成元器件报表功能，【报告】/【Bill of Materials】。</font><p><font size="5">(<a href="LETV_open_bom.htm">通过新闻了解BOM</a>)</font></td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>设计的原理图需要与其它软件进行数据共享</font></td>
+		<td height="50" width="596" valign="top"><font>
+		网表，电路的另外一种表述形式。【设计】/【文档的网络表】/【Protel】</font><p>（过程图：<a href="Net_list/learn_netlist_01.png">1</a>,<a href="Net_list/learn_netlist_02.png">2</a>,<a href="Net_list/learn_netlist_03.png">3</a>,<a href="Net_list/learn_netlist_04.png">4</a>,<a href="Net_list/learn_netlist_05_netlist2vhdl.png">5</a>）</td>
+	</tr>
+	<tr>
+		<td width="403" valign="top"><font>快捷键的使用</font></td>
+		<td height="50" width="596" valign="top"><font>在菜单项中已标示出来（<a href="快捷键的使用.htm">示例</a>）</font></td>
+	</tr>
+</table>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+<p>　</p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>PCB布线一般应遵循的规则</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="from-name.htm">课程名称</a>
+				<a href="protel-history.htm">课程工具</a> 
+				<a href="altium_web.htm">官网资源</a>
+				<a href="setup.htm">软件安装</a>
+				<a href="schematic_design.htm">原理图设计</a>
+				<a href="讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="pcb_design.htm">印制板图设计</a> 
+				<a href="component_package.htm">器件的封装</a>
+				<a href="pcb_examples.htm">PCB实例</a>
+				<a href="实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<p><b><font size="5">PCB电磁干扰理论：</font></b></p>
+<blockquote>
+	<p><font>电磁场和电磁波理论，传输线理论</font></p>
+	<p><font>基本概念：</font></p>
+	<p><font>@麦克斯韦方程组表明电荷产生电场</font></p>
+	<p><font>@传导电流能产生磁场</font></p>
+	<p><font>@时变电流产生时变磁场，时变磁场产生时变电场，所以时变电流既能产生磁场也能产生电场</font></p>
+</blockquote>
+<p><b><font size="5">PCB布线一般应遵循的规则：</font></b></p>
+<p><font>1、不允许有交叉电路或者交叉导线。</font></p>
+<p><font>2、同一级电路接地点应尽量靠近。并且本级电路的电源滤波电容也应接在该级接地点上。 
+避免两个接地点间的铜箔太长引起干扰与自激，所以要采用“一点接地法”的电路。</font></p>
+<p><font>3、总线必须严格按照高频——中频——低频逐级地从弱点到强电的顺序排列。避免产生自激。</font></p>
+<p><font>4、强电流引线（公共地线、功放电源引线等）应尽可能宽些。降低布线电阻和压降。</font></p>
+<p><font>5、阻抗高的布线尽量短，阻抗低的布线可长一些。阻抗高的布线容易发生反射和吸收信号。</font></p>
+<p><font>6、强弱信号分开布线。</font></p>
+<p><font>7、交直流线路分开布线。</font></p>
+<p><font>8、高低压电路分开走线。</font></p>
+<p><font>9、减小布线的环路面积。</font></p>
+<p>　</p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

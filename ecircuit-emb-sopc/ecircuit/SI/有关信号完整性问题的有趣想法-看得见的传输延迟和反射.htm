@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word">
+
+<!-- #BeginTemplate "../ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>电子线路辅助设计</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../index.html" title="Home">主页</a></li>
+			<li><a href="../../about.html" title="About">关于</a></li>
+			<li><a href="../../contact.html" title="Contact">联系</a></li>
+			<li><a href="../../links.html" title="Links">课程</a></li>
+			<li><a href="../../search.html" title="Search">搜索</a></li>
+			<li><a href="../../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="../from-name.htm">课程名称</a>
+				<a href="../protel-history.htm">课程工具</a> 
+				<a href="../altium_web.htm">官网资源</a>
+				<a href="../setup.htm">软件安装</a>
+				<a href="../schematic_design.htm">原理图设计</a>
+				<a href="../讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="../pcb_design.htm">印制板图设计</a> 
+				<a href="../component_package.htm">器件的封装</a>
+				<a href="../pcb_examples.htm">PCB实例</a>
+				<a href="../实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan;mso-outline-level:2'><b><span
+style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>有关信号完整性问题的有趣想法：看得见的传输延迟和反射<span lang=EN-US><o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'>(2012-02-11 23:47:17)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'>FROM:</span><span lang=EN-US> </span><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>http://blog.sina.com.cn/s/blog_70bb32080100zrpx.html<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='mso-cellspacing:1.5pt;
+ mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+  mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+  mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>前言<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+工作中遇到这样一件事情，某个新产品在静电测试时遇到问题，<span
+lang=EN-US>FPGA</span>总被复位；经过查找，这个产品主要的情况是：<span lang=EN-US>6</span>层<span
+lang=EN-US>PCB</span>，<span lang=EN-US>FPGA</span>绝大多数走线在内层， 
+且没有跨分割之类的不符合规则的布线；没有屏蔽外壳，地线（<span
+lang=EN-US>PE</span>）在<span lang=EN-US>PCB</span>板和结构中绕了个圈。结论是，做静电测试时，静电放电电流经过了较长地线路径， 
+产生了较大的辐射，干扰了<span lang=EN-US>FPGA</span>。但有这个结论还不够，怎么才能定量的确定多长的地线，怎么走的地线在静电测试时不会对电路产生影响呢？<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+我找到的解决方案是使用电磁场仿真软件。大名鼎鼎的<span
+class=SpellE><span lang=EN-US>Ansoft</span></span>就有这样的解决方案套装。简单介绍一下：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>Maxwell</span><span style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+宋体;mso-font-kerning:0pt'>：基于标量场（例如电势）计算的电磁场仿真软件，适合用来计算电机磁场、电容、特征阻抗等。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>HFSS</span><span style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+宋体;mso-font-kerning:0pt'>：基于<span lang=EN-US>S</span>参数（<span lang=EN-US><a
+href="http://zh.wikipedia.org/wiki/%E4%BA%8C%E7%AB%AF%E5%8F%A3%E7%BD%91%E7%BB%9C"
+target="_blank"><span class=GramE><span lang=EN-US><span lang=EN-US>解释看</span></span></span><span
+lang=EN-US><span lang=EN-US>这里</span></span></a></span>）计算的电磁场仿真软件，适合用来计算与电磁波相关的问题。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span class=SpellE><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'>SIWave</span></span><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>：用于计算信号<span
+lang=EN-US>PCB</span>信号完整性和电源完整性。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>与<span
+class=SpellE><span lang=EN-US>PSpice</span></span>、<span class=SpellE><span
+lang=EN-US>Multisim</span></span>之类的仿真软件不同，上述这些仿真软件是有限元分析软件（<span lang=EN-US><a
+href="http://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90"
+target="_blank"><span class=GramE><span lang=EN-US><span lang=EN-US>解释看</span></span></span><span
+lang=EN-US><span lang=EN-US>这里</span></span></a></span>）。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>再提下两个软件：<span
+lang=EN-US>ADS</span>和<span class=SpellE><span lang=EN-US>Hyperlynx</span></span>。安捷伦的<span
+lang=EN-US>ADS</span>（<span class=SpellE><span lang=EN-US>ADS</span></span><span
+lang=EN-US> = Advanced Design System</span>，不是开发<span lang=EN-US>ARM</span>的<span
+lang=EN-US>ADS</span>），<span lang=EN-US>ADS</span>虽然也能分析电磁波，但是它的分析方法是基于预设模型的，无法解决任意结构的电磁问题。举个例子，假设你 
+自己做了个很奇怪的连接器，你想知道这个连接器到底能传输多高频率的信号，<span lang=EN-US>ADS</span>是没办法仿真的。<span
+class=SpellE><span lang=EN-US>Hyperlynx</span></span>是一个专门用于分析<span lang=EN-US>PCB</span>上走线的信 
+号完整性的软件，同样，它也是基于预设模型的。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>在学习<span
+class=SpellE><span lang=EN-US>Ansoft</span></span>软件的过程中，我发现他们可以解决很多我之前很想知道，但什么书都说不明白问题。我决定开始写一些关于信号完整性基础的文章，这些文章都将是对我工作中遇到的一些问题的分析。先从信号完整性的本质开始吧。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:right;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>我是一只鱼（不靠谱工程师） 于<span
+lang=EN-US>2012</span>年<span lang=EN-US>2</span>月<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+这年头，当电子工程师的都知道信号完整性这个词，都知道高频数字电路的<span
+lang=EN-US>PCB</span>设计需要一些技巧。但是信号完整性的本质是什么呢？我用<span lang=EN-US>HFSS</span>做了例子。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>下图是一个多层<span
+lang=EN-US>PCB</span>上的传输线，为了方便理解，我把它弄成笔直的。图中土黄色的是铜皮，绿色的是<span lang=EN-US>FR4</span>，也就是<span
+lang=EN-US>PCB</span>的基板。这是个<span lang=EN-US>“</span>微带线<span lang=EN-US>”</span>，也就是<span
+lang=EN-US>PCB</span>上相邻层有地平面的表层走线：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US><a
+href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s10.sinaimg.cn/orignal/70bb3208tb8af05df8829&amp;690"
+target="_blank"><span style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+宋体;mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+none'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_5" o:spid="_x0000_i1029" type="#_x0000_t75"
+ alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射"
+ href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s10.sinaimg.cn/orignal/70bb3208tb8af05df8829&amp;690"
+ target="&quot;_blank&quot;" style='width:234.75pt;height:351pt;visibility:visible;
+ mso-wrap-style:square' o:button="t">
+ <v:imagedata src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image001.png" o:title="有关信号完整性问题的有趣想法：看得见的传输延迟和反射"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=313 height=468
+src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image001.png"
+alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射" v:shapes="图片_x0020_5"></span><![endif]></span></a></span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+在上图中，下方是一个抽象的信号源端口，上方是一个抽象的负载端口。这个微带线模型有<span
+lang=EN-US>150mm</span>长，但只有<span lang=EN-US>2mm</span>宽，这是因为信号传播时的，微带线周围的 
+电磁场主要分布在这<span
+lang=EN-US>2mm</span>的区域中，所以没有必要建立更宽的模型。为了让大家看得更清楚，我调整了长度和宽度的显示比例。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+首先，理想情况下，信号在导线上是怎么传输的呢？看下面这个视频。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>这个视频描述的现象持续<span
+lang=EN-US>4.5ns</span>，下方是信号源，上方是负载，蓝色的碎片是传输线附近的电场强度分布情况。可见，理想情况下，信号像潮水一样从<span
+class=GramE>信号源涌向</span>负载，不再返回。可以注意到，信号虽然以光速的数量级传播，但是还是需要一些时间才能从信号源，传递到负载。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+那么，实际电路中，如果完全没有确保信号完整性的措施，信号是在导线上是怎么传输的呢？看下面这个视频。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>这个视频描述的现象持续<span
+lang=EN-US>8ns</span>。可见，在实际电路中，传播到负载端的电场强度被弹了回来，然后又被<span class=GramE>信号源弹了</span>出去，然后又弹回来，如此往复。下文中，我们会对这个过程进行详细的分析。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+先提前告诉大家，信号完整性问题本质上，是由于第一个视频中看到的传输延迟，和第二个视频中看到的反射造成的。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+为了解释信号完整性的本质，我们先来看这样两个信号完整性的基本公式，为了方便，我用<span
+class=SpellE><span lang=EN-US>Matlab</span></span>的语法来写，相信大家能看懂：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>v = c / <span class=SpellE><span class=GramE>sqrt</span></span><span
+class=GramE>(</span>ε) (1)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>Γ = (Z1 - Z0) / (Z1 + Z0) (2)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>式<span lang=EN-US>1</span>是介质中电磁波传播速度的计算式，<span
+lang=EN-US>v</span>是介质中的电磁波传播速度，<span lang=EN-US>c</span>是真空光速，<span
+lang=EN-US>ε</span>是介质的介电常数。真空的介电常数为<span lang=EN-US>1</span>，空气比真空大一点点，其他材料的介电常数都大于<span
+lang=EN-US>1</span>。也就是说，不管电磁波或者导线里的电信号在什么东西里传播，速度都要比光速慢。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>式<span lang=EN-US>2</span>是信号在传输时遇到不同的介质，例如，从芯片管脚到<span
+lang=EN-US>PCB</span>走线时的反射系数计算公式，以此为例，<span lang=EN-US>Z1</span>是<span
+lang=EN-US>PCB</span>的阻抗，<span lang=EN-US>Z0</span>是芯片管脚的阻抗（稍后解释 
+阻抗这个概念，先理解为对变化信号的电阻吧）。这个公式指出，一旦传输介质的阻抗不同，信号就会出现反射；这个现象和高中物理学的，光线在空气和玻璃的界 
+面发生反射很像吧。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>假设我们要在<span
+lang=EN-US>PCB</span>上的一条走线上传输信号，虽然电路原理认为信号以光速传播，但是在介质（<span lang=EN-US>PCB</span>基板、绿油等材料）的环绕下，速度会慢一些；一般在<span
+lang=EN-US> PCB</span>的走线上，会降到光速的二分之一。如今的电路速度越来越快，假设一个很短的脉冲在<span lang=EN-US>PCB</span>上传输时，很可能负载还没有接收到信号，信号源已经发送完 
+了。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>一般情况下，<span
+lang=EN-US>PCB</span>的走线的阻抗和信号源芯片、负载芯片管脚的阻抗都不一样，这样信号到达负载芯片的时候，又被反射向信号源，反射回来的信号会叠加在原来 
+的信号上，让信号出现失真；对大多数芯片来说<span class=GramE>来说</span>，负载芯片管脚的反射，会让信号的幅度变为原来的<span
+lang=EN-US>2</span>倍或更多（不要想到直流信号去了，我们一直在讲变化的 信号）。如果只是变成原来的<span lang=EN-US>2</span>倍我们也就忍了，但是负载芯片反射回信号源芯片的信号到达信号源芯片的管脚上，又会发生二次反射，再反射向负载芯片，叠加在 
+原来的信号上；假设传输的信号是一个很短的脉冲，在二次反射到来前的这段时间里，负载芯片管脚上的电压一般已经稳定了，而再次到来的二次反射信号会让负载 
+芯片管脚的电压再次发生变化<span
+lang=EN-US>——</span>这就造成了传输波形的严重失真。下面这张图简述了这个过程。不过本文所用信号第一次反射到达信号源时，信号源输出已恢复为 
+零，所以下图忽略了反射与信号源的叠加。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US><a
+href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s4.sinaimg.cn/orignal/70bb3208tb8eaeef16353&amp;690"
+target="_blank"><span style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+宋体;mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+none'><!--[if gte vml 1]><v:shape id="图片_x0020_4" o:spid="_x0000_i1028" type="#_x0000_t75"
+ alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射"
+ href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s4.sinaimg.cn/orignal/70bb3208tb8eaeef16353&amp;690"
+ target="&quot;_blank&quot;" style='width:349.5pt;height:250.5pt;visibility:visible;
+ mso-wrap-style:square' o:button="t">
+ <v:imagedata src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image002.png" o:title="有关信号完整性问题的有趣想法：看得见的传输延迟和反射"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=466 height=334
+src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image002.png"
+alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射" v:shapes="图片_x0020_4"></span><![endif]></span></a></span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+好了，你已经对信号传输过程中造成的变化有了一个大概的认识，现在解释下<span
+lang=EN-US>PCB</span>的阻抗是怎么回事。电路原理认为信号在导体中传输是不会遇到阻碍的，但实际 情况是，<span lang=EN-US>PCB</span>上的走线是有<span
+lang=EN-US>“</span>分布参数<span lang=EN-US>”</span>的，也就是，走线虽然没有绕圈，也会存在电感；走线虽然与地平面的相对面积很小，也会存在电容。电容和电感的交流 
+阻抗公式：<span lang=EN-US>ZC = 1 / <span class=SpellE>jωC</span></span>，<span
+lang=EN-US>ZL = <span class=SpellE>jωL</span></span>，可以看出，虽然<span lang=EN-US>PCB</span>走线的分布参数很小，但当信号的频率<span
+lang=EN-US>ω</span>足够大时，<span lang=EN-US>ZC</span>和<span lang=EN-US>ZL</span>就会发挥作用。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+我们可以将传输线微元化，将每一段微元建立起这样的<span
+lang=EN-US>RLCG</span>模型：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_3" o:spid="_x0000_i1027"
+ type="#_x0000_t75" alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射" style='width:187.5pt;
+ height:114.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image003.png" o:title="有关信号完整性问题的有趣想法：看得见的传输延迟和反射"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=250 height=153
+src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image003.png"
+alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射" v:shapes="图片_x0020_3"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>则可推导出微元的阻抗为<span
+lang=EN-US>Z0 = <span class=SpellE>sqrt</span>((R + <span class=SpellE>jwL</span>) 
+/ (G + <span class=SpellE>jwC</span>))</span>（<span lang=EN-US><a
+href="http://en.wikipedia.org/wiki/Telegrapher%27s_equations" target="_blank"><span
+lang=EN-US><span lang=EN-US>推导过程看这里</span></span></a></span>）。对于一般的<span
+lang=EN-US>PCB</span>，由于<span lang=EN-US>R</span>很小，<span lang=EN-US>G</span>很大，微元的阻抗可以简化为<span
+lang=EN-US>Z0 = <span class=SpellE>sqrt</span>(L / C)</span>，这就是传输线的特征阻抗。（<span
+lang=EN-US><a href="http://en.wikipedia.org/wiki/Characteristic_impedance"
+target="_blank"><span lang=EN-US><span lang=EN-US>定义看这里</span></span></a></span>）需要注意的是，特征阻抗是用于交流信号的；另外，公式中的<span
+lang=EN-US>RLCG</span>，都与传输线自身的结构有关。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+如果有点晕了，就只需要记住，对于高频信号，<span
+lang=EN-US>PCB</span>的走<span class=GramE>线不再</span>是良好的导体。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>回到<span
+lang=EN-US>v = c / <span class=SpellE>sqrt</span>(ε)</span>和<span lang=EN-US>Γ = 
+(Z1 - Z0) / (Z1 + Z0)</span>这两个公式，假设信号源阻抗为<span lang=EN-US>20</span>欧、<span
+lang=EN-US>PCB</span>走线特征阻抗为<span lang=EN-US>40</span>欧、负载阻抗为<span lang=EN-US>1000</span>欧，我们再来看看信号的传输过程，看下面这张图，这是对上面的微带线模型仿真的结果：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;margin-bottom:
+12.0pt;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US><a
+href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s9.sinaimg.cn/orignal/70bb3208tb8b18343d9d8&amp;690"
+target="_blank"><span style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+宋体;mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+none'><!--[if gte vml 1]><v:shape id="图片_x0020_2" o:spid="_x0000_i1026" type="#_x0000_t75"
+ alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射"
+ href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s9.sinaimg.cn/orignal/70bb3208tb8b18343d9d8&amp;690"
+ target="&quot;_blank&quot;" style='width:517.5pt;height:245.25pt;visibility:visible;
+ mso-wrap-style:square' o:button="t">
+ <v:imagedata src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image004.jpg" o:title="有关信号完整性问题的有趣想法：看得见的传输延迟和反射"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=690 height=327
+src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image004.jpg"
+alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射" v:shapes="图片_x0020_2"></span><![endif]></span></a></span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+图中，红色的是信号源波形，蓝色的是负载端波形，绿色的是信号源反射波形。可见，信号源波形刚进入微带线就发生了反射，反射系数为<span
+lang=EN-US>Γ = (40 - 20) / (40 + 20) = 0.33</span>，图中反射波形的幅值恰好就是信号源波形的<span
+lang=EN-US>0.33</span>倍左右，这个反射波形同时叠加在信号源上，输出到微带线上，也就是说，传输信号峰值实际为<span
+lang=EN-US>1.33V</span>。当微带线上的信号到达负载端时，再次发生反射，反射系数为<span lang=EN-US>Γ = (1000 - 
+40) / (1000 + 40) = 0.92</span>，这个反射的波形同时叠加在传输波形上，输入负载端，也就是说，负载端接收到得信号峰值实际为<span
+lang=EN-US>1.33 * </span>（<span lang=EN-US>1 + 0.92</span>）<span lang=EN-US>= 
+2.55(V)</span>，图中负载端信号的幅值恰好就是<span lang=EN-US>2.5V</span>左右。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+刚才我说过了，如果负载端信号幅值变大我们也就忍了，问题是还有传输延迟，和传输延迟造成的二次反射叠加。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+红色波形的最大值与蓝色波形的最大值之间相差大约<span
+lang=EN-US>1ns</span>，用<span lang=EN-US>v = c / <span class=SpellE>sqrt</span>(ε)</span>验算下，<span
+lang=EN-US>v = 3.0e8 / <span class=SpellE>sqrt</span>(4.2) = 1.46e8(m/s)</span>，这段微带线的长度为<span
+lang=EN-US>150mm</span>，所以传输延迟<span lang=EN-US>t = s / v = 0.15 / 1.46e8 = 
+1.03e-9(s)</span>，也就是<span
+lang=EN-US>1.03ns</span>，这和仿真结果是吻合的。我们再来看从负载端反射回去的波形，经过<span lang=EN-US>1.03ns</span>，在<span
+lang=EN-US>3.56ns</span>左右，从负载反 射回的波形到达信号源，同时又被信号源反射回了负载（这一次反射系数是负的，请自行计算），又经过<span
+lang=EN-US>1.03ns</span>，在<span lang=EN-US>4.6ns</span>左右，又反射到了负载端，出 
+现一个负向波形，然后又被反射<span
+lang=EN-US>……</span>像踢皮球吧？本来一个漂漂亮亮的红色波形，被踢成了蓝色波形那个丑样。<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+现在，我再说一次，造成信号完整性问题的本质是传输延迟和信号反射，应该很好理解了吧？<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>那么，有没有还我漂<span
+class=GramE>漂</span>拳呢？很显然有两个思路：消除传输延迟和消除信号反射。消除传输延迟，那就是超光速，以现在的人类科技是做不到了，不是<span
+lang=EN-US>LHC</span>发现所谓的<span lang=EN-US>“</span>快子<span lang=EN-US>”</span>被证明是错误的吗？看来只有消除信号反射了，从<span
+lang=EN-US>Γ = (Z1 - Z0) / (Z1 + Z0)</span>这个式子看，只要<span lang=EN-US>Z1 = Z0</span>，<span
+lang=EN-US>Γ</span>不就是零了吗？这就是所谓的阻抗匹配。很多的书上说了很多的阻抗匹配的方法，这里我就不再赘述了。给出一个阻抗匹配的仿真结果：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US><a
+href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s16.sinaimg.cn/orignal/70bb3208tb8b216322b1f&amp;690"
+target="_blank"><span style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+宋体;mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+none'><!--[if gte vml 1]><v:shape id="图片_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75"
+ alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射"
+ href="http://photo.blog.sina.com.cn/showpic.html#blogid=70bb32080100zrpx&amp;url=http://s16.sinaimg.cn/orignal/70bb3208tb8b216322b1f&amp;690"
+ target="&quot;_blank&quot;" style='width:517.5pt;height:245.25pt;visibility:visible;
+ mso-wrap-style:square' o:button="t">
+ <v:imagedata src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image005.jpg" o:title="有关信号完整性问题的有趣想法：看得见的传输延迟和反射"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=690 height=327
+src="有关信号完整性问题的有趣想法-看得见的传输延迟和反射.files/image005.jpg"
+alt="说明: 有关信号完整性问题的有趣想法：看得见的传输延迟和反射" v:shapes="图片_x0020_1"></span><![endif]></span></a></span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+图中，红色的是信号源波形，蓝色的是负载端波形，绿色的是信号源反射波形。可见，阻抗匹配时，波形反射几为<span
+lang=EN-US>0</span>，信号波形除了那该有的<span lang=EN-US>1.03ns</span>传输延迟，没有失真。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:left;mso-pagination:widow-orphan'><span style='font-size:12.0pt;
+font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+一般的信号完整性书说的也就是这些理论知识，但书里描述的这种传输延迟和反射到底是什么样子呢？回忆下本文开始的那两个视频吧，这是我写这篇文章的动机。就到这里。<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

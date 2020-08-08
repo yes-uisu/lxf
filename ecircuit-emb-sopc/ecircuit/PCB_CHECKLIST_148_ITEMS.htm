@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>pcb设计，148个检查项目</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="from-name.htm">课程名称</a>
+				<a href="protel-history.htm">课程工具</a> 
+				<a href="altium_web.htm">官网资源</a>
+				<a href="setup.htm">软件安装</a>
+				<a href="schematic_design.htm">原理图设计</a>
+				<a href="讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="pcb_design.htm">印制板图设计</a> 
+				<a href="component_package.htm">器件的封装</a>
+				<a href="pcb_examples.htm">PCB实例</a>
+				<a href="实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<table border="1" width="100%">
+	<tr>
+		<td>from:http://www.hqpcb.com/pcbjishu/1488.html</td>
+	</tr>
+	<tr>
+		<td>
+		<div class="news_capital">
+			<h1>PCB设计的148个检查项目-PCB checklist</h1>
+			<br>
+			<span class="news_info">2016年03月23日 16:15:11来源：华强PCB作者：Greta</span><span class="news_comment"><a href="http://www.hqpcb.com/pcbjishu/1488.html#comment">我要评论（<font color="red">0</font>）</a></span></div>
+		<div class="news_list">
+			<h3><span style="font-size: 12px">一、资料输入阶段</span><br>
+			　</h3>
+			<p><span style="font-size: 12px">
+			1.在流程上接收到的资料是否齐全（包括：原理图、*.brd文件、料单、PCB设计说明以及PCB设计或更改要求、标准化要求说明、工艺设计说明文件）</span></p>
+			<p><span style="font-size: 12px">2.确认PCB模板是最新的</span></p>
+			<p><span style="font-size: 12px">3. 确认模板的定位器件位置无误</span></p>
+			<p><span style="font-size: 12px">4.PCB设计说明以及PCB设计或更改要求、标准化要求说明是否明确</span></p>
+			<p><span style="font-size: 12px">5.确认外形图上的禁止布放器件和布线区已在PCB模板上体现</span></p>
+			<p><span style="font-size: 12px">6.比较外形图，确认PCB所标注尺寸及公差无误, 
+			金属化孔和非金属化孔定义准确</span></p>
+			<p><span style="font-size: 12px">7.确认PCB模板准确无误后最好锁定该结构文件，以免误操作被移动位置</span></p>
+			<h3><span style="font-size: 12px">二、布局后检查阶段</span></h3>
+			<h6><span style="font-size: 12px">a.器件检查</span></h6>
+			<p><span style="font-size: 12px">8, 
+			确认所有器件封装是否与公司统一库一致，是否已更新封装库（用viewlog检查运行结果）如果不一致，一定要Update Symbols</span></p>
+			<p><span style="font-size: 12px">&nbsp;9, 
+			母板与子板，单板与背板，确认信号对应，位置对应，连接器方向及丝印标识正确，且子板有防误插措施，子板与母板上的器件不应产生干涉</span></p>
+			<p><span style="font-size: 12px">10, 元器件是否100% 放置</span></p>
+			<p><span style="font-size: 12px">11, 打开器件TOP和BOTTOM层的place-bound， 
+			查看重叠引起的DRC是否允许</span></p>
+			<p><span style="font-size: 12px">12, Mark点是否足够且必要</span></p>
+			<p><span style="font-size: 12px">13, 
+			较重的元器件，应该布放在靠近PCB支撑点或支撑边的地方，以减少PCB的翘曲</span></p>
+			<p><span style="font-size: 12px">14, 与结构相关的器件布好局后最好锁住，防止误操作移动位置</span></p>
+			<p><span style="font-size: 12px">15, 
+			压接插座周围5mm范围内，正面不允许有高度超过压接插座高度的元件，背面不允许有元件或焊点</span></p>
+			<p><span style="font-size: 12px">16, 
+			确认器件布局是否满足工艺性要求（重点关注BGA、PLCC、贴片插座）</span></p>
+			<p><span style="font-size: 12px">17, 
+			金属壳体的元器件，特别注意不要与其它元器件相碰，要留有足够的空间位置</span></p>
+			<p><span style="font-size: 12px">18, 
+			接口相关的器件尽量靠近接口放置，背板总线驱动器尽量靠近背板连接器放置</span></p>
+			<p><span style="font-size: 12px">19, 波峰焊面的CHIP器件是否已经转换成波峰焊封装，</span></p>
+			<p><span style="font-size: 12px">20, 手工焊点是否超过50个</span></p>
+			<p><span style="font-size: 12px">21, 
+			在PCB上轴向插装较高的元件，应该考虑卧式安装。留出卧放空间。并且考虑固定方式，如晶振的固定焊盘</span></p>
+			<p><span style="font-size: 12px">22, 
+			需要使用散热片的器件，确认与其它器件有足够间距，并且注意散热片范围内主要器件的高度</span></p>
+			<h6><span style="font-size: 12px">b.功能检查</span></h6>
+			<p><span style="font-size: 12px">23, 
+			数模混合板的数字电路和模拟电路器件布局时是否已经分开，信号流是否合理</span></p>
+			<p><span style="font-size: 12px">24, A/D转换器跨模数分区放置。</span></p>
+			<p><span style="font-size: 12px">25, 时钟器件布局是否合理</span></p>
+			<p><span style="font-size: 12px">26, 高速信号器件布局是否合理</span></p>
+			<p><span style="font-size: 12px">27, 
+			端接器件是否已合理放置（源端匹配串阻应放在信号的驱动端；中间匹配的串阻放在中间位置；终端匹配串阻应放在信号的接收端）</span></p>
+			<p><span style="font-size: 12px">28, IC器件的去耦电容数量及位置是否合理</span></p>
+			<p><span style="font-size: 12px">29, 
+			信号线以不同电平的平面作为参考平面，当跨越平面分割区域时，参考平面间的连接电容是否靠近信号的走线区域。</span></p>
+			<p><span style="font-size: 12px">30, 保护电路的布局是否合理，是否利于分割</span></p>
+			<p><span style="font-size: 12px">31, 单板电源的保险丝是否放置在连接器附近，且前面没有任何电路元件</span></p>
+			<p><span style="font-size: 12px">32, 确认强信号与弱信号（功率相差30dB）电路分开布设</span></p>
+			<p><span style="font-size: 12px">33, 
+			是否按照设计指南或参考成功经验放置可能影响EMC实验的器件。如：面板的复位电路要稍靠近复位按钮</span></p>
+			<h6><span style="font-size: 12px">c.发热</span></h6>
+			<p><span style="font-size: 12px">34, 
+			对热敏感的元件（含液态介质电容、晶振）尽量远离大功率的元器件、散热器等热源</span></p>
+			<p><span style="font-size: 12px">35, 布局是否满足热设计要求，散热通道（根据工艺设计文件来执行）</span></p>
+			<h6><span style="font-size: 12px">d.电源</span></h6>
+			<p><span style="font-size: 12px">36, 是否IC电源距离IC过远</span></p>
+			<p><span style="font-size: 12px">37, LDO及周围电路布局是否合理</span></p>
+			<p><span style="font-size: 12px">38, 模块电源等周围电路布局是否合理</span></p>
+			<p><span style="font-size: 12px">39, 电源的整体布局是否合理</span></p>
+			<h6><span style="font-size: 12px">e.规则设置</span></h6>
+			<p><span style="font-size: 12px">40, 是否所有仿真约束都已经正确加到Constraint 
+			Manager中</span></p>
+			<p><span style="font-size: 12px">41, 是否正确设置物理和电气规则（注意电源网络和地网络的约束设置）</span></p>
+			<p><span style="font-size: 12px">42, Test Via、Test Pin的间距设置是否足够</span></p>
+			<p><span style="font-size: 12px">43, 叠层的厚度和方案是否满足设计和加工要求</span></p>
+			<p><span style="font-size: 12px">44, 所有有特性阻抗要求的差分线阻抗是否已经经过计算，并用规则控制</span></p>
+			<h3><span style="font-size: 12px">三、布线后检查阶段</span></h3>
+			<h5><span style="font-size: 12px">e.数模</span></h5>
+			<p><span style="font-size: 12px">45, 数字电路和模拟电路的走线是否已分开，信号流是否合理</span></p>
+			<p><span style="font-size: 12px">46, 
+			A/D、D/A以及类似的电路如果分割了地，那么电路之间的信号线是否从两地之间的桥接点上走（差分线例外）？</span></p>
+			<p><span style="font-size: 12px">47, 必须跨越分割电源之间间隙的信号线应参考完整的地平面。</span></p>
+			<p><span style="font-size: 12px">48, 
+			如果采用地层设计分区不分割方式，要确保数字信号和模拟信号分区布线。</span></p>
+			<h6><span style="font-size: 12px">f.时钟和高速部分</span></h6>
+			<p><span style="font-size: 12px">49, 高速信号线的阻抗各层是否保持一致</span></p>
+			<p><span style="font-size: 12px">50, 高速差分信号线和类似信号线，是否等长、对称、就近平行地走线？</span></p>
+			<p><span style="font-size: 12px">51, 确认时钟线尽量走在内层</span></p>
+			<p><span style="font-size: 12px">52, 
+			确认时钟线、高速线、复位线及其它强辐射或敏感线路是否已尽量按3W原则布线</span></p>
+			<p><span style="font-size: 12px">53, 
+			时钟、中断、复位信号、百兆/千兆以太网、高速信号上是否没有分叉的测试点？</span></p>
+			<p><span style="font-size: 12px">54, 
+			LVDS等低电平信号与TTL/CMOS信号之间是否尽量满足了10H（H为信号线距参考平面的高度）？</span></p>
+			<p><span style="font-size: 12px">55, 
+			时钟线以及高速信号线是否避免穿越密集通孔过孔区域或器件引脚间走线？</span></p>
+			<p><span style="font-size: 12px">56, 
+			时钟线是否已满足（SI约束）要求（时钟信号走线是否做到少打过孔、走线短、参考平面连续，主要参考平面尽量是GND；若换层时变换了GND主参考平面层，在离过孔200mil范围之内是GND过孔） 
+			若换层时变换不同电平的主参考平面，在离过孔200mil范围之内是否有去耦电容）？</span></p>
+			<p><span style="font-size: 12px">57, 差分对、高速信号线、各类BUS是否已满足（SI约束）要求</span></p>
+			<h6><span style="font-size: 12px">g.EMC与可靠性</span></h6>
+			<p><span style="font-size: 12px">58, 
+			对于晶振，是否在其下布一层地？是否避免了信号线从器件管脚间穿越？对高速敏感器件，是否避免了信号线从器件管脚间穿越？</span></p>
+			<p><span style="font-size: 12px">59, 单板信号走线上不能有锐角和直角（一般成 135 
+			度角连续转弯，射频信号线最好采用圆弧形或经过计算以后的切角铜箔）</span></p>
+			<p><span style="font-size: 12px">60, 
+			对于双面板，检查高速信号线是否与其回流地线紧挨在一起布线；对于多层板，检查高速信号线是否尽量紧靠地平面走线</span></p>
+			<p><span style="font-size: 12px">61, 对于相邻的两层信号走线，尽量垂直走线</span></p>
+			<p><span style="font-size: 12px">62, 避免信号线从电源模块、共模电感、变压器、滤波器下穿越</span></p>
+			<p><span style="font-size: 12px">63, 尽量避免高速信号在同一层上的长距离平行走线</span></p>
+			<p><span style="font-size: 12px">64, 
+			板边缘还有数字地、模拟地、保护地的分割边缘是否有加屏蔽过孔？多个地平面是否用过孔相连?过孔距离是否小于最高频率信号波长的1/20？</span></p>
+			<p><span style="font-size: 12px">65, 浪涌抑制器件对应的信号走线是否在表层短且粗？</span></p>
+			<p><span style="font-size: 12px">66, 
+			确认电源、地层无孤岛、无过大开槽、无由于通孔隔离盘过大或密集过孔所造成的较长的地平面裂缝、无细长条和通道狭窄现象</span></p>
+			<p><span style="font-size: 12px">67, 
+			是否在信号线跨层比较多的地方，放置了地过孔（至少需要两个地平面）</span></p>
+			<h6><span style="font-size: 12px">h.电源和地</span></h6>
+			<p><span style="font-size: 12px">68, 
+			如果电源/地平面有分割，尽量避免分割开的参考平面上有高速信号的跨越。</span></p>
+			<p><span style="font-size: 12px">69, 
+			确认电源、地能承载足够的电流。过孔数量是否满足承载要求,（估算方法：外层铜厚1oz时1A/mm线宽，内层0.5A/mm线宽，短线电流加倍）</span></p>
+			<p><span style="font-size: 12px">70, 对于有特殊要求的电源，是否满足了压降的要求</span></p>
+			<p><span style="font-size: 12px">71, 
+			为降低平面的边缘辐射效应，在电源层与地层间要尽量满足20H原则。（条件允许的话，电源层的缩进得越多越好）。</span></p>
+			<p><span style="font-size: 12px">72, 如果存在地分割，分割的地是否不构成环路？</span></p>
+			<p><span style="font-size: 12px">73, 相邻层不同的电源平面是否避免了交叠放置？</span></p>
+			<p><span style="font-size: 12px">74, 保护地、-48V地及GND的隔离是否大于2mm？</span></p>
+			<p><span style="font-size: 12px">75, 
+			-48V地是否只是-48V的信号回流，没有汇接到其他地？如果做不到请在备注栏说明原因。</span></p>
+			<p><span style="font-size: 12px">76, 
+			靠近带连接器面板处是否布10~20mm的保护地，并用双排交错孔将各层相连？</span></p>
+			<p><span style="font-size: 12px">77, 电源线与其他信号线间距是否距离满足安规要求？</span></p>
+			<h6><span style="font-size: 12px">i.禁布区</span></h6>
+			<p><span style="font-size: 12px">78, 金属壳体器件和散热器件下，不应有可能引起短路的走线、铜皮和过孔</span></p>
+			<p><span style="font-size: 12px">79, 安装螺钉或垫圈的周围不应有可能引起短路的走线、铜皮和过孔</span></p>
+			<p><span style="font-size: 12px">80, 设计要求中预留位置是否有走线</span></p>
+			<p><span style="font-size: 12px">81, 
+			非金属化孔内层离线路及铜箔间距应大于0.5mm（20mil），外层0.3mm（12mil）,单板起拔扳手轴孔内层离线路及铜箔间距应大于2mm（80mil）</span></p>
+			<p><span style="font-size: 12px">82, 铜皮和线到板边 推荐为大于2mm 最小为0.5mm</span></p>
+			<p><span style="font-size: 12px">&nbsp;83, 内层地层铜皮到板边 1 ~ 2 mm， 最小为0.5mm</span></p>
+			<h6><span style="font-size: 12px">j.焊盘出线</span></h6>
+			<p><span style="font-size: 12px">84, 
+			对于两个焊盘安装的CHIP元件（0805及其以下封装），如电阻、电容，与其焊盘连接的印制线最好从焊盘中心位置对称引出，且与焊盘连接的印制线必须具有一样的宽度，对于线宽小于0.3mm(12mil)的引出线可以不考虑此条规定</span></p>
+			<p><span style="font-size: 12px">85, 
+			与较宽印制线连接的焊盘，中间最好通过一段窄的印制线过渡？（0805及其以下封装）</span></p>
+			<p><span style="font-size: 12px">86, 
+			线路应尽量从SOIC、PLCC、QFP、SOT等器件的焊盘的两端引出</span></p>
+			<h6><span style="font-size: 12px">k.丝印</span></h6>
+			<p><span style="font-size: 12px">87, 器件位号是否遗漏，位置是否能正确标识器件</span></p>
+			<p><span style="font-size: 12px">88, 器件位号是否符合公司标准要求</span></p>
+			<p><span style="font-size: 12px">89, 确认器件的管脚排列顺序， 
+			第1脚标志，器件的极性标志，连接器的方向标识的正确性</span></p>
+			<p><span style="font-size: 12px">90, 母板与子板的插板方向标识是否对应</span></p>
+			<p><span style="font-size: 12px">91, 背板是否正确标识了槽位名、槽位号、端口名称、护套方向</span></p>
+			<p><span style="font-size: 12px">92, 确认设计要求的丝印添加是否正确</span></p>
+			<p><span style="font-size: 12px">93, 确认已经放置有防静电和射频板标识（射频板使用）</span></p>
+			<h6><span style="font-size: 12px">l.编码/条码</span></h6>
+			<p><span style="font-size: 12px">94, 确认PCB编码正确且符合公司规范</span></p>
+			<p><span style="font-size: 12px">95, 确认单板的PCB编码位置和层面正确（应该在A面左上方,丝印层）</span></p>
+			<p><span style="font-size: 12px">96, 
+			确认背板的PCB编码位置和层面正确（应该在B右上方,外层铜箔面）</span></p>
+			<p><span style="font-size: 12px">97, 确认有条码激光打印白色丝印标示区</span></p>
+			<p><span style="font-size: 12px">98, 确认条码框下面没有连线和大于0.5mm导通孔</span></p>
+			<p><span style="font-size: 12px">99, 
+			确认条码白色丝印区外20mm范围内不能有高度超过25mm的元器件</span></p>
+			<h6><span style="font-size: 12px">m.过孔</span></h6>
+			<p><span style="font-size: 12px">100, 
+			在回流焊面，过孔不能设计在焊盘上。（正常开窗的过孔与焊盘的间距应大于0.5mm （20mil），绿油覆盖的过孔与焊盘的间距应大于0.1 
+			mm （4mil），方法：将Same Net DRC打开，查DRC，然后关闭Same Net DRC）</span></p>
+			<p><span style="font-size: 12px">101, 过孔的排列不宜太密，避免引起电源、地平面大范围断裂</span></p>
+			<p><span style="font-size: 12px">102, 钻孔的过孔孔径最好不小于板厚的1/10</span></p>
+			<h6><span style="font-size: 12px">n.工艺</span></h6>
+			<p><span style="font-size: 12px">103, 
+			器件布放率是否100%，布通率是否100%（没有达到100%的需要在备注中说明）</span></p>
+			<p><span style="font-size: 12px">104, 
+			Dangling线是否已经调整到最少，对于保留的Dangling线已做到一一确认；</span></p>
+			<p><span style="font-size: 12px">105, 工艺科反馈的工艺问题是否已仔细查对</span></p>
+			<h6><span style="font-size: 12px">o.大面积铜箔</span></h6>
+			<p><span style="font-size: 12px">106, 
+			对于Top、bottom上的大面积铜箔，如无特殊的需要，应用网格铜[单板用斜网，背板用正交网，线宽0.3mm （12 
+			mil）、间距0.5mm （20mil）]</span></p>
+			<p><span style="font-size: 12px">107, 
+			大面积铜箔区的元件焊盘，应设计成花焊盘，以免虚焊；有电流要求时，则先考虑加宽花焊盘的筋，再考虑全连接</span></p>
+			<p><span style="font-size: 12px">108, 大面积布铜时，应该尽量避免出现没有网络连接的死铜（孤岛）</span></p>
+			<p><span style="font-size: 12px">109, 大面积铜箔还需注意是否有非法连线，未报告的DRC</span></p>
+			<h6><span style="font-size: 12px">p.测试点</span></h6>
+			<p><span style="font-size: 12px">110, 各种电源、地的测试点是否足够（每2A电流至少有一个测试点）</span></p>
+			<p><span style="font-size: 12px">111, 确认没有加测试点的网络都是经确认可以进行精简的</span></p>
+			<p><span style="font-size: 12px">112, 确认没有在生产时不安装的插件上设置测试点</span></p>
+			<p><span style="font-size: 12px">113, Test Via、Test 
+			Pin是否已Fix（适用于测试针床不变的改板）</span></p>
+			<h6><span style="font-size: 12px">q.DRC</span></h6>
+			<p><span style="font-size: 12px">&nbsp;114, Test via 和Test pin 的Spacing 
+			Rule应先设置成推荐的距离，检查DRC，若仍有DRC存在，再用最小距离设置检查DRC</span></p>
+			<p><span style="font-size: 12px">&nbsp;115, 
+			打开约束设置为打开状态，更新DRC，查看DRC中是否有不允许的错误</span></p>
+			<p><span style="font-size: 12px">116, 确认DRC已经调整到最少，对于不能消除DRC要一一确认；</span></p>
+			<h6><span style="font-size: 12px">r.光学定位点</span></h6>
+			<p><span style="font-size: 12px">117, 确认有贴装元件的PCB面已有光学定位符号</span></p>
+			<p><span style="font-size: 12px">118, 确认光学定位符号未压线（丝印和铜箔走线）</span></p>
+			<p><span style="font-size: 12px">119, 光学定位点背景需相同，确认整板使用光学点其中心离边≥5mm</span></p>
+			<p><span style="font-size: 12px">&nbsp;120, 
+			确认整板的光学定位基准符号已赋予坐标值（建议将光学定位基准符号以器件的形式放置），且是以毫米为单位的整数值。</span></p>
+			<p><span style="font-size: 12px">121, 管脚中心距&lt;0.5mm的IC，以及中心距小于0.8 
+			mm（31 mil）的BGA器件，应在元件对角线附近位置设置光学定位点</span></p>
+			<h6><span style="font-size: 12px">s.阻焊检查</span></h6>
+			<p><span style="font-size: 12px">122, 
+			确认是否有特殊需求类型的焊盘都正确开窗（尤其注意硬件的设计要求）</span></p>
+			<p><span style="font-size: 12px">123, BGA下的过孔是否处理成盖油塞孔</span></p>
+			<p><span style="font-size: 12px">124, 除测试过孔外的过孔是否已做开小窗或盖油塞孔</span></p>
+			<p><span style="font-size: 12px">125, 光学定位点的开窗是否避免了露铜和露线</span></p>
+			<p><span style="font-size: 12px">126, 
+			电源芯片、晶振等需铜皮散热或接地屏蔽的器件，是否有铜皮并正确开窗。由焊锡固定的器件应有绿油阻断焊锡的大面积扩散</span></p>
+			<h3><span style="font-size: 12px">四、出加工文件</span></h3>
+			<h6><span style="font-size: 12px">t.钻孔图</span></h6>
+			<p><span style="font-size: 12px">127, 
+			Notes的PCB板厚、层数、丝印的颜色、翘曲度，以及其他技术说明是否正确</span></p>
+			<p><span style="font-size: 12px">128, 
+			叠板图的层名、叠板顺序、介质厚度、铜箔厚度是否正确；是否要求作阻抗控制，描述是否准确。叠板图的层名与其光绘文件名是否一致</span></p>
+			<p><span style="font-size: 12px">129, 将设置表中的Repeat code 
+			关掉，钻孔精度应设置为2－5</span></p>
+			<p><span style="font-size: 12px">&nbsp;130, 孔表和钻孔文件是否最新 （改动孔时，必须重新生成）</span></p>
+			<p><span style="font-size: 12px">131, 
+			孔表中是否有异常的孔径，压接件的孔径是否正确；孔径公差是否标注正确</span></p>
+			<p><span style="font-size: 12px">132, 要塞孔的过孔是否单独列出，并标注“filled vias”</span></p>
+			<h6><span style="font-size: 12px">u.光绘</span></h6>
+			<p><span style="font-size: 12px">133, 光绘文件输出尽量采用RS274X格式，且精度应设置为5：5</span></p>
+			<p><span style="font-size: 12px">&nbsp;134, art_aper.txt 是否已最新（274X可以不需要）</span></p>
+			<p><span style="font-size: 12px">135, 输出光绘文件的log文件中是否有异常报告</span></p>
+			<p><span style="font-size: 12px">136, 负片层的边缘及孤岛确认</span></p>
+			<p><span style="font-size: 12px">137, 使用光绘检查工具检查光绘文件是否与PCB 
+			相符(改板要使用比对工具进行比对)</span></p>
+			<h3><span style="font-size: 12px">五、文件齐套</span></h3>
+			<p><span style="font-size: 12px">138, PCB文件：产品型号_规格_单板代号_版本号.brd</span></p>
+			<p><span style="font-size: 12px">139, 
+			背板的衬板设计文件：产品型号_规格_单板代号_版本号-CB[-T/B].brd</span></p>
+			<p><span style="font-size: 12px">140, 
+			PCB加工文件：PCB编码.zip（含各层的光绘文件、光圈表、钻孔文件及ncdrill.log；拼板还需要有工艺提供的拼板文件*.dxf）,背板还要附加衬板文件：PCB编码-CB[-T/B].zip 
+			（含drill.art、*.drl、ncdrill.log）</span></p>
+			<p><span style="font-size: 12px">141, 工艺设计文件：产品型号_规格_单板代号_版本号-GY.doc</span></p>
+			<p><span style="font-size: 12px">142, 
+			SMT坐标文件：产品型号_规格_单板代号_版本号-SMT.txt,（输出坐标文件时，确认选择 Body 
+			center，只有在确认所有SMD器件库的原点是器件中心时，才可选Symbol origin）</span></p>
+			<p><span style="font-size: 12px">143, 
+			PCB板结构文件：产品型号_规格_单板代号_版本号-MCAD.zip(包含结构工程师提供的.DXF与.EMN文件)</span></p>
+			<p><span style="font-size: 12px">144, 
+			测试文件：产品型号_规格_单板代号_版本号-TEST.ZIP(包含testprep.log 和 
+			untest.lst或者*.drl测试点的坐标文件)</span></p>
+			<p><span style="font-size: 12px">145, 
+			归档图纸文件：产品型号规格-单板名称-版本号.pdf,（包括：封面、首页、各层丝印、各层线路、钻孔图、背板含有衬板图）</span></p>
+			<h3><span style="font-size: 12px">六、标准化</span></h3>
+			<p><span style="font-size: 12px">146, 确认封面、首页信息正确</span></p>
+			<p><span style="font-size: 12px">147, 确认图纸序号（对应PCB各层顺序分配）正确的</span></p>
+			<p><span style="font-size: 12px">148, 确认图纸框上PCB编码是正确的</span></p>
+			<p><br>
+			　</div>
+		<p>　</td>
+	</tr>
+	<tr>
+		<td>　</td>
+	</tr>
+</table>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

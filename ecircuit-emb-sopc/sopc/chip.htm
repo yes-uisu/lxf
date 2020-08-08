@@ -1,0 +1,631 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "sopc_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>Chip</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000;"  >
+					<div id="content1" onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第一章 概述</div> 
+					<div id="child1" align="left" style="display:none"> 
+						1.<a href="SOPC基本概念.htm">SOPC系统的基本概念</a> <br> 
+						2.<a href="IP-core.htm">IP核</a> <br> 
+						3.<a href="sopc-dev-process.htm">SOPC开发基本流程</a> <br> 
+						4.<a href="NiosII-introduction.htm">Nios II处理器介绍</a> <br>
+						5.<a href="FPGA-implemented-sopc.htm">用FPGA实现SOPC</a><br>
+						6.<a href="nios-app.htm">应用</a><br>
+					</div> 
+					
+					<div id="content2" onclick="document.all.child2.style.display=(document.all.child2.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第二章 Nios II处理器体系结构 </div> 
+					<div id="child2" align="left" style="display:none"> 
+						1.<a href="NiosII-architecture.htm">Nios II处理器结构</a> <br> 
+						2.<a href="Nios-architecture/nios-register.htm">Nios II寄存器的配置</a> <br> 
+						3.<a href="Nios-architecture/nios-alu.htm">ALU</a> <br>
+						4.<a href="Nios-architecture/operating-modes.htm">Nios II处理器运行模式及</a><br>
+						  <a href="Nios-architecture/exception.htm">异常和中断</a> <br>
+						5.<a href="Nios-architecture/memory.htm">存储器和外设访问</a><br>
+						附录：<a href="Nios-architecture/implement-cpu-instruction.htm">计算机指令执行</a><br>
+					</div> 
+					<div id="content3" onclick="document.all.child3.style.display=(document.all.child3.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第三章 Avalon接口规范 </div> 
+					<div id="child3" style="display:none"> 
+						1.<a href="avalon/avalon-introduction.htm">Avalon总线简介</a> <br> 
+						2.<a href="avalon/avalon-concept.htm">Avalon总线基本概念</a> <br> 
+						3.<a href="avalon/avalon-signal.htm">Avalon信号</a>  <br>
+						4.<a href="avalon/avalon-slave.htm">从端口传输</a> <br>
+						5.<a href="avalon/avalon-master.htm">主端口传输</a> <br>
+						6.<a href="avalon/avalon-streaming.htm">流水线传输</a> <br>
+						7.<a href="avalon/avalon-tristate.htm">三态传输</a> <br>
+					</div> 
+					
+					<div id="content4" onclick="document.all.child5.style.display=(document.all.child5.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第四章 SOPC软硬件开发平台 </div> 
+					<div id="child5" style="display:none"> 
+						1.<a href="sopcdevelopment/sopc-dev-platform.htm">SOPC系统开发的软硬件平台</a> <br> 
+						2.<a href="#">Quartus II下的SOPC Builder工具</a>(Qsys) <br> 
+						3.<a href="#">Nios II IDE集成开发环境</a><br>
+						4.<a href="sopcdevelopment/software/HAL/Nios_HAL.htm">软硬件接口的硬件抽象层（HAL)</a><br>
+						5.<a href="sopcdevelopment/example-list.htm">例子</a>
+					</div> 
+					
+					<div id="content5" onclick="document.all.child4.style.display=(document.all.child4.style.display =='none')?'':'none'" > 
+					第五章 Nios II处理器常用外设 </div> 
+					<div id="child4" style="display:none"> 
+						1.<a href="#">并行I/O</a>(重点讲解结构) <br> 
+						2.<a href="#">定时器</a> <br> 
+						3.<a href="#">异步串口UART</a> <br>
+						4.<a href="#">Optrex 1207 LCD</a><br>
+						5.<a href="sopcdevelopment/devices/SDRAM.htm">SDRAM</a>
+					</div> 
+					
+					<div id="content6" onclick="document.all.child6.style.display=(document.all.child6.style.display =='none')?'':'none'" > 
+					第六章 μC/OS II操作系统移植 </div> 
+					<div id="child6" style="display:none"> 
+						1.<a href="sopcdevelopment/software/os/os.htm">操作系统概念</a> <br> 
+						2.<a href="sopcdevelopment/software/os/ucos/first_ucos.htm">μC/OS II运行在Nios II</a> <br> 
+						3.<a href="sopcdevelopment/software/os/ucos/ucos_api.htm">μC/OS II编程介绍</a> 
+					</div> 
+					
+					<div id="content8" onclick="document.all.child7.style.display=(document.all.child7.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第七章 Nios II系统深入设计 </div> 
+					<div id="child7" style="display:none"> 
+						1.<a href="sopcdevelopment/hardware/user_instructions/user_instructions.htm">用户定制指令</a> <br> 
+						2.<a href="sopcdevelopment/develop_user_devices.htm">用户定制外设</a> 
+					</div>
+					
+					<div id="content8" onclick="document.all.child8.style.display=(document.all.child8.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第八章 调试技术 </div> 
+					<div id="child8" style="display:none"> 
+						1.<a href="debug-tech/hardware/ModelSim/modelsim_introduction.htm">ModelSim</a><br>
+						2.<a href="debug-tech/hardware/signaltap/signaltap_introduction.htm">SignalTap</a><br>
+						3.Nios EDS调试<br> 
+					</div> 
+			</div>
+			<hr/>
+			<!-- #BeginEditable "content" -->
+			
+<p><font size="6">Chip（芯片）=IC：Integrated 
+Circuit（集成电路）=microcircuit（微电路）=microchip（微芯片）</font></p>
+<p><br>
+<b><u><font size="5" face="仿宋">概念</font></u></b></p>
+<p><b>百度百科：</b></p>
+<p>集成电路（integrated circuit）是一种微型电子器件或部件。采用一定的工艺，把一个电路中所需的<a target="_blank" href="http://baike.baidu.com/view/30363.htm">晶体管</a>、<a target="_blank" href="http://baike.baidu.com/subview/3571/10073092.htm">电阻</a>、<a target="_blank" href="http://baike.baidu.com/subview/3686/11337402.htm">电容</a>和<a target="_blank" href="http://baike.baidu.com/view/785.htm">电感</a>等元件及布线互连一起，制作在一小块或几小块<a target="_blank" href="http://baike.baidu.com/view/19928.htm">半导体</a>晶片或<a target="_blank" href="http://baike.baidu.com/view/298837.htm">介质</a>基片上，然后封装在一个管壳内，成为具有所需电路功能的微型结构；其中所有元件在结构上已组成一个整体，使电子元件向着微小型化、低功耗、智能化和高可靠性方面迈进了一大步。</p>
+
+<p><b>维基百科-中文</b></p>
+<p>集成电路（<span class="LangWithName"><a title="英语" href="https://zh.wikipedia.org/wiki/英语">英语</a>：<span xml:lang="en" lang="en"><b>integrated 
+circuit</b></span></span>，<a title="缩写" href="https://zh.wikipedia.org/wiki/縮寫">缩写</a>：<b>IC</b>）、或称<b>微电路</b>（<span xml:lang="en" lang="en"><b>microcircuit</b></span>）、<b>微芯片</b>（<span xml:lang="en" lang="en"><b>microchip</b></span>）、<b>芯片</b>（<span xml:lang="en" lang="en"><b>chip</b></span>）在<a title="电子学" href="https://zh.wikipedia.org/wiki/电子学">电子学</a>中是一种把<a title="电路" href="https://zh.wikipedia.org/wiki/电路">电路</a>（主要包括<a title="半导体器件" href="https://zh.wikipedia.org/wiki/半导体器件">半导体设备</a>，也包括<a title="被动组件" class="mw-redirect" href="https://zh.wikipedia.org/wiki/被动元件">被动组件</a>等）小型化的方式，并时常制造在半导体<a title="晶圆" href="https://zh.wikipedia.org/wiki/晶圓">晶圆</a>表面上。</p>
+<p>前述将电路制造在半导体芯片表面上的集成电路又称<a title="薄膜" href="https://zh.wikipedia.org/wiki/薄膜">薄膜</a>（thin-film）集成电路。另有一种<span class="ilh-all"><span class="ilh-page"><a original-title="厚膜（页面不存在）" class="new" href="https://zh.wikipedia.org/w/index.php?title=%E5%8E%9A%E8%86%9C&action=edit&redlink=1">厚膜</a></span></span>（thick-film）<span class="ilh-all"><span class="ilh-page"><a original-title="混成集成电路（页面不存在）" class="new" href="https://zh.wikipedia.org/w/index.php?title=%E6%B7%B7%E6%88%90%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF&action=edit&redlink=1">集成電路</a></span></span>（<span xml:lang="en" lang="en">hybrid 
+integrated circuit</span>）<sup id="cite_ref-terms-edu-tw_1-0" class="reference"><a href="参考资料/集成电路%20-%20维基百科，自由的百科全书.htm#cite_note-terms-edu-tw-1">[1]</a></sup><span id="noteTag-cite_ref-sup"><sup id="cite_ref-hybrid-integrated-circuit_2-0" class="reference"><a href="参考资料/集成电路%20-%20维基百科，自由的百科全书.htm#cite_note-hybrid-integrated-circuit-2">[注 
+1]</a></sup></span>是由独立<a title="半导体设备" class="mw-redirect" href="https://zh.wikipedia.org/wiki/半導體設備">半导体设备</a>和<a title="被动组件" class="mw-redirect" href="https://zh.wikipedia.org/wiki/被动元件">被动组件</a>，集成到衬底或线路板所构成的小型化<a title="电路" href="https://zh.wikipedia.org/wiki/电路">电路</a>。</p>
+<p><b>Wikipedia</b></p>
+<p>A circuit in which all or some of the circuit elements are inseparably 
+associated and electrically interconnected so that it is considered to be 
+indivisible for the purposes of construction and commerce.</p>
+<p><b><u><font size="5" face="仿宋">发展</font></u></b></p>
+<p><b><font color="#FF0000">科学技术的发现发明是问题驱动型的。</font></b></p>
+<table border="1" width="67%" style="border-width: 0px">
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1947年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		美国贝尔实验室的约翰·巴丁（John Bardeen）、瓦尔特·布拉顿(Walter 
+		Brattain)、肖克莱（Shockley）三人发明了晶体管（transistor），这是微电子技术发展中第一个里程碑；</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1950年</td>
+		<td style="border-style: none; border-width: medium" width="580">结型晶体管诞生</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1950年</td>
+		<td style="border-style: none; border-width: medium" width="580">R 
+		Ohl和肖克莱发明了<b>离子注入工艺</b></td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1951年</td>
+		<td style="border-style: none; border-width: medium" width="580"><b>
+		场效应晶体管</b>发明</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1956年</td>
+		<td style="border-style: none; border-width: medium" width="580">C S 
+		Fuller发明了<b>扩散工艺</b></td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1958年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		仙童公司(Fairchild Semiconductor)Robert Noyce与德仪公司Jack 
+		Kilby间隔数月分别发明了集成电路，开创了世界微电子学的历史；</td>
+		<td style="border-style: none; border-width: medium">
+		<img border="0" src="pic/220px-Kilby_solid_circuit.jpg" width="220" height="146"></td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1960年</td>
+		<td style="border-style: none; border-width: medium" width="580">H H 
+		Loor和E Castellani发明了<b>光刻工艺</b></td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1962年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		美国RCA公司研制出<b>MOS场效应晶体管</b></td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1963年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		F.M.Wanlass和C.T.Sah首次提出<b>CMOS技术</b>，今天，95%以上的集成电路芯片都是基于CMOS工艺</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1964年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		Intel摩尔提出摩尔定律，预测晶体管集成度将会每18个月增加1倍</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1966年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		美国RCA公司研制出CMOS集成电路，并研制出第一块门阵列（50门），为现如今的大规模集成电路发展奠定了坚实基础，具有里程碑意义</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1967年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		应用材料公司（Applied Materials）成立，现已成为全球最大的半导体设备制造公司</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1971年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		Intel推出1kb动态随机存储器（DRAM），标志着大规模集成电路出现</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1971年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		全球第一个微处理器4004由Intel公司推出，采用的是MOS工艺，这是一个里程碑式的发明</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1974年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		RCA公司推出第一个CMOS微处理器1802</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1976年</td>
+		<td style="border-style: none; border-width: medium" width="580">16kb 
+		DRAM和4kb SRAM问世</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1978年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		64kb动态随机存储器诞生，不足0.5平方厘米的硅片上集成了14万个晶体管，标志着超大规模集成电路（VLSI）时代的来临</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="60">1979年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		Intel推出5MHz 8088微处理器，之后，IBM基于8088推出全球第一台PC</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1981年</td>
+		<td style="border-style: none; border-width: medium" width="580">256kb 
+		DRAM和64kb CMOS SRAM问世</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1984年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		日本宣布推出1Mb DRAM和256kb SRAM</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1985年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		80386微处理器问世，20MHz</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1988年</td>
+		<td style="border-style: none; border-width: medium" width="580">16M 
+		DRAM问世，1平方厘米大小的硅片上集成有3500万个晶体管，标志着进入超大规模集成电路（VLSI）阶段</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1989年</td>
+		<td style="border-style: none; border-width: medium" width="580">1Mb 
+		DRAM进入市场</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1989年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		486微处理器推出，25MHz，1μm工艺，后来50MHz芯片采用 0.8μm工艺</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1992年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		64M位随机存储器问世</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1993年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		66MHz奔腾处理器推出，采用0.6μm工艺</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1995年</td>
+		<td style="border-style: none; border-width: medium" width="580">Pentium 
+		Pro, 133MHz，采用0.6-0.35μm工艺；</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1997年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		300MHz奔腾Ⅱ问世，采用0.25μm工艺</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		1999年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		奔腾Ⅲ问世，450MHz，采用0.25μm工艺，后采用0.18μm工艺</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2000年</td>
+		<td style="border-style: none; border-width: medium" width="580">1Gb 
+		RAM投放市场</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2000年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		奔腾4问世，1.5GHz，采用0.18μm工艺</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2001年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		Intel宣布2001年下半年采用0.13μm工艺。</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2003年</td>
+		<td style="border-style: none; border-width: medium" width="580">奔腾4 
+		E系列推出，采用90nm工艺。</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2005年</td>
+		<td style="border-style: none; border-width: medium" width="580">intel 
+		酷睿2系列上市，采用65nm工艺。</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2007年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		基于全新45纳米High-K工艺的intel酷睿2 E7/E8/E9上市。</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		2009年</td>
+		<td style="border-style: none; border-width: medium" width="580">
+		intel酷睿i系列全新推出，创纪录采用了领先的32纳米工艺，并且下一代22纳米工艺正在研发。</td>
+		<td style="border-style: none; border-width: medium">
+		　</td>
+	</tr>
+
+	<tr>
+		<td style="border-style: none; border-width: medium" width="22" bgcolor="#000080" bordercolor="#0000FF" bordercolorlight="#0000FF" bordercolordark="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60" bordercolor="#0000FF">
+		　</td>
+		<td style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1px" width="60">
+		　</td>
+		<td style="border-style: none; border-width: medium" width="580">　</td>
+		<td style="border-style: none; border-width: medium">　</td>
+	</tr>
+
+</table>
+<p><b><u><font size="5" face="仿宋">例子</font></u></b></p>
+<p>
+<img border="0" src="pic/Siliconchip_by_shapeshifter.png" width="496" height="350"></p>
+<p>Synthetic detail of an integrated circuit through four layers of planarized 
+copper interconnect, down to the polysilicon (pink), wells (greyish), and 
+substrate (green)</p>
+<div style="border-bottom-style: solid; border-bottom-width: 1px; padding-bottom: 1px">
+	　</div>
+
+<p><font size="7"><a href="逻辑门电路完整教程.htm">逻辑门电路教程</a></font></p>
+<p><font size="7"><a href="集成电路制造工艺流程.html">集成电路制造</a></font></p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

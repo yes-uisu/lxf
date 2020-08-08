@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+
+<!-- #BeginTemplate "sopc_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+
+<title>可实现SOPC的FPGA芯片</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000;"  >
+					<div id="content1" onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第一章 概述</div> 
+					<div id="child1" align="left" style="display:none"> 
+						1.<a href="SOPC基本概念.htm">SOPC系统的基本概念</a> <br> 
+						2.<a href="IP-core.htm">IP核</a> <br> 
+						3.<a href="sopc-dev-process.htm">SOPC开发基本流程</a> <br> 
+						4.<a href="NiosII-introduction.htm">Nios II处理器介绍</a> <br>
+						5.<a href="FPGA-implemented-sopc.htm">用FPGA实现SOPC</a><br>
+						6.<a href="nios-app.htm">应用</a><br>
+					</div> 
+					
+					<div id="content2" onclick="document.all.child2.style.display=(document.all.child2.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第二章 Nios II处理器体系结构 </div> 
+					<div id="child2" align="left" style="display:none"> 
+						1.<a href="NiosII-architecture.htm">Nios II处理器结构</a> <br> 
+						2.<a href="Nios-architecture/nios-register.htm">Nios II寄存器的配置</a> <br> 
+						3.<a href="Nios-architecture/nios-alu.htm">ALU</a> <br>
+						4.<a href="Nios-architecture/operating-modes.htm">Nios II处理器运行模式及</a><br>
+						  <a href="Nios-architecture/exception.htm">异常和中断</a> <br>
+						5.<a href="Nios-architecture/memory.htm">存储器和外设访问</a><br>
+						附录：<a href="Nios-architecture/implement-cpu-instruction.htm">计算机指令执行</a><br>
+					</div> 
+					<div id="content3" onclick="document.all.child3.style.display=(document.all.child3.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第三章 Avalon接口规范 </div> 
+					<div id="child3" style="display:none"> 
+						1.<a href="avalon/avalon-introduction.htm">Avalon总线简介</a> <br> 
+						2.<a href="avalon/avalon-concept.htm">Avalon总线基本概念</a> <br> 
+						3.<a href="avalon/avalon-signal.htm">Avalon信号</a>  <br>
+						4.<a href="avalon/avalon-slave.htm">从端口传输</a> <br>
+						5.<a href="avalon/avalon-master.htm">主端口传输</a> <br>
+						6.<a href="avalon/avalon-streaming.htm">流水线传输</a> <br>
+						7.<a href="avalon/avalon-tristate.htm">三态传输</a> <br>
+					</div> 
+					
+					<div id="content4" onclick="document.all.child5.style.display=(document.all.child5.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第四章 SOPC软硬件开发平台 </div> 
+					<div id="child5" style="display:none"> 
+						1.<a href="sopcdevelopment/sopc-dev-platform.htm">SOPC系统开发的软硬件平台</a> <br> 
+						2.<a href="#">Quartus II下的SOPC Builder工具</a>(Qsys) <br> 
+						3.<a href="#">Nios II IDE集成开发环境</a><br>
+						4.<a href="sopcdevelopment/software/HAL/Nios_HAL.htm">软硬件接口的硬件抽象层（HAL)</a><br>
+						5.<a href="sopcdevelopment/example-list.htm">例子</a>
+					</div> 
+					
+					<div id="content5" onclick="document.all.child4.style.display=(document.all.child4.style.display =='none')?'':'none'" > 
+					第五章 Nios II处理器常用外设 </div> 
+					<div id="child4" style="display:none"> 
+						1.<a href="#">并行I/O</a>(重点讲解结构) <br> 
+						2.<a href="#">定时器</a> <br> 
+						3.<a href="#">异步串口UART</a> <br>
+						4.<a href="#">Optrex 1207 LCD</a><br>
+						5.<a href="sopcdevelopment/devices/SDRAM.htm">SDRAM</a>
+					</div> 
+					
+					<div id="content6" onclick="document.all.child6.style.display=(document.all.child6.style.display =='none')?'':'none'" > 
+					第六章 μC/OS II操作系统移植 </div> 
+					<div id="child6" style="display:none"> 
+						1.<a href="sopcdevelopment/software/os/os.htm">操作系统概念</a> <br> 
+						2.<a href="sopcdevelopment/software/os/ucos/first_ucos.htm">μC/OS II运行在Nios II</a> <br> 
+						3.<a href="sopcdevelopment/software/os/ucos/ucos_api.htm">μC/OS II编程介绍</a> 
+					</div> 
+					
+					<div id="content8" onclick="document.all.child7.style.display=(document.all.child7.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第七章 Nios II系统深入设计 </div> 
+					<div id="child7" style="display:none"> 
+						1.<a href="sopcdevelopment/hardware/user_instructions/user_instructions.htm">用户定制指令</a> <br> 
+						2.<a href="sopcdevelopment/develop_user_devices.htm">用户定制外设</a> 
+					</div>
+					
+					<div id="content8" onclick="document.all.child8.style.display=(document.all.child8.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第八章 调试技术 </div> 
+					<div id="child8" style="display:none"> 
+						1.<a href="debug-tech/hardware/ModelSim/modelsim_introduction.htm">ModelSim</a><br>
+						2.<a href="debug-tech/hardware/signaltap/signaltap_introduction.htm">SignalTap</a><br>
+						3.Nios EDS调试<br> 
+					</div> 
+			</div>
+			<hr/>
+			<!-- #BeginEditable "content" -->
+			
+<p><b><font size="7">可实现SOPC的FPGA芯片</font></b></p>
+<p>from: https://www.altera.com/products/fpga</p>
+
+<p class="MsoNormal" align="left" style="text-align: left; margin-bottom: 3.75pt">
+<b>
+<span lang="EN-US" style="font-size: 20.5pt; font-family: 宋体; color: #333333;background:red">
+Altera FPGAs</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Altera FPGAs are ideal for a wide variety of applications, from high-volume 
+applications to state-of-the-art products. Each series of FPGA includes 
+different features, such as embedded memory, digital signal processing (DSP) 
+blocks, high-speed transceivers, or high-speed I/O pins, to cover a broad range 
+of end products.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_4" o:spid="_x0000_s1032" type="#_x0000_t75"
+ alt="说明: fpga-product-01-stratix-series" style='width:82.5pt;height:82.5pt;
+ visibility:visible;mso-wrap-style:square;float:left'>
+ <v:imagedata src="FPGA-implemented-sopc.files/image001.png" o:title="fpga-product-01-stratix-series"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=110 height=110
+src="FPGA-implemented-sopc.files/image002.jpg" align=left
+alt="说明: fpga-product-01-stratix-series" v:shapes="图片_x0020_4"><![endif]></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">
+<b>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Stratix Series</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left; line-height: 15.0pt; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333">
+The Stratix</span><sup><span lang="EN-US" style="font-size: 8.5pt; font-family: 宋体; color: #333333">®</span></sup><span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333"> 
+&nbsp;FPGA and SoC family enables you to deliver high-performance, state-of-the-art 
+products to market faster with lower risk and higher productivity.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_s1031" type="#_x0000_t75" alt="说明: fpga-product-02-arria-series"
+ style='width:82.5pt;height:82.5pt;visibility:visible;mso-wrap-style:square;float:left'>
+ <v:imagedata src="FPGA-implemented-sopc.files/image003.png" o:title="fpga-product-02-arria-series"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=110 height=110
+src="FPGA-implemented-sopc.files/image004.jpg" align=left
+alt="说明: fpga-product-02-arria-series" v:shapes="图片_x0020_3"><![endif]></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">
+<b>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Arria Series</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left; line-height: 15.0pt; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333">
+Altera's Arria</span><sup><span lang="EN-US" style="font-size: 8.5pt; font-family: 宋体; color: #333333">®</span></sup><span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333"> 
+&nbsp;family delivers optimal performance and power efficiency in the midrange.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_2" o:spid="_x0000_s1030" type="#_x0000_t75" alt="说明: fpga-product-03-cyclone-series"
+ style='width:82.5pt;height:82.5pt;visibility:visible;mso-wrap-style:square;float:left'>
+ <v:imagedata src="FPGA-implemented-sopc.files/image005.png" o:title="fpga-product-03-cyclone-series"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=110 height=110
+src="FPGA-implemented-sopc.files/image006.jpg" align=left
+alt="说明: fpga-product-03-cyclone-series" v:shapes="图片_x0020_2"><![endif]></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">
+<b>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Cyclone Series</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left; line-height: 15.0pt; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333">
+The Cyclone®&nbsp;FPGA series is built to meet your low-power, cost-sensitive design 
+needs, enabling you to get to market faster.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_1" o:spid="_x0000_s1029" type="#_x0000_t75" alt="说明: fpga-product-04-MAX-series"
+ style='width:82.5pt;height:82.5pt;visibility:visible;mso-wrap-style:square;float:left'>
+ <v:imagedata src="FPGA-implemented-sopc.files/image007.png" o:title="fpga-product-04-MAX-series"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=110 height=110
+src="FPGA-implemented-sopc.files/image008.jpg" align=left
+alt="说明: fpga-product-04-MAX-series" v:shapes="图片_x0020_1"><![endif]></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">　</p>
+<p class="MsoNormal" align="left" style="text-align: left; background: white">
+<b>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+MAX 10 Series</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left; line-height: 15.0pt; background: white">
+<span lang="EN-US" style="font-size: 11.0pt; font-family: 宋体; color: #333333">
+Altera’s MAX®&nbsp;10 FPGAs revolutionize non-volatile integration by delivering 
+advance processing capabilities in a low-cost, single chip small form</span></p>
+<p>　</p>
+
+<p><font size="7" style ="background-color:red">SoCs Portfolio</font></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Altera offers a full-range SoC FPGA product portfolio spanning high-end, 
+midrange, and low-end applications.</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">To 
+meet the needs of high-end applications with the most demanding performance 
+requirements, Altera offers the Stratix® series. The Arria® series balances cost 
+and power with performance for midrange applications. The Cyclone® series 
+provides low system cost and power coupled with performance levels that make the 
+device family ideal for differentiating high-volume applications.</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin-bottom: 3.75pt">
+<b>
+<span lang="EN-US" style="font-size: 20.5pt; font-family: 宋体; color: #333333">
+Stratix 10 SoC</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left"><span lang="EN-US">
+<a target="_blank" href="https://www.altera.com/products/fpga/stratix-series/stratix-10/overview.html">
+<span style="font-size: 12.0pt; font-family: 宋体; color: #006AA0; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_s1028" type="#_x0000_t75" alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/stratix-10-device--220px.png"
+ href="https://www.altera.com/products/fpga/stratix-series/stratix-10/overview.html"
+ style='width:165pt;height:122.25pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:fill o:detectmouseclick="t"/>
+ <v:imagedata src="FPGA-implemented-sopc.files/image009.png" o:title="stratix-10-device--220px"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="https://www.altera.com/products/fpga/stratix-series/stratix-10/overview.html"><img
+border=0 width=220 height=163 src="FPGA-implemented-sopc.files/image010.jpg"
+alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/stratix-10-device--220px.png"
+title="" v:shapes="图片_x0020_5"></a></span><![endif]></a></a></a></a></a></span></a></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Stratix 10 SoCs offer breakthrough advantages in bandwidth and system 
+integration, including a next-generation hard processor system (HPS). Stratix 
+10&nbsp;devices feature the revolutionary HyperFlex architecture and&nbsp;are manufactured 
+on the Intel 14 nm Tri-Gate&nbsp;process, delivering breakthrough levels of 
+performance and power efficiencies that were previously unimaginable. When 
+coupled with 64 bit quad-core ARM Cortex-A53 processor and advanced 
+heterogeneous development and debug tools such as the Altera SDK for OpenCL™ and 
+SoC Embedded Design Suite (EDS), Stratix 10 devices offer the industry’s most 
+versatile heterogeneous computing platform.</span></p>
+<p class="MsoNormal" align="left" style="text-align: left">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+<a href="https://www.altera.com/products/fpga/stratix-series/stratix-10/overview.html">
+<span style="color: #006AA0; text-decoration: none">Learn More &gt;&gt;</span></a>
+</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin-bottom: 3.75pt">
+<b>
+<span lang="EN-US" style="font-size: 20.5pt; font-family: 宋体; color: #333333">
+Arria 10 SoC</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left"><span lang="EN-US">
+<a target="_blank" href="https://www.altera.com/products/soc/portfolio/arria-10-soc/overview.html">
+<span style="font-size: 12.0pt; font-family: 宋体; color: #006AA0; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_s1027" type="#_x0000_t75" alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/arria-10-device-220px.png"
+ href="https://www.altera.com/products/soc/portfolio/arria-10-soc/overview.html"
+ style='width:165pt;height:122.25pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:fill o:detectmouseclick="t"/>
+ <v:imagedata src="FPGA-implemented-sopc.files/image011.png" o:title="arria-10-device-220px"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="https://www.altera.com/products/soc/portfolio/arria-10-soc/overview.html"><img
+border=0 width=220 height=163 src="FPGA-implemented-sopc.files/image012.jpg"
+alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/arria-10-device-220px.png"
+title="" v:shapes="图片_x0020_6"></a></span><![endif]></a></a></a></a></a></span></a></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+The 20 nm Arria 10 ARM-based SoCs deliver optimal performance, power efficiency, 
+small form factor, and low cost for midrange applications. The Arria 10 SoCs, 
+based on TSMC’s 20 nm process technology, combine a dual-core ARM Cortex-A9 
+MPCore™ hard processor system (HPS) with industry-leading programmable logic 
+technology that includes hardened
+<a href="https://www.altera.com/products/fpga/features/dsp/arria10-dsp-block.html">
+<span style="color: #006AA0; text-decoration: none">floating-point digital 
+signal processing (DSP) blocks</span></a>.&nbsp;By utilizing the same dual-core ARM 
+Cortex-A9 processor as the Arria V SoC, the Arria 10 SoC offers an easy 
+performance upgrade and software migration path for Arria V SoC designs.</span></p>
+<p class="MsoNormal" align="left" style="text-align: left">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+<a href="https://www.altera.com/products/soc/portfolio/arria-10-soc/overview.html">
+<span style="color: #006AA0; text-decoration: none">Learn More &gt;&gt;</span></a>
+</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin-bottom: 3.75pt">
+<b>
+<span lang="EN-US" style="font-size: 20.5pt; font-family: 宋体; color: #333333">
+Arria V SoC</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left"><span lang="EN-US">
+<a target="_blank" href="https://www.altera.com/products/soc/portfolio/arria-v-soc/overview.html">
+<span style="font-size: 12.0pt; font-family: 宋体; color: #006AA0; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_7" o:spid="_x0000_s1026" type="#_x0000_t75" alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/arria-V-device-220px.png"
+ href="https://www.altera.com/products/soc/portfolio/arria-v-soc/overview.html"
+ style='width:165pt;height:121.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:fill o:detectmouseclick="t"/>
+ <v:imagedata src="FPGA-implemented-sopc.files/image013.png" o:title="arria-V-device-220px"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="https://www.altera.com/products/soc/portfolio/arria-v-soc/overview.html"><img
+border=0 width=220 height=162 src="FPGA-implemented-sopc.files/image014.jpg"
+alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/arria-V-device-220px.png"
+title="" v:shapes="图片_x0020_7"></a></span><![endif]></a></a></a></a></a></span></a></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Altera’s Arria V SoCs provide the highest bandwidth with the lowest total power 
+for midrange applications such as remote radio units, 10G/40G line cards, 
+medical imaging, and broadcast studio equipment. The combination of a hard 
+processor system (HPS) consisting of a dual-core ARM&nbsp;Cortex-A9 processor, 
+peripherals, and memory interfaces with our flexible 28 nm FPGA fabric lets you 
+reduce system power, cost, and board space.</span></p>
+<p class="MsoNormal" align="left" style="text-align: left">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+<a href="https://www.altera.com/products/soc/portfolio/arria-v-soc/overview.html">
+<span style="color: #006AA0; text-decoration: none">Learn More &gt;&gt;</span></a>
+</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin-bottom: 3.75pt">
+<b>
+<span lang="EN-US" style="font-size: 20.5pt; font-family: 宋体; color: #333333">
+Cyclone V SoC</span></b></p>
+<p class="MsoNormal" align="left" style="text-align: left"><span lang="EN-US">
+<a target="_blank" href="https://www.altera.com/products/soc/portfolio/cyclone-v-soc/overview.html">
+<span style="font-size: 12.0pt; font-family: 宋体; color: #006AA0; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_8" o:spid="_x0000_s1025" type="#_x0000_t75" alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/cyclone-V-device-220px.png"
+ href="https://www.altera.com/products/soc/portfolio/cyclone-v-soc/overview.html"
+ style='width:165pt;height:122.25pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:fill o:detectmouseclick="t"/>
+ <v:imagedata src="FPGA-implemented-sopc.files/image015.png" o:title="cyclone-V-device-220px"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="https://www.altera.com/products/soc/portfolio/cyclone-v-soc/overview.html"><img
+border=0 width=220 height=163 src="FPGA-implemented-sopc.files/image016.jpg"
+alt="说明: https://www.altera.com/content/dam/altera-www/global/en_US/images/altera-new/cyclone-V-device-220px.png"
+title="" v:shapes="图片_x0020_8"></a></span><![endif]></a></a></a></a></a></span></a></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; margin: 12.0pt 0cm">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+Altera's Cyclone&nbsp;V SoCs provide the industry's lowest system cost and power. The 
+SoCs’ high performance levels are ideal for differentiating high-volume 
+applications such as industrial motor control drives, protocol bridging, video 
+converter and capture cards, and handheld devices. SoCs come in a wide range of 
+programmable logic densities with many system-level functions hardened in 
+silicon — a dual-core ARM Cortex-A9 hard processor system (HPS), embedded 
+peripherals, multiport memory controllers, serial transceivers, and PCI Express</span><sup><span lang="EN-US" style="font-size: 9.0pt; font-family: 宋体; color: #333333">®</span></sup><span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">&nbsp;(PCIe</span><sup><span lang="EN-US" style="font-size: 9.0pt; font-family: 宋体; color: #333333">®</span></sup><span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">) 
+ports.</span></p>
+<p class="MsoNormal" align="left" style="text-align: left">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: 宋体; color: #333333">
+<a href="https://www.altera.com/products/soc/portfolio/cyclone-v-soc/overview.html">
+<span style="color: #006AA0; text-decoration: none">Learn More &gt;&gt;</span></a>
+</span></p>
+<p>　</p>
+
+<p><font size="7">举例：<a href="参考资料/cyclone-series.htm">Cyclone系列</a></font></p>
+<p><font size="7"><a href="参考资料/other-sopc-implementation.htm">其他</a></font></p>
+<p>　</p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

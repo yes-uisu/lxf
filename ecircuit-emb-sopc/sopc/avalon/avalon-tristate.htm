@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../sopc_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>Tristate interface</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../index.html" title="Home">主页</a></li>
+			<li><a href="../../about.html" title="About">关于</a></li>
+			<li><a href="../../contact.html" title="Contact">联系</a></li>
+			<li><a href="../../links.html" title="Links">课程</a></li>
+			<li><a href="../../search.html" title="Search">搜索</a></li>
+			<li><a href="../../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000;"  >
+					<div id="content1" onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第一章 概述</div> 
+					<div id="child1" align="left" style="display:none"> 
+						1.<a href="../SOPC基本概念.htm">SOPC系统的基本概念</a> <br> 
+						2.<a href="../IP-core.htm">IP核</a> <br> 
+						3.<a href="../sopc-dev-process.htm">SOPC开发基本流程</a> <br> 
+						4.<a href="../NiosII-introduction.htm">Nios II处理器介绍</a> <br>
+						5.<a href="../FPGA-implemented-sopc.htm">用FPGA实现SOPC</a><br>
+						6.<a href="../nios-app.htm">应用</a><br>
+					</div> 
+					
+					<div id="content2" onclick="document.all.child2.style.display=(document.all.child2.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第二章 Nios II处理器体系结构 </div> 
+					<div id="child2" align="left" style="display:none"> 
+						1.<a href="../NiosII-architecture.htm">Nios II处理器结构</a> <br> 
+						2.<a href="../Nios-architecture/nios-register.htm">Nios II寄存器的配置</a> <br> 
+						3.<a href="../Nios-architecture/nios-alu.htm">ALU</a> <br>
+						4.<a href="../Nios-architecture/operating-modes.htm">Nios II处理器运行模式及</a><br>
+						  <a href="../Nios-architecture/exception.htm">异常和中断</a> <br>
+						5.<a href="../Nios-architecture/memory.htm">存储器和外设访问</a><br>
+						附录：<a href="../Nios-architecture/implement-cpu-instruction.htm">计算机指令执行</a><br>
+					</div> 
+					<div id="content3" onclick="document.all.child3.style.display=(document.all.child3.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第三章 Avalon接口规范 </div> 
+					<div id="child3" style="display:none"> 
+						1.<a href="avalon-introduction.htm">Avalon总线简介</a> <br> 
+						2.<a href="avalon-concept.htm">Avalon总线基本概念</a> <br> 
+						3.<a href="avalon-signal.htm">Avalon信号</a>  <br>
+						4.<a href="avalon-slave.htm">从端口传输</a> <br>
+						5.<a href="avalon-master.htm">主端口传输</a> <br>
+						6.<a href="avalon-streaming.htm">流水线传输</a> <br>
+						7.<a href="avalon-tristate.htm">三态传输</a> <br>
+					</div> 
+					
+					<div id="content4" onclick="document.all.child5.style.display=(document.all.child5.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第四章 SOPC软硬件开发平台 </div> 
+					<div id="child5" style="display:none"> 
+						1.<a href="../sopcdevelopment/sopc-dev-platform.htm">SOPC系统开发的软硬件平台</a> <br> 
+						2.<a href="#">Quartus II下的SOPC Builder工具</a>(Qsys) <br> 
+						3.<a href="#">Nios II IDE集成开发环境</a><br>
+						4.<a href="../sopcdevelopment/software/HAL/Nios_HAL.htm">软硬件接口的硬件抽象层（HAL)</a><br>
+						5.<a href="../sopcdevelopment/example-list.htm">例子</a>
+					</div> 
+					
+					<div id="content5" onclick="document.all.child4.style.display=(document.all.child4.style.display =='none')?'':'none'" > 
+					第五章 Nios II处理器常用外设 </div> 
+					<div id="child4" style="display:none"> 
+						1.<a href="#">并行I/O</a>(重点讲解结构) <br> 
+						2.<a href="#">定时器</a> <br> 
+						3.<a href="#">异步串口UART</a> <br>
+						4.<a href="#">Optrex 1207 LCD</a><br>
+						5.<a href="../sopcdevelopment/devices/SDRAM.htm">SDRAM</a>
+					</div> 
+					
+					<div id="content6" onclick="document.all.child6.style.display=(document.all.child6.style.display =='none')?'':'none'" > 
+					第六章 μC/OS II操作系统移植 </div> 
+					<div id="child6" style="display:none"> 
+						1.<a href="../sopcdevelopment/software/os/os.htm">操作系统概念</a> <br> 
+						2.<a href="../sopcdevelopment/software/os/ucos/first_ucos.htm">μC/OS II运行在Nios II</a> <br> 
+						3.<a href="../sopcdevelopment/software/os/ucos/ucos_api.htm">μC/OS II编程介绍</a> 
+					</div> 
+					
+					<div id="content8" onclick="document.all.child7.style.display=(document.all.child7.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第七章 Nios II系统深入设计 </div> 
+					<div id="child7" style="display:none"> 
+						1.<a href="../sopcdevelopment/hardware/user_instructions/user_instructions.htm">用户定制指令</a> <br> 
+						2.<a href="../sopcdevelopment/develop_user_devices.htm">用户定制外设</a> 
+					</div>
+					
+					<div id="content8" onclick="document.all.child8.style.display=(document.all.child8.style.display =='none')?'':'none'" > 
+					<font face="楷体" size="4">第八章 调试技术 </div> 
+					<div id="child8" style="display:none"> 
+						1.<a href="../debug-tech/hardware/ModelSim/modelsim_introduction.htm">ModelSim</a><br>
+						2.<a href="../debug-tech/hardware/signaltap/signaltap_introduction.htm">SignalTap</a><br>
+						3.Nios EDS调试<br> 
+					</div> 
+			</div>
+			<hr/>
+			<!-- #BeginEditable "content" -->
+			
+<p><font size="7">Tristate interface</font></p>
+<p><font size="7">三态传输</font></p>
+<p><i><b><font size="5">Avalon三态属性允许基于Avalon的系统与片外的设备直接相连。</font></b></i></p>
+<p><font size="5">The Avalon Tristate Conduit Interface (Avalon-TC) is a <b>
+point-to-point interface</b> designed for on-chip controllers that <b>drive 
+off-chip components</b>. This interface allows data, address, and control pins 
+to be shared across multiple tristate devices. Sharing conserves pins in systems 
+that have multiple external memory devices.</font></p>
+<p><font size="5">=============================================================</font></p>
+<p><span style="font-size: 16pt"><font face="宋体">●例子</font></span></p>
+<p><img border="0" src="tristate-nonsyn-chip.jpg" width="698" height="402"></p>
+<p><img border="0" src="tristate-syn-chip.jpg" width="694" height="404"></p>
+<p><font face="宋体" style="font-size: 16pt">
+==================================================================</font></p>
+<p><span style="font-size: 16pt"><font face="宋体">●三态从端口与异步存储器读传输</font></span></p>
+<p>
+<img border="0" src="tristate-slave-waite-read.jpg" width="812" height="537"></p>
+<p><span style="font-size: 16pt"><font face="宋体">●</font></span><font face="宋体" style="font-size: 16pt">流水线模式的三态从端口读传输</font></p>
+<p>
+<img border="0" src="tristate-slave-stream-read.jpg" width="789" height="699"></p>
+<p><span style="font-size: 16pt"><font face="宋体">●</font></span><font face="宋体" style="font-size: 16pt">三态从端口与异步存储器之间的写传输</font></p>
+<p><img border="0" src="tristate-slave-write.jpg" width="744" height="478"></p>
+<p><span style="font-size: 16pt"><font face="宋体">●</font></span><font face="宋体" style="font-size: 16pt">三态主端口传输 
+（读写）</font></p>
+<p>
+<img border="0" src="tristate-master-read-write.jpg" width="863" height="518"></p>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

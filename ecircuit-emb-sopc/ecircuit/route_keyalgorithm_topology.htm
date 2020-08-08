@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word">
+
+<!-- #BeginTemplate "ecircuit_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>电子线路辅助设计</title>
+<!-- #EndEditable -->
+<!-- #BeginEditable "description" -->
+<meta content="insert DESCRIPTION here" name="description" />
+<!-- #EndEditable -->
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" src="../images/title_pic.png" style="height: 170px; width: 699px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../index.html" title="Home">主页</a></li>
+			<li><a href="../about.html" title="About">关于</a></li>
+			<li><a href="../contact.html" title="Contact">联系</a></li>
+			<li><a href="../links.html" title="Links">课程</a></li>
+			<li><a href="../search.html" title="Search">搜索</a></li>
+			<li><a href="../site-map.html" title="Site Map">站点地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程</p>
+			<ul>
+				<li><a href="../sopc/目录.htm" title="SOPC">SOPC</a></li>
+				<li><a href="../embeddedsys/coming.html" title="嵌入式系统应用">嵌入式系统应用</a></li>
+				<li><a href="../ecircuit/from-name.htm" title="电子线路设计">电子线路设计</a></li>
+			</ul>
+			
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">教学相长</p>
+			<p>认真教书，认真学习</p>
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<p style="color: red; background-color: #000000;"  >
+				<a href="from-name.htm">课程名称</a>
+				<a href="protel-history.htm">课程工具</a> 
+				<a href="altium_web.htm">官网资源</a>
+				<a href="setup.htm">软件安装</a>
+				<a href="schematic_design.htm">原理图设计</a>
+				<a href="讲解实例/schematic_examples.htm">原理图实例</a> 
+				<a href="pcb_design.htm">印制板图设计</a> 
+				<a href="component_package.htm">器件的封装</a>
+				<a href="pcb_examples.htm">PCB实例</a>
+				<a href="实物展示/objects_index.htm">实物展示（菲林、钢网）</a> 
+			</p>
+
+			<!-- #BeginEditable "content" -->
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center;mso-pagination:widow-orphan'><span style='font-size:
+18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>
+自动布线的关键算法（拓扑）<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Shortest ( </span><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+     0pt'>最短<span lang=EN-US> ) </span>规则设置<span lang=EN-US>:</span>该选项的定义是在布线时连接所有节点的连线最短规则。
+     <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145014.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+      o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+      stroked="f">
+      <v:stroke joinstyle="miter"/>
+      <v:formulas>
+       <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+       <v:f eqn="sum @0 1 0"/>
+       <v:f eqn="sum 0 0 @1"/>
+       <v:f eqn="prod @2 1 2"/>
+       <v:f eqn="prod @3 21600 pixelWidth"/>
+       <v:f eqn="prod @3 21600 pixelHeight"/>
+       <v:f eqn="sum @0 0 1"/>
+       <v:f eqn="prod @6 1 2"/>
+       <v:f eqn="prod @7 21600 pixelWidth"/>
+       <v:f eqn="sum @8 21600 0"/>
+       <v:f eqn="prod @7 21600 pixelHeight"/>
+       <v:f eqn="sum @10 21600 0"/>
+      </v:formulas>
+      <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+      <o:lock v:ext="edit" aspectratio="t"/>
+     </v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1031" type="#_x0000_t75"
+      alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145014.JPG"
+      target="&quot;_blank&quot;" style='width:160.5pt;height:120.75pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image001.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=214 height=161
+     src="route_keyalgorithm_topology.files/image001.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_1"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Horizontal </span><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+     0pt'>（水平）规则设置<span lang=EN-US>:</span>采用连接节点的水平连线最短规则。 <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145043.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shape id="图片_x0020_2" o:spid="_x0000_i1030"
+      type="#_x0000_t75" alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145043.JPG"
+      target="&quot;_blank&quot;" style='width:168.75pt;height:127.5pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image002.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=225 height=170
+     src="route_keyalgorithm_topology.files/image002.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_2"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Vertical </span><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+     0pt'>（垂直）规则设置<span lang=EN-US>:</span>采和是连接所有节点，在垂直方向连线最短规则。<span
+     lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145105.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shape id="图片_x0020_3" o:spid="_x0000_i1029"
+      type="#_x0000_t75" alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145105.JPG"
+      target="&quot;_blank&quot;" style='width:168.75pt;height:127.5pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image003.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=225 height=170
+     src="route_keyalgorithm_topology.files/image003.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_3"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Daisy Simple </span><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+     0pt'>（简单雏菊）规则设置<span lang=EN-US>:</span>采用的是使用链式连通法则，从一点到另一点连通所有的节点，并使连线最短。
+     <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145130.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shape id="图片_x0020_4" o:spid="_x0000_i1028"
+      type="#_x0000_t75" alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145130.JPG"
+      target="&quot;_blank&quot;" style='width:168.75pt;height:127.5pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image004.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=225 height=170
+     src="route_keyalgorithm_topology.files/image004.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_4"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Daisy-<span
+     class=SpellE>MidDriven</span> </span><span style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>（雏菊中点）规则设置<span
+     lang=EN-US>:</span>该规则选择一个<span lang=EN-US> Source </span>
+ （源点），以它为中心向左右连通所有的节点，并使连线最短。
+     <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145159.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shape id="图片_x0020_5" o:spid="_x0000_i1027"
+      type="#_x0000_t75" alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145159.JPG"
+      target="&quot;_blank&quot;" style='width:168.75pt;height:127.5pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image005.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=225 height=170
+     src="route_keyalgorithm_topology.files/image005.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_5"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Daisy Balanced </span><span style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'>（雏菊平衡）规则设置<span lang=EN-US>:</span>选择一个源点，将所有的中间节点数目平均分成组，所有的组都连接在源点上，并使连线最短。
+     <span lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145217.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shape id="图片_x0020_6" o:spid="_x0000_i1026"
+      type="#_x0000_t75" alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145217.JPG"
+      target="&quot;_blank&quot;" style='width:168.75pt;height:127.5pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image006.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=225 height=170
+     src="route_keyalgorithm_topology.files/image006.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_6"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US style='font-size:18.0pt;
+     font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Star Burst </span><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+     0pt'>（星形）规则设置<span lang=EN-US>:</span>选择一个源点，以星形方式去连接别的节点，并使连线最短。 <span
+     lang=EN-US><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     text-align:left;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+     tab-stops:list 36.0pt'><span lang=EN-US><a
+     href="http://www.dzkf.cn/upimg/allimg/0705/1_25145251.JPG" target="_blank"><span
+     style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:宋体;color:blue;
+     mso-font-kerning:0pt;mso-no-proof:yes;text-decoration:none;text-underline:
+     none'><!--[if gte vml 1]><v:shape id="图片_x0020_7" o:spid="_x0000_i1025"
+      type="#_x0000_t75" alt="说明: Protel &lt;wbr&gt;DXP布线规则设置"
+      href="http://www.dzkf.cn/upimg/allimg/0705/1_25145251.JPG"
+      target="&quot;_blank&quot;" style='width:168.75pt;height:127.5pt;
+      visibility:visible;mso-wrap-style:square' o:button="t">
+      <v:fill o:detectmouseclick="t"/>
+      <v:imagedata src="route_keyalgorithm_topology.files/image007.jpg"
+       o:title="Protel &lt;wbr&gt;DXP布线规则设置"/>
+     </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+     border=0 width=225 height=170
+     src="route_keyalgorithm_topology.files/image007.jpg"
+     alt="说明: Protel &lt;wbr&gt;DXP布线规则设置" v:shapes="图片_x0020_7"></span><![endif]></span></a></span><span
+     lang=EN-US style='font-size:18.0pt;font-family:宋体;mso-bidi-font-family:
+     宋体;mso-font-kerning:0pt'><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:18.0pt'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+			<!-- #EndEditable --></div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		
+		<p class="smltxt">模板来自于:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+		<p class="smltxt"><a href="http://www.miitbeian.gov.cn/" title="备案后">京ICP备15041520号</a></p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

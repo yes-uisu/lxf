@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../../embeddedsys_template.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!-- #BeginEditable "doctitle" -->
+<title>ARMv7指令集</title>
+<!-- #EndEditable -->
+<meta content="insert DESCRIPTION here" name="description" />
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="General" name="rating" />
+<meta content="no" http-equiv="imagetoolbar" />
+<meta content="Copyright 2015, Pat Geary  http://genealogy-web-creations.com/ All Rights Reserved" name="copyright" />
+<!-- 
+*********************************
+Design by: Genealogy Web Creations
+http://www.genealogy-web-creations.com/
+Release Date: May 2015
+*********************************
+-->
+<!-- main css -->
+<link href="../../../styles/site.css" rel="stylesheet" type="text/css" />
+<!-- media queries css -->
+<link href="../../../styles/media-queries.css" rel="stylesheet" type="text/css" />
+<!-- css3-mediaqueries.js for IE less than 9 --><!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+
+
+</script>
+<![endif]-->
+<meta content="width=device-width; initial-scale=1.0" name="viewport" />
+</head>
+
+<body>
+
+<!-- Page Container begins here -->
+<div id="outerWrapper">
+	<!-- Masthead begins here -->
+	<div id="header">
+		<img alt="" class="scalable" src="../../../images/masthead-logo.jpg" style="width: 1024px; height: 139px" /></div>
+	<!-- Masthead ends here -->
+	<!-- Top Navigation begins here -->
+	<div id="topNavigation">
+		<ul>
+			<li><a href="../../../index.html" title="主页">主页</a></li>
+			<li><a href="../../../about.html" title="关于">关于</a></li>
+			<li><a href="../../../contact.html" title="联系方式">联系方式</a></li>
+			<li><a href="../../../links.html" title="外网课件">外网课件</a></li>
+			<li><a href="../../../search.html" title="搜索">搜索</a></li>
+			<li><a href="../../../site-map.html" title="网站地图">网站地图</a></li>
+		</ul>
+	</div>
+	<!-- Top Navigation ends here -->
+	<!-- Columns Container begins here -->
+	<div id="contentWrapper">
+		<!-- Left Sidebar Begins Here	-->
+		<div id="leftColumn1">
+			<!--	Sectional Menu Begins Here	-->
+			<p class="heading">课程列表</p>
+			<ul>
+				<li>
+				<a href="../../../电子线路计算机辅助设计/课件/目录.htm" title="电子线路计算机辅助设计">电子线路计算机辅助设计</a></li>
+				<li><a href="../../contents.htm" title="嵌入式系统设计">嵌入式系统设计</a></li>
+				<li><a href="../../../sopc系统设计/目录.htm" title="SOPC系统设计">SOPC系统设计</a></li>
+			</ul>
+			<p class="heading">基本问题</p>
+			<ul>
+				<li><a href="#" title="计算机组成">自制计算机</a></li>
+			</ul>
+			<p class="heading">开源资源</p>
+			<ul>
+				<li><a href="#" title="开源cpu">开源cpu</a></li>
+				<li><a href="#" title="gcc">gcc</a></li>
+			</ul>
+
+			<!--	Sectional Menu ends Here	-->
+			<p class="heading">好好学习天天向上</p>
+			
+		</div>
+		<!-- Left Sidebar ends Here	-->
+		<!--Main Content Area Begins Here-->
+		<div id="content">
+			<div style="color: red; background-color: #000000; "  >
+				联大大纲—<a href="../../communication_syllabus.htm">通信</a>—<a href="../../普通本科教学大纲-嵌入式系统原理及应用(电子3学分).htm">电子</a>
+				;<a href="../../lixiaofeng_inf.htm">教师介绍</a>;
+				<a href="../单片机原理与应用目录.htm">单片机课程学习经验</a>-
+				<a href="../learning_map.htm">学习路线图</a>;
+				1.<a href="../Embedded_system_introduction.htm">概述</a>
+				-<a href="../application.htm">应用</a>
+				-<a href="../definition.htm">定义</a>
+				-<a href="../features.htm">特点</a>
+				-<a href="../architecture.htm">构成</a>;
+				2.嵌入式处理器
+				—<a href="../most_simple_cpu/cpu_learn_tru_diy.htm">DIY CPU</a>
+				—<a href="../general_cpu.htm">处理器</a>
+				—<a href="../ARM_index.htm">ARM处理器</a>
+				—<a href="../Cortex-A8/Cortex-A8-index.htm">Cortex-A8</a>
+				—<a href="../S5PV210/S5PV210_index.htm">S5PV210</a>
+				—<a href="../armv7-contexa8-s5pv210-rel.htm">讨论</a>;
+				
+				3.<a href="arm_assembly_index.htm">汇编语言</a>
+				-<a href="exercise_ldr_compile.htm">作业</a>
+				
+				4.<a href="../bootloader/Bootloader_index.htm">Bootloader</a>
+				-<a href="../bootloader/uboot/exercise_read_uboot.htm">作业</a>
+				
+				5.<a href="../Linux/Linux_kernel_transplantation_index.htm">Linux内核移植</a>
+				
+				6.<a href="../Linux/index_programming.htm">嵌入式Linux程序设计</a>
+				
+				7.<a href="../QT/Qt_index.htm">图形用户接口QT</a>
+				
+				8.<a href="../framwork_introduction.htm">其他框架介绍</a>;
+				9.嵌入式物联网应用系统设计
+			</div>
+<!-- #BeginEditable "body" -->
+
+<p><font size="7">ARMv7指令集</font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 宋体; color: black"><font size="5">
+一条指令中使用操作数字段来描述指令功能。不同的功能需要由不同的操作数来描述，结合寻址方式构成一条完整的指令。一款微处理器所能运行的所有汇编指令合集简称为</font></span><span style="font-family: 宋体; color: red"><font size="5">指令集</font></span><span style="font-family: 宋体; color: black"><font size="5">。</font></span></p>
+<p>　</p>
+<p><span style="font-family: Calibri; color: black"><font size="5">ARM</font></span><span style="font-family: 宋体; color: black"><font size="5">汇编</font></span><span style="font-family: 宋体; color: red"><font size="5">指令分类</font></span><span style="font-family: 宋体; color: black"><font size="5">：跳转指令、数据处理指令、程序状态寄存器访问指令、</font></span><span style="font-family: Calibri; color: black"><font size="5">load/store</font></span><span style="font-family: 宋体; color: black"><font size="5">指令（存储器访问指令）、异常产生指令和协处理器指令。</font></span></p>
+<p><font size="5"><span style="font-family: 宋体">
+==========================================</span></font></p>
+<p><font size="5"><span style="font-family: 宋体">from：ARM architecture reference 
+manual ARMv7-A ARMv7-R</span></font></p>
+<p><font size="5"><span style="font-family: 宋体">Chaper A4: The instruction sets</span></font></p>
+<p><font size="5">This chapter describes the ARM and Thumb instruction sets. It 
+contains the following sections:<br>
+• About the instruction sets on page A4-160<br>
+• Unified Assembler Language on page A4-162<br>
+• Branch instructions on page A4-164<br>
+• Data-processing instructions on page A4-165<br>
+• Status register access instructions on page A4-174<br>
+• Load/store instructions on page A4-175<br>
+• Load/store multiple instructions on page A4-177<br>
+• Miscellaneous instructions on page A4-178<br>
+• Exception-generating and exception-handling instructions on page A4-179<br>
+• Coprocessor instructions on page A4-180<br>
+• Advanced SIMD and Floating-point load/store instructions on page A4-181<br>
+• Advanced SIMD and Floating-point register transfer instructions on page A4-183<br>
+• Advanced SIMD data-processing instructions on page A4-184<br>
+• Floating-point data-processing instructions on page A4-191.</font></p>
+<p><font size="5"><span style="font-family: 宋体">
+==========================================</span></font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Times New Roman; color: black; font-weight: bold">
+<font size="5">1</font></span><span style="font-family: Times New Roman; color: #C00000; font-weight: bold"><font size="5">
+</font></span><span style="font-family: 宋体; color: #C00000; font-weight: bold">
+<font size="5">跳转指令</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 宋体; color: black"><font size="5">指令格式：</font></span><span style="font-family: Calibri; color: black"><font size="5">B{L}{&lt;cond&gt;} 
+&lt;target_address&gt;</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 宋体; color: black"><font size="5">
+指令功能：相对跳转指令，跳转范围为当前位置±32MB范围内。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">B</font></span><span style="font-family: 宋体; color: black"><font size="5">：跳转指令助记符；</font></span><span style="font-family: Calibri; color: black"><font size="5">BL</font></span><span style="font-family: 宋体; color: black"><font size="5">：存储跳转返回地址，可实现函数调用。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 宋体; color: black"><font size="5">范例</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">B&nbsp;&nbsp; 
+label&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">无条件转移到标号为</font></span><span style="font-family: Calibri; color: black"><font size="5">label</font></span><span style="font-family: 宋体; color: black"><font size="5">的指令处</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">BEQ&nbsp;&nbsp; 
+label&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">有条件（</font></span><span style="font-family: Calibri; color: black"><font size="5">Z=1</font></span><span style="font-family: 宋体; color: black"><font size="5">）转移到标号为</font></span><span style="font-family: Calibri; color: black"><font size="5">label</font></span><span style="font-family: 宋体; color: black"><font size="5">的指令处</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">MOV&nbsp;&nbsp; 
+PC, #0&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">跳转到</font></span><span style="font-family: Calibri; color: black"><font size="5">0x0000_0000</font></span><span style="font-family: 宋体; color: black"><font size="5">地址处</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">BL&nbsp;&nbsp; 
+func&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">调用</font></span><span style="font-family: Calibri; color: black"><font size="5">func</font></span><span style="font-family: 宋体; color: black"><font size="5">子程序</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">func</font></span><span style="font-family: 宋体; color: black"><font size="5">：&nbsp;
+</font></span><span style="font-family: Calibri; color: black"><font size="5">;</font></span><span style="font-family: 宋体; color: black"><font size="5">定义函数名</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">…&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">定义函数体&nbsp;
+</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">MOV&nbsp;&nbsp; 
+PC, LR&nbsp;&nbsp; ;R15=R14,</font></span><span style="font-family: 宋体; color: black"><font size="5">恢复断点，实现子程序调用返回</font></span></p>
+<span style="font-family: Calibri; color: black"><font size="5">LDR &nbsp; PC, =func 
+			&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">将函数</font></span><span style="font-family: Calibri; color: black"><font size="5">func</font></span><span style="font-family: 宋体; color: black"><font size="5">存放地址加载到程序计数器</font></span><p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">2 </font></span>
+<span style="font-family: 宋体; color: #C00000; font-weight: bold"><font size="5">
+			数据处理指令：</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">ADC&nbsp; R5,R1,</font></span><span style="font-family: 宋体; color: black"><font size="5">　</font></span><span style="font-family: Calibri; color: black"><font size="5">R3&nbsp;&nbsp;&nbsp; 
+;R4 = R0+R2+C</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">ADD</font></span><span style="font-family: 宋体; color: black"><font size="5">　</font></span><span style="font-family: Calibri; color: black"><font size="5">R2, 
+R10, R10, LSR #1&nbsp;&nbsp; ;R2 = R10+R0*2</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">ANDS&nbsp; R3, 
+R0, #0x7000000&nbsp; ;R3= R0 &amp; 0x7000000, 影响CPSR</font></span><span style="font-family: 宋体; color: black"><font size="5">寄存器</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">BIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+R0, R0, #0x00002000&nbsp; ;R0= R0 &amp; !</font></span><span style="font-family: 宋体; color: black"><font size="5">（</font></span><span style="font-family: Calibri; color: black"><font size="5">#0x00002000</font></span><span style="font-family: 宋体; color: black"><font size="5">）</font></span><span style="font-family: Calibri; color: black"><font size="5">,&nbsp;&nbsp; 
+R0[13]=0</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">CMP&nbsp;&nbsp; 
+R5,&nbsp; R4&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">比较 
+</font></span><span style="font-family: Calibri; color: black"><font size="5">
+R5, R4</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">BEQ&nbsp; 
+board_init_in_ram&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">若</font></span><span style="font-family: Calibri; color: black"><font size="5">R5=R4,</font></span><span style="font-family: 宋体; color: black"><font size="5">则跳转到</font></span><span style="font-family: Calibri; color: black"><font size="5">board_init_in_ram</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">ORR&nbsp;&nbsp;&nbsp;&nbsp; 
+R0,&nbsp;&nbsp; R0, #</font></span><span style="font-family: 宋体; color: black"><font size="5">（</font></span><span style="font-family: Calibri; color: black"><font size="5">1&lt;&lt;1</font></span><span style="font-family: 宋体; color: black"><font size="5">）</font></span><span style="font-family: Calibri; color: black"><font size="5">;R0 
+= R0|</font></span><span style="font-family: 宋体; color: black"><font size="5">（</font></span><span style="font-family: Calibri; color: black"><font size="5">1&lt;&lt;1</font></span><span style="font-family: 宋体; color: black"><font size="5">）</font></span><span style="font-family: Calibri; color: black"><font size="5">,&nbsp;&nbsp; 
+R0[1]=1</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">SUB&nbsp;&nbsp; 
+R0,&nbsp; R0,#1&nbsp;&nbsp; ;R0=R0-1</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">MUL&nbsp;&nbsp; 
+R4, R2,</font></span><span style="font-family: 宋体; color: black"><font size="5">　</font></span><span style="font-family: Calibri; color: black"><font size="5">R1&nbsp;&nbsp; 
+;</font></span><span style="font-family: 宋体; color: black"><font size="5">乘&nbsp;&nbsp;
+</font></span><span style="font-family: Calibri; color: black"><font size="5">R4 
+= R2 * R1</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">MLA&nbsp;&nbsp; 
+R7, R8, R9, R3&nbsp;&nbsp;&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">乘加&nbsp;&nbsp; </font></span><span style="font-family: Calibri; color: black"><font size="5">
+R7 = R8 * R9 + R3</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">UMULL&nbsp; R6, 
+R8, R0, R1&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">无符号乘&nbsp;&nbsp; </font></span><span style="font-family: Calibri; color: black"><font size="5">
+R8, R6 = R0 x R1</font></span></p>
+<span style="font-family: Calibri; color: black"><font size="5">UMLAL&nbsp; R5, R8, 
+			R0, R1 &nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">无符号乘加长</font></span><span style="font-family: Calibri; color: black"><font size="5">R8, 
+			R5 = R0 x R1 + R8, R5</font></span><p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">3 </font></span>
+<span style="font-family: 宋体; color: #C00000; font-weight: bold"><font size="5">
+			存储器访问指令</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: 宋体; color: black"><font size="5">助记符</font></span><span style="font-family: Calibri; color: black"><font size="5">LDR</font></span><span style="font-family: 宋体; color: black"><font size="5">实现读存储单元内容</font></span><span style="font-family: Calibri; color: black"><font size="5">,</font></span><span style="font-family: 宋体; color: black"><font size="5">助记符</font></span><span style="font-family: Calibri; color: black"><font size="5">STRB</font></span><span style="font-family: 宋体; color: black"><font size="5">实现存储单元写操作。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">LDR&nbsp;&nbsp; 
+R1, [R0]&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">读 
+</font></span><span style="font-family: Calibri; color: black"><font size="5">R1 
+= [R0]</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">LDR&nbsp;&nbsp; 
+R8, [R3, #4]&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">读 
+</font></span><span style="font-family: Calibri; color: black"><font size="5">R8 
+= [R3+4]</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">LDR&nbsp;&nbsp; 
+R11, [R1, R2]&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">读 
+</font></span><span style="font-family: Calibri; color: black"><font size="5">
+R11 = [R1 + R2]</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">STR&nbsp;&nbsp; 
+R2, [R1, #0x100]&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">写 
+</font></span><span style="font-family: Calibri; color: black"><font size="5">
+[R1+0x100] = R2</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">STMFD R13!, {R0 
+- R12, LR}&nbsp; ;R13=SP,</font></span><span style="font-family: 宋体; color: black"><font size="5">将</font></span><span style="font-family: Calibri; color: black"><font size="5">R0</font></span><span style="font-family: 宋体; color: black"><font size="5">～</font></span><span style="font-family: Calibri; color: black"><font size="5">R12</font></span><span style="font-family: 宋体; color: black"><font size="5">，</font></span><span style="font-family: Calibri; color: black"><font size="5">LR</font></span><span style="font-family: 宋体; color: black"><font size="5">入栈。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">LDMFD&nbsp; 
+R13!, {R0 - R12, PC}&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">数据出栈，存入</font></span><span style="font-family: Calibri; color: black"><font size="5">R0</font></span><span style="font-family: 宋体; color: black"><font size="5">～</font></span><span style="font-family: Calibri; color: black"><font size="5">R12</font></span><span style="font-family: 宋体; color: black"><font size="5">，</font></span><span style="font-family: Calibri; color: black"><font size="5">PC</font></span><span style="font-family: 宋体; color: black"><font size="5">。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">LDMIA&nbsp; &nbsp;R0, 
+{R5 - R8}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+;</font></span><span style="font-family: 宋体; color: black"><font size="5">连续读取数据到存入</font></span><span style="font-family: Calibri; color: black"><font size="5">R5-R8</font></span><span style="font-family: 宋体; color: black"><font size="5">。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<span style="font-family: Calibri; color: black"><font size="5">STMDA&nbsp; 
+&nbsp;R1!, {R2 - R11}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;</font></span><span style="font-family: 宋体; color: black"><font size="5">将</font></span><span style="font-family: Calibri; color: black"><font size="5">R2-R11</font></span><span style="font-family: 宋体; color: black"><font size="5">的数据保存到存储器中。</font></span></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+　</p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font size="5"><span style="font-family: 宋体">4、<font color="#FF0000">程序状态寄存器访问指令</font><br>
+　</span></font></p>
+<p style="text-align: left; direction: ltr; unicode-bidi: embed; word-break: normal; punctuation-wrap: hanging; margin-left: 0in; margin-top: 0pt; margin-bottom: 0pt">
+<font face="宋体" size="5">助记符MRS实现读CPSR内容到通用寄存器。<br>
+助记符MSR实现将通用寄存器内容写入CPSR。</font></p>
+<p><font size="5">指令范例<br>
+（1）清标志位<br>
+MRS R0, CPSR ;读 R0=CPSR<br>
+BIC R0, R0, #0xF0000000 ;清N、Z、C、V<br>
+MSR CPSR_f, R0 ;写 CPSR标志域, N、Z、C、V、Q =0<br>
+（2）禁止IRQ中断<br>
+MRS R0, CPSR ;读 R0=CPSR<br>
+ORR R0, R0, #0x80 ;I=1<br>
+MSR CPSR_c, R0 ;回写CPSR控制域<br>
+（3）设置FIQ模式<br>
+MRS R0, CPSR ;读 CPSR<br>
+BIC R0, R0, #0x1F ;清mode对应位<br>
+ORR R0, R0, #0x11 ;置FIQ工作模式位<br>
+MSR CPSR_c, R0 ;回写CPSR控制域</font><br>
+　</p>
+<p><font size="5">5、<font color="#FF0000">存储器块访问指令</font></font></p>
+<p><font size="5">指令格式<br>
+LDM{&lt;cond&gt;}&lt;addressing_mode&gt; Rn{!}, &lt;registers&gt;{^} ;连续读<br>
+STM{&lt;cond&gt;}&lt;addressing_mode&gt; Rn{!}, &lt;registers&gt;{^} ;连续写<br>
+指令范例<br>
+STMFD R13!, {R0 - R12, LR} ;R13=SP,将R0～R12，LR入栈。满递减堆栈。<br>
+LDMFD R13!, {R0 - R12, PC} ;数据出栈，存入R0～R12，PC。<br>
+LDMIA R0, {R5 - R8} ;连续读取数据到存入R5-R8。<br>
+STMDA R1!, {R2 - R11} ;将R2-R11的数据保存到存储器中。<br>
+　</font></p>
+<p><font size="5">6、<font color="#FF0000">寄存器和存储器交换指令</font><br>
+指令范例<br>
+SWP R12, R10, [R9] ;R12 =[R9] ，[R9] = R10<br>
+SWPB R3, R4, [R8] ;交换字节<br>
+　</font></p>
+
+<p><font size="5">7、<font color="#FF0000">异常产生指令</font><br>
+指令范例<br>
+BKPT ;断点</font></p>
+<p><font size="5">from:<a href="http://infocenter.arm.com/help/basic/help.jsp?topic=/com.arm.doc.dui0204ic/Cihbiggi.html">http://infocenter.arm.com/help/basic/help.jsp?topic=/com.arm.doc.dui0204ic/Cihbiggi.html</a></font></p>
+<table border="1" width="100%">
+	<tr>
+		<td bgcolor="#808000">
+		<div class="sect2" xml:lang="en" lang="en">
+			<div class="titlepage">
+				<div>
+					<div>
+						<h3 class="title">4.10.1.&nbsp;BKPT</h3>
+					</div>
+				</div>
+			</div>
+			<p>断点。</p>
+			<div class="sect3" xml:lang="en" lang="en">
+				<div class="titlepage">
+					<div>
+						<div>
+							<h4 class="title"><a id="id4921182"></a>语法</h4>
+						</div>
+					</div>
+				</div>
+				<pre class="synopsis"><code class="code">BKPT</code> #<em class="replaceable"><code>immed</code></em>
+</pre>
+				<p>其中：</p>
+				<div class="variablelist">
+					<dl>
+						<dt><span class="term"><em class="parameter"><code>
+						<em class="replaceable">immed</em></code></em></span></dt>
+						<dd>
+						<div class="definition">
+							是一个表达式，其取值为以下范围内的一个整数：<div class="itemizedlist">
+								<ul type="disc">
+									<li>在 ARM 指令中，为 0-65535（16 位值）</li>
+									<li>在 16 位 Thumb 指令中为 0-255（8 位值）。</li>
+								</ul>
+							</div>
+						</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="sect3" xml:lang="en" lang="en">
+				<div class="titlepage">
+					<div>
+						<div>
+							<h4 class="title"><a id="id4921233"></a>用法</h4>
+						</div>
+					</div>
+				</div>
+				<p><font color="#FF0000"><code class="code">BKPT</code> 
+				指令可使处理器进入调试状态。 当指令到达某个特定地址处时，调试工具可以使用此指令来检查系统状态。</font></p>
+				<p>在 ARM 状态和 Thumb 状态中，ARM 硬件都会忽略 <code class="literal">
+				<em class="replaceable"><code>immed</code></em></code>。不过，调试器可用它来存储断点的其他信息。</div>
+			<div class="sect3" xml:lang="en" lang="en">
+				<div class="titlepage">
+					<div>
+						<div>
+							<h4 class="title"><a id="id4921263"></a>体系结构</h4>
+						</div>
+					</div>
+				</div>
+				<p>此 ARM 指令可用于 ARMv5 及更高版本。</p>
+				<p>此 16 位 Thumb 指令可用于 ARMv5 及更高版本的 T 变体。</p>
+				<p>此指令无 32 位 Thumb 版本。</div>
+		</div>
+		<div class="footers">
+			<table class="legalfooter" summary="Legal information footer" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr class="copyrightdocnumbar">
+					<td class="copyrightcell" align="left" valign="top">
+					Copyright ©&nbsp;2002-2008 ARM Limited. All rights reserved.</td>
+					<td class="docnumcell" align="right" valign="top">ARM DUI 
+					0204IC</td>
+				</tr>
+				<tr class="secstatusbar">
+					<td class="securitycell" align="left" valign="top">
+					Non-Confidential</td>
+				</tr>
+			</table>
+		</div>
+		<p>　</td>
+	</tr>
+	<tr>
+		<td>　</td>
+	</tr>
+</table>
+<p><font size="5"><br>
+SWI ;软件中断<br>
+　</font></p>
+<p><font size="5">8、</font><span style="font-family: 宋体"><font size="5" color="#FF0000">协处理器指令</font></span></p>
+<p><font size="5">协处理器（coprocessor），一种芯片，用于减轻系统微处理器的特定处理任务。</font></p>
+<p><font size="5">指令助记符 </font></p>
+<p><font size="5">CDP：协处理器数据操作指令。 </font></p>
+<p><font size="5">LDC：协处理器数据读取指令。 </font></p>
+<p><font size="5">STC：协处理器数据写入指令。 </font></p>
+<p><font size="5">MCR：ARM寄存器到协处理器寄存器的数据传送指令。 </font></p>
+<p><font size="5">MRC：协处理器寄存器到ARM 寄存器到的数据传送指令。</font> </p>
+<p><font size="5"><b>举例</b>：</font></p>
+<p><font size="5">CDP{cond} coproc, opcodel, CRd, CRn, CRm{,opcode2} </font></p>
+<p><font size="5">在上述指令格式中： </font></p>
+<p><font size="5">coproc 指令操作的协处理器名。标准名为pn,n 为0~15。 </font></p>
+<p><font size="5">opcodel 协处理器的特定操作码。 </font></p>
+<p><font size="5">CRd 作为目标寄存器的协处理器寄存器。 </font></p>
+<p><font size="5">CRN 存放第1个操作数的协处理器寄存器。 </font></p>
+<p><font size="5">CRm 存放第2个操作数的协处理器寄存器。 </font></p>
+<p><font size="5">Opcode2 可选的协处理器特定操作码。 </font></p>
+
+<!-- #EndEditable -->
+		</div>
+		<!--Main Content Area Ends Here--></div>
+	<!-- Columns Container ends here -->
+	<!-- Footer begins here -->
+	<div id="footer">
+		<p>Copyright © 2015 Company Name. All Rights Reserved.</p>
+		<p>your-name@your-domain.com
+		<a href="../../../privacy-policy.html" title="Privacy Policy.">Privacy Policy</a>
+		</p>
+		<p class="smltxt">Template Design:
+		<a href="http://www.genealogy-web-creations.com/" title="Genealogy Web Creations.">
+		Genealogy Web Creations</a> </p>
+		<p class="smltxt">Template Updated: May 2015 </p>
+	</div>
+	<!-- Footer ends here -->
+	<!-- Page Container ends here --></div>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
