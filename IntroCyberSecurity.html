@@ -109,23 +109,64 @@
 					<ol class="mb-5">
 						<li class="mb-2">下载安装开源虚拟机软件Virtual Box。网址https://www.virtualbox.org/
 						</li>
-						<li class="mb-2">在Virtual Box中安装Linux的Ubuntu发行版。Ubuntu的下载地址https://ubuntu.com/download/desktop ，从Ubuntu的官网上下载比较慢，也可以找国内的镜像网站，如网易开源镜像站（http://mirrors.163.com/）下载，或者从我的校园网盘上的共享下载（分享链接: 链接:http://pan.buu.edu.cn/share?id=5xq8vxg3myru）。
+						
+						<li class="mb-2">在Virtual Box中安装Linux的Ubuntu发行版。Ubuntu的下载地址https://cn.ubuntu.com/download/desktop ，从Ubuntu的官网上下载比较慢，也可以找国内的镜像网站，如网易开源镜像站（http://mirrors.163.com/）下载，或者从我的校园网盘上的共享下载（分享链接: 链接:http://pan.buu.edu.cn/share?id=5xq8vxg3myru）。<br>
+						<div >
+							 <b> 注：校园网盘上的共享通常不是最新的，最新的软件需要到官方网站上下载。</b>
+						</div>	
+						
 						</li>
+						
+						<li class="mb-2">为了以后利用apt安装软件能快一些，建议可以把国内的几个源（如阿里、腾讯、清华、中科大等）加到apt的配置文件“/etc/apt/sources.list”中。
+						</li>
+						
+						<li class="mb-2">在你安装的Ubuntu操作系统上，在终端内执行下面的指令安装nmap软件。<br>
+						<div style="color:#FF0000;text-align:center">
+							  sudo apt install nmap
+						</div>					
+						安装结束后，在终端执行以下指令，如果能够显示nmap的指令说明，则表示安装成功。<br>
+						<div style="color:#FF0000;text-align:center">
+							  nmap -h 
+						</div>						
+						</li>
+						
+						<li class="mb-2">在Ubuntu操作系统的软件中心“Ubuntu Software”中查找并安装NmapSI4（这是Nmap的一个图形化界面）。
+						</li>
+						
+						<li class="mb-2">在终端内执行下面的指令安装net-tools软件。<br>
+						<div style="color:#FF0000;text-align:center">
+							  sudo apt install net-tools
+						</div>					
+						安装结束后，在终端执行以下指令，查看本机ip地址。(<a href="https://www.bilibili.com/video/BV1uP411V7zC?vd_source=968e841856a85a1089843a033511a1d0)">B站视频演示</a>)<br>
+						<div style="color:#FF0000;text-align:center">
+							  ifconfig 
+						</div>						
+						</li>
+						
+						<li class="mb-2">启动nmapsi4软件，选择"Quick Scan“模式，在软件右侧的参数输入部分左上的第一个框内输入你的ip地址，然后按界面左上的“scan”键进行扫描。(<a href="https://www.bilibili.com/video/BV1uP411V7zC?vd_source=968e841856a85a1089843a033511a1d0)">B站视频演示</a>)
+						</li>
+						
 						<li class="mb-2">在你的宿主机操作系统中（就是安装Virtual Box的系统）安装一个录屏软件。
 						</li>
+						
 						<li class="mb-2">使用录屏软件录制以下内容：
 							<ul class="mb-5">
 								<li class="mb-2">Ubuntu在虚拟机VirtualBox中启动的过程；
 								</li>
-								<li class="mb-2">启动后执行终端程序（也就是进入命令行），执行ls指令。
+								<li class="mb-2">启动后执行终端程序（也就是进入命令行），执行ifconfig指令。
 								</li>
+								<li class="mb-2">启动nmapsi4，并执行上述扫描的过程。
+								</li>								
 							</ul>
 						</li>
+						
 						<li class="mb-2">录制的视频软件存为mp4格式，文件名为形式为：****-###.mp4，其中****为你的学号，###为你的中文姓名。
 						</li>
 						
-						<li class="mb-2">可在联大云盘中搜索群组“李晓峰的课程作业”，加入群组，上传你的文件。
+						<li class="mb-2">可在联大云盘(https://pan.buu.edu.cn/)中搜索群组“李晓峰的课程作业”，加入群组，上传你的文件。<br>
+						如果学生在校外，可用vpn连接联大云盘。
 						</li>
+						
 						<li class="mb-2">作业截止时间在上课时告知。
 						</li>
 					</ol>
@@ -139,19 +180,20 @@
 					<h3 class="mt-5 mb-3">课程资料</h3>
 				    
 				    <ul class="mb-5">
-					  <li class="mb-2">走进台积电了解晶圆制造流程 <a href="https://gitee.com/uisu/introduction-cyber-security/tree/master/video">mp4</a> </li>
+					  <li class="mb-2">走进台积电了解晶圆制造流程 <a href="https://gitee.com/uisu/introduction-cyber-security/tree/master/video">mp4</a> <a href="https://www.bilibili.com/video/BV19x411W7kt?share_source=copy_web&vd_source=968e841856a85a1089843a033511a1d0">B站链接</a></li>
+ 
+					  <li class="mb-2">从沙子到芯片的制作过程 <a href="https://www.bilibili.com/video/BV1tV41127Zr?share_source=copy_web&vd_source=968e841856a85a1089843a033511a1d0">B站视频</a> </li>
+					  
+					  <li class="mb-2">信息安全技术术语(GB/T 25069) <a href=“https://www.yunzhongzhuan.com/#sharefile=uxBwqnzv_80814”>2010版下载</a>，<a href=“https://www.yunzhongzhuan.com/#sharefile=GLZKBUKF_80818”>2022版下载</a></li>
 					  
 					  <li class="mb-2">GB/T 22081-2008《信息技术-安全技术-信息安全管理实用规则》 <a href="https://gitee.com/uisu/introduction-cyber-security/tree/master/std">PDF</a>  </li>
 					  
 					  <li class="mb-2">GB/T 22239-2019《信息安全技术网络安全等级保护基本要求》 <a href="https://gitee.com/uisu/introduction-cyber-security/tree/master/std">PDF</a>  </li>
-	
-					  <li class="mb-2">GB/T 22239-2019《信息安全技术网络安全等级保护基本要求》 <a href="https://caiyun.139.com/m/i?175CdXB1BfuOn">链接</a>  </li>
-					  
+						  
 					  <li class="mb-2">课程PPT中给出的参考文献及链接 （网盘地址会在课堂给出）  </li>
 					  
-					  <li class="mb-2">斯坦福(stanford)大学CS101: Introduction to Computing Principles的课程资料 </li>
-					  <p>完整的课程主页见https://web.stanford.edu/class/cs101/</p>
-					  <p>课程主页中介绍了一个课程资源，其对计算机的一些基本概念做了介绍，网址：网址：https://introcomputing.org/</p>
+					  <li class="mb-2">斯坦福(stanford)大学CS101: Introduction to Computing Principles课程（<a href="https://web.stanford.edu/class/cs101/">课程主页</a>），课程中有对计算机一些基本概念的介绍资料，网址：https://introcomputing.org/ </li>
+					  
 					  
 					  <li class="mb-2">计算机是如何运行的（开源书）<a href="./download/Computersoftsysinter.pdf">下载</a>  </li> 
 					</ul>
