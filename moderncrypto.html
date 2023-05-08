@@ -6,11 +6,36 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blog Template">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
     <link rel="shortcut icon" href="favicon.ico"> 
-    
+    <style>
+		.accordion {
+		    background-color: #90EE90;
+		<!--
+			background-color: #eee;
+			color: #444;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			transition: 0.4s;-->
+		}
+
+		.active, .accordion:hover {
+			<!--background-color:  #ccc;-->
+		}
+
+		.panel {
+			padding: 0 18px;
+			background-color: white;
+			display: none;
+			overflow: hidden;
+		}
+	</style>
 
     
     <!-- Theme CSS -->  
@@ -20,7 +45,7 @@
 </head> 
 
 <body>
-    
+
     <header class="header text-center">	    
 	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Xiaofeng‘s Web</a></h1>
         
@@ -84,10 +109,10 @@
 				    <h3 class="mt-5 mb-3">自编教材</h3>
 					<ul class="mb-5">
 					  <li class="mb-2">发布版PDF（CryBook）  </li>
-					        <p><a href="https://www.yunzhongzhuan.com/#sharefile=Md5SrM4q_134506" rel="nofollow">v5.0</a> 
+					        <p><a href="https://www.yunzhongzhuan.com/#sharefile=Md5SrM4q_134506" rel="nofollow"  target="_blank">v5.0</a> 
 							&nbsp &nbsp
-							<a href="./download/CryBook.pdf" rel="nofollow">v3.2</a></p>
-					  <li class="mb-2"><a href="https://gitee.com/uisu/modern_cryptography_free_book" rel="nofollow">Latex源码</a></li>
+							<a href="./download/CryBook.pdf" rel="nofollow"  target="_blank">v3.2</a></p>
+					  <li class="mb-2"><a href="https://gitee.com/uisu/modern_cryptography_free_book" rel="nofollow"  target="_blank">Latex源码</a></li>
 					</ul>
 				    
 					<p>教材包括以下内容的基础知识。</p>
@@ -128,46 +153,246 @@
 					</ol>
 					
 					<h3 class="mt-5 mb-3">编程练习</h3>
+						<p>1-5编程作业通过gitee提交，每个任务的初始仓库会建在每次的课程项目里。任务6需要将你的公钥证书上传到指定目录，发送邮件到指定邮箱。任务7将write-up发送指定老师。</p>
+					    <button class="accordion">一般性Q/A</button>
+								<div class="panel">
+								  <p>密码学课程作业 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617149929" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879475283460120" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>作业截止前可以重新提交吗？ 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1647303021" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>关于代码重复率高的处理办法 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617863838" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879471931949365" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>程序注释 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617352660" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879473571922005" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>关于编程过程中函数的使用查找 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617341323" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879473857134897" rel="nofollow" target="_blank">微博</a>  
+								  </p> 
+								  <p>如何查找函数用法 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1618409682" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470325793107" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>密码学编程练习编译后程序执行方式 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617236674" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879474301993074" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>pull request目标仓库
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617236360" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879474528485630" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>Use the Microsoft C++ toolset from the command line
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617160307" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879474914361386" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>以十六进制方式查看文件内容
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1618554950" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470065484013" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>文件的文本方式和二进制方式打开的区别
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1618021039" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879471168848027" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>比较文件差别
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1679730822" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404883207718830109" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>caesarchipher和hancipher提交不理想QA（2023）
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1679316065" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404881468534162297" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>函数参数同时为in和out时，函数注释写法
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1679028060" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404880260297523925" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>修改同学一个函数注释
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1678587795" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>使用gdb调试程序详解（转）
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1676264796" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>codeblocks的debug教程（转）
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1676264225" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>编写“漂亮”的代码
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1653530192" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>关于函数返回值设计
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1649086308" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>使用gdb极简入门
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1648190817" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>code::block下如何debug
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1648189867" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p> (转)VS Using GCC with MinGW
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1624510908" rel="nofollow" target="_blank" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank" target="_blank">微博</a>  
+								  </p> 
+								  <p> (转)Tutorial of gcc and gdb
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1624510772" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								   <p> (转)Create and Debug C/C++ Programs with Eclipse and Cygwin in Windows
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1624510635" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								</div>
 					<h4 class="mt-5 mb-4">任务</h4>
 						<ol class="mb-5">
 						  <li class="mb-2">古典密码
 							<p> 凯撒加密：
 							  任务文档(<a href="./download/1古典密钥编程练习.pdf" rel="nofollow">PDF</a>)
-							</p>							
+							</p>
+							<button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>Caesar 实验报告共性问题罗列 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1618201910" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>caesar加密编程字母是大写还是小写？
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617678083" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>caesar加密与加法加密关系
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617677830" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879473089839281" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>技术报告中如何写句子——读Caesar实验报告有感
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1618375929" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470657142809" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								  <p>Caesar 实验报告共性问题罗列
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1618201910" rel="nofollow" target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow" target="_blank">微博</a>  
+								  </p>
+								</div>						
+                     
+                            								
 							<p> 汉语加密：
 							  任务文档(<a href="./download/1古典密钥编程练习.pdf" rel="nofollow">PDF</a>)
-							</p>							
+							</p>
+                            <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>HanCipher密文可以是乱码吗？ 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617718011" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879472175219029" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>关于类比Caesar密码实现汉字加密的说明
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1646886647" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								</div>							
 						  </li>
 						  
 						  <li class="mb-2">流密码:
-						  任务文档(<a href="./download/2流密码编程练习.pdf" rel="nofollow">PDF</a>)
+						  任务文档(<a href="./download/2流密码编程练习.pdf" rel="nofollow"  target="_blank">PDF</a>)
+						  <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>流加密时关于文件格式问题
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617678376" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879472443654511" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>LFSR的本原多项式与反馈函数 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1648798152" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								</div>
 						  </li>
 						  
 						  <li class="mb-2">分组密码:
-						  任务文档(<a href="./download/3分组密码编程练习.pdf" rel="nofollow">PDF</a>)
+						  任务文档(<a href="./download/3分组密码编程练习.pdf" rel="nofollow"  target="_blank">PDF</a>)
+						  <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>DES的NIST标准测试数据
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404899092097794311" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  
+								</div>
 						  </li>
 						  
 						  <li class="mb-2">公钥密码:
-						  任务文档(<a href="./download/4公钥密码编程练习.pdf" rel="nofollow">PDF</a>)
+						  任务文档(<a href="./download/4公钥密码编程练习.pdf" rel="nofollow"  target="_blank">PDF</a>)
+						  <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>关于用GMP实现 512bit RSA基本说明
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404899082765467843" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>关于RSA的位数  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404899083583356998" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								</div>
 						  </li>
 						  
 						  <li class="mb-2">哈希函数:
-						  任务文档(<a href="./download/5哈希函数编程练习.pdf" rel="nofollow">PDF</a>)
+						  任务文档(<a href="./download/5哈希函数编程练习.pdf" rel="nofollow"  target="_blank">PDF</a>)
+						  <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>MD5的验收测试 
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404899093003501901" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								</div>
 						  </li>
 						  
 						  <li class="mb-2">证书生成及应用试验：
-						  任务文档(<a href="./download/6证书生成及应用实验.pdf" rel="nofollow">PDF</a>)
+						  任务文档(<a href="./download/6证书生成及应用实验.pdf" rel="nofollow"  target="_blank">PDF</a>)
+						  <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>X.509证书（关注序列号唯一性） 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1652855416" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>MIME 和S/MIME
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1652691402" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>证书练习要求(强调)
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1623800139" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>利用OpenSSL生成证书
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1622790308" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>在Thunderbird中使用证书
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1622790080" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  
+								</div>
 						  </li>
 						  
 						  <li class="mb-2">密码学CTF：
-						  任务文档(<a href="./download/7密码学CTF.pdf" rel="nofollow">PDF</a>)
+						  任务文档(<a href="./download/7密码学CTF.pdf" rel="nofollow"  target="_blank">PDF</a>)
+						  <button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>密码学CTF题目从哪里找？
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404899093771321771" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								</div>
 						  </li>
 						</ol>
-						<p>1-5编程作业通过gitee提交，每个任务的初始仓库会建在每次的课程项目里。</p>
+
 					<h4 class="mt-5 mb-4">评价</h4>
+					<p style="background-color:Tomato;">注意：凯撒编程练习的实验报告需要达到合格性要求，在没有合格前，会让大家不断修改，在课程结束前，如果此报告任然没有达到合格性要求，本门课程记0分！</p>
 					<ul class="mb-5">
-					  <li class="mb-2"><a href="./download/编程类练习评分标准.pdf" rel="nofollow">发布版PDF</a></li>
-					  <li class="mb-2"><a href="https://gitee.com/uisu/modern_cryptography_free_book/blob/master/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/program-ex.tex" rel="nofollow">Latex源码</a></li>
+					  <li class="mb-2"><a href="./download/编程类练习评分标准.pdf" rel="nofollow"  target="_blank">发布版PDF</a></li>
+					  <li class="mb-2"><a href="https://gitee.com/uisu/modern_cryptography_free_book/blob/master/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/program-ex.tex" rel="nofollow"  target="_blank">Latex源码</a></li>
 					</ul>
 					<p>对于编程类练习，应该有个评价指导过程，此课的评价方法所对应的条件是一个授课老师的情况，本着评分尽量公平合理的原则下制定的，对于一些练习也采取了指导评价再指导再评价的反复循环，最多一个练习是4个循环。</p>
 					<p>对于有条件的学校，建议配几个助教，评分方法可以改变，可以形成对学生有针对性的个性化指导、提高。
@@ -204,14 +429,37 @@
 					
 					<h4 class="mt-5 mb-4">课程理论作业</h4>
 					<p>理论作业会发布在课程QQ群（3093083538）里，理论作业需要交纸质版，每次布置新作业，同时会在QQ群把上次作业答案上传。</P>
+					<button class="accordion">Q/A</button>
+								<div class="panel">
+								  <p>不知道密钥参数 怎样求解密函数？
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1617677683" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879473307681205" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>形式化证明工具Isabelle 
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1675735163" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>交互式定理证明器-ACL2
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1675735038" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>（转）安全多方计算介绍
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1630911628" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								  <p>（转）密码学中的可证明安全理论
+								          <a href="https://user.qzone.qq.com/3093083538/blog/1625232388" rel="nofollow"  target="_blank">QQ日志</a>  
+										  <a href="https://weibo.com/ttarticle/p/show?id=2309404879470912995381" rel="nofollow"  target="_blank">微博</a>  
+								  </p>
+								</div>
 					
 					<h2 class="mt-5 mb-2">《密码学》课程设计</h2>
 					<p>此课程设计是信息安全本科学生，在第四学期完成《密码学》理论课程学习后，在5天时间内完成的一个练习。</p>
 					<ul class="mb-5">
-					  <li class="mb-2"><a href="./download/密码学课程设计任务书.pdf" rel="nofollow">任务书发布版PDF</a></li>
-					  <li class="mb-2">报告模板（<a href="./download/密码学课程设计报告模板-word.dotx" rel="nofollow">MS Word</a>， <a href="./download/密码学课程设计报告模板-wsp.wpt" rel="nofollow">WPS</a>）</li>
-					  <li class="mb-2"><a href="https://gitee.com/uisu/secretsender" rel="nofollow">任务初始库</a></li>
-					  <li class="mb-2"><a href="https://gitee.com/uisu/ModernCryptoCD" rel="nofollow">任务书Latex源码</a></li>
+					  <li class="mb-2"><a href="./download/密码学课程设计任务书.pdf" rel="nofollow"  target="_blank">任务书发布版PDF</a></li>
+					  <li class="mb-2">报告模板（<a href="./download/密码学课程设计报告模板-word.dotx" rel="nofollow"  target="_blank">MS Word</a>， <a href="./download/密码学课程设计报告模板-wsp.wpt" rel="nofollow"  target="_blank">WPS</a>）</li>
+					  <li class="mb-2"><a href="https://gitee.com/uisu/secretsender" rel="nofollow"  target="_blank">任务初始库</a></li>
+					  <li class="mb-2"><a href="https://gitee.com/uisu/ModernCryptoCD" rel="nofollow"  target="_blank">任务书Latex源码</a></li>
 					</ul>
 					
 				</div><!--//blog-comments-section-->
@@ -249,11 +497,30 @@
             <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
         </div><!--//panel-inner-->
     </div><!--//configure-panel-->
+ 
+ <script>
+		// 获取所有按钮
+		var acc = document.getElementsByClassName("accordion");
 
-    
-       
-     
-    
+		// 遍历所有按钮
+		for (var i = 0; i < acc.length; i++) {
+			// 监听按钮的点击事件
+			acc[i].addEventListener("click", function() {
+				// 切换当前按钮的active类
+				this.classList.toggle("active");
+
+				// 获取按钮关联的内容块
+				var panel = this.nextElementSibling;
+
+				// 如果内容块已经是显示状态，则隐藏它；否则显示它
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			});
+		}
+	</script>
 
 </body>
 </html> 
