@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Xiaofeng‘s web</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+   
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+    
+<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Xiaofeng‘s Web</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+					
+					<div class="bio mb-3" style="font-size:12px">简单介绍一下<br><a href="about.html">如需沟通，email</a></div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<div style="font-size:14px">
+					<ul class="navbar-nav flex-column text-left">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Web Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="publications.html"><i class="fas fa-user fa-fw mr-2"></i>Publications</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="recomresource.html"><i class="fas fa-user fa-fw mr-2"></i>Recommended Resource</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container";place-items: center; >
+			
+			    <header class="blog-post-header" >
+				<div style="display: grid; place-items: center;">
+				  <h1> 勘误表</h1>
+				   <h2 style="font-size: 20px;">《应用密码学基础》，李晓峰，清华大学出版社，2024年12月第一版</h2>
+				</div>
+					
+				    
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    
+
+			<table>
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>页码</th>
+						<th>原文</th>
+						<th>修改</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>P.14</td>
+						<td>
+						机密性 (Confidentiality)：保护信息不被泄露或暴露给未授权的实体。<br>
+						完整性 (Integrity)：保护数据防止未授权的改变、删除或替代。<br>
+						非否认 (Non-repudiation)：防止参与某次通信交换的一方事后否认本次交换
+						曾经发生过。<br>
+						可认证 (Authentication)：提供某个实体（人或系统）的身份的保证。<br>
+						访问控制 (Access control)：保护资源以免对其进行非法使用或操纵。<br>
+						</td>
+						<td>
+						机密性 (Confidentiality)：保护信息不被泄露或暴露给未授权的实体。<br>
+						完整性 (Integrity)：保护数据防止未授权的改变、删除或替代。<br>
+						<span style="color: red;">可用性 (Availability): 信息在需要时能够获取。</span><br>
+						非否认 (Non-repudiation)：防止参与某次通信交换的一方事后否认本次交换
+						曾经发生过。<br>
+						可认证 (Authentication)：提供某个实体（人或系统）的身份的保证。<br>
+						访问控制 (Access control)：保护资源以免对其进行非法使用或操纵。<br>
+						</td>
+						<td>印刷版漏洞了“可用性”，CIA中的A</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>   
+				
+				
+	
+				</div><!--//blog-comments-section-->
+				
+		    </div><!--//container-->
+	    </article>
+	    
+
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+    
+
+</body>
+</html> 
+
