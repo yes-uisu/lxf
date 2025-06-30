@@ -172,9 +172,58 @@
 						<td>5</td>
 						<td>P42</td>
 						<td>通常找一个素多项式是一个困难问题，通常都会查表。</td>
-						<td>这句话不严谨，因为存在有效的随机算法找到某阶的素多项式，原文中的这句话容易引起误解，所以删掉这句话。</td>
+						<td>这句话错误，因为在有限域上，存在多项式时间算法，如Shoup算法，寻找素多项式，所以这不是一个困难问题。所以删掉这句话。</td>
 						<td></td>
 					</tr>
+					<tr>
+						<td>6</td>
+						<td>P61</td>
+						<td>分组大小：分组越大意味着安全性越高 ，但加密/解密速度也越慢。64 比特分组大小是比较合理的，在分组密码设计中他几乎是个通用的数值。</td>
+						<td>目前因为计算能力越来越高，这句话修订一下：<br>
+						分组大小：分组越大意味着安全性越高 ，但加密/解密速度也越慢。64 比特分组大小是比较合理的，在<span style="color: red;">早期</span>分组密码设计中他几乎是个通用的数值。</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>P61</td>
+						<td>如果算法能够简洁地解释清楚，那么就很容易通过分析算法而找到密码分析上的弱点，进而能够对其牢固程度有更大信心。例如，DES 这个算法的功能原理就不容易分析。</td>
+						<td>进行修订，描述更严谨：<br>						
+						如果算法能够简洁地解释清楚，那么就很容易<span style="color: red;">对算法进行分析</span>，进而能够对其牢固程度有更大信心。<del>例如，DES 这个算法的功能原理就不容易分析。</del></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>P82</td>
+						<td>例 6.3的解部分X=(0,1,0,1,0,0,0,0)</td>
+						<td>修改为：X=(0,0,1,0,1,0,0,0),以上计算过程相应修改部分是，v<span class="custom-subscript">3</span>=1，v<span class="custom-subscript">4</span>=0，v<span class="custom-subscript">5</span>=1</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>P82</td>
+						<td>例 6.4的解部分X=(0,1,0,1,0)</td>
+						<td>修改为：X=(1,1,0,1,0)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>P88</td>
+						<td>2.选一个正整数d，满足 gcd(d,mod(𝜙(n))=1.<br>
+						3. 计算 d 模 𝜙(n) 的逆元 e，也就是说 ed=1(mod(𝜙(n)).
+						</td>
+						<td>2.选一个正整数<span style="color: red;">e</span>，满足 gcd(<span style="color: red;">e</span>,mod(𝜙(n))=1.<br>
+						3. 计算 <span style="color: red;">e</span> 模 𝜙(n) 的逆元 <span style="color: red;">d</span>，也就是说 ed=1(mod(𝜙(n)).</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>P100</td>
+						<td>目前大多数哈希函数的结构都采用 Merkle-Damgåard 结构
+						</td>
+						<td>目前大多数哈希函数的结构都采用 Merkle-Damgård 结构</td>
+						<td></td>
+					</tr>
+					
 				</tbody>
 			</table>   
 				
